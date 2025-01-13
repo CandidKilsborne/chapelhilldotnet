@@ -50,6 +50,16 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Blazicons.Devicon": {
+              "target": "Package",
+              "version": "[1.1.9, )"
+            },
+            "Blazicons.Lucide": {
+              "target": "Package",
+              "version": "[1.2.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

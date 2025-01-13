@@ -16,7 +16,6 @@ C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\scopedcss\C
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\scopedcss\bundle\ChapelHillDotNet.styles.css
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\scopedcss\projectbundle\ChapelHillDotNet.bundle.scp.css
-C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\mnm0yvugw6-khy4lop6wu.gz
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\6yrv4568b3-bqjiyaj88i.gz
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\vvz0adbj50-c2jlpeoesf.gz
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\r2mhctrou6-erw9l3u2r3.gz
@@ -61,7 +60,6 @@ C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\zoquvde3kw-h1s4sie4z3.gz
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\psw0vagbvs-63fj8s7r0e.gz
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\7as7cmg17s-0j3bgjxly4.gz
-C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\p4qvbiu1tp-sf8o4928cl.gz
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\5reoraal3x-sf8o4928cl.gz
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\staticwebassets.development.json
@@ -77,3 +75,13 @@ C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\refint\Chap
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\ChapelHillDotNet.pdb
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\ChapelHillDotNet.genruntimeconfig.cache
 C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\ref\ChapelHillDotNet.dll
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\ChapelHillDotNet.sourcelink.json
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\mnm0yvugw6-udwmzx58l8.gz
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\bin\Debug\net9.0\Blazicons.dll
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\bin\Debug\net9.0\Blazicons.Lucide.dll
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\bin\Debug\net9.0\BlazorComponentUtilities.dll
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\ChapelHillDotNet.csproj.AssemblyReference.cache
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\rvt9lig6b8-ugzwxlf6d1.gz
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\compressed\p4qvbiu1tp-76eo1lvswe.gz
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\obj\Debug\net9.0\ChapelHi.75E4BE71.Up2Date
+C:\Users\appio\source\repos\GitHub\ChapelHillDotNet\bin\Debug\net9.0\Blazicons.Devicon.dll

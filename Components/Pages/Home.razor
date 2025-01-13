@@ -1,7 +1,277 @@
 ﻿@page "/"
+@using System;
+@using ChapelHillDotNet.Components.Layout
+@using Microsoft.AspNetCore.Components.Web
 
-<PageTitle>Home</PageTitle>
+<div class="flex flex-col min-h-screen dark:bg-gray-900 dark:text-white">
+    <header class="bg-white dark:bg-gray-800 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg class="h-8 w-8 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="text-xl font-bold text-gray-800 dark:text-white">Chapel Hill .NET & Azure</span>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#events" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Events</a>
+                <a href="#organizers" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Organizers</a>
+                <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-2">
+                <DarkModeToggle />
+                <button class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-md">Join Us</button>
+            </div>
+        </div>
+    </header>
 
-<h1>Hello, world!</h1>
+    <main class="flex-grow">
+        <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Connect, Learn, and Grow with .NET & Azure</h1>
+                <p class="text-xl mb-8">Join our vibrant community of developers in Chapel Hill, NC</p>
+                <button class="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700 text-lg py-2 px-6 rounded-md">
+                    Attend Next Meetup
+                </button>
+            </div>
+        </section>
 
-Welcome to your new app.
+        <section id="about" class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">What We're About</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+
+                        <div class="flex items-start space-x-4">
+                            @* <Blazicon Svg="Lucide.Code" /> *@
+                            <Blazicon Svg='DeviconOriginal.Dotnetcore.WithSize("200%")' />
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">.NET Development</h3>
+                                <p class="text-gray-600">Explore the latest in .NET development, from C# features to ASP.NET Core best practices.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                              @* <Blazicon Svg="Lucide.Cloud" /> *@
+                              <Blazicon Svg="DeviconOriginal.Azure" />
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Azure Cloud</h3>
+                                <p class="text-gray-600">Dive into Azure services, cloud architecture, and DevOps practices for scalable applications.</p>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">Upcoming Events</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach (var evt in Events)
+                    {
+                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+                            <div class="flex items-center space-x-2 text-blue-600 mb-2">
+                                <Blazicon Svg="Lucide.Calendar" />
+                                <span>@evt.Date.ToString("MMMM d, yyyy")</span>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">@evt.Title</h3>
+                            <p class="text-gray-600 mb-4">@evt.Description</p>
+                            <div class="flex items-center space-x-2 text-gray-500">
+                                <Blazicon Svg="Lucide.MapPinned" />
+                                <span>@evt.Location</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section id="organizers" class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Meet Our Organizers</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach (var organizer in Organizers)
+                    {
+                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
+                            <img src="@organizer.ImageUrl" alt="@organizer.Name" class="w-24 h-24 rounded-full mx-auto mb-4" />
+                            <h3 class="text-xl font-semibold mb-2 dark:text-white">@organizer.Name</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">@organizer.Bio</p>
+                            <div class="flex justify-center space-x-4">
+                                @if (!string.IsNullOrEmpty(organizer.TwitterUrl))
+                                {
+                                    <a href="@organizer.TwitterUrl" class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                        @* <TwitterIcon /> *@
+                                    </a>
+                                }
+                                @if (!string.IsNullOrEmpty(organizer.LinkedInUrl))
+                                {
+                                    <a href="@organizer.LinkedInUrl" class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                        <Blazicon Svg="Lucide.Linkedin" />
+                                    </a>
+                                }
+                                @if (!string.IsNullOrEmpty(organizer.GitHubUrl))
+                                {
+                                    <a href="@organizer.GitHubUrl" class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                        <Blazicon Svg="Lucide.Github" />
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About Us</h3>
+                    <p class="text-gray-400">We're a community of .NET and Azure enthusiasts in Chapel Hill, NC, dedicated to learning and sharing knowledge.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#organizers" class="text-gray-400 hover:text-white">Organizers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <p class="text-gray-400">Email: info@chapelhilldotnet.com</p>
+                    <p class="text-gray-400">Phone: (555) 123-4567</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            @* <TwitterIcon /> *@
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <Blazicon Svg="Lucide.Linkedin" />
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <Blazicon Svg="Lucide.Github" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; @DateTime.Now.Year Chapel Hill .NET & Azure Meetup. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+@code {
+    private List<Feature> Features { get; set; } = new();
+    private List<Event> Events { get; set; } = new();
+    private List<Organizer> Organizers { get; set; } = new();
+
+    protected override void OnInitialized()
+    {
+        Features = new List<Feature>
+        {
+            new Feature
+            {
+                Title = ".NET Development",
+                Description = "Explore the latest in .NET development, from C# features to ASP.NET Core best practices.",
+                IconColor = "text-blue-600",
+                IconName = "<Blazicon Svg=\"Lucide.Code\" />"
+            },
+            new Feature
+            {
+                Title = "Azure Cloud",
+                Description = "Dive into Azure services, cloud architecture, and DevOps practices for scalable applications.",
+                IconColor = "text-purple-600",
+                IconName = "<Blazicon Svg=\"Lucide.Cloud\" />"
+            }
+        };
+
+        Events = new List<Event>
+        {
+            new Event
+            {
+                Title = "Meetup Topic 1",
+                Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
+                Date = DateTime.Now.AddDays(7),
+                Location = "Chapel Hill Tech Hub"
+            },
+            new Event
+            {
+                Title = "Meetup Topic 2",
+                Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
+                Date = DateTime.Now.AddDays(14),
+                Location = "Chapel Hill Tech Hub"
+            },
+            new Event
+            {
+                Title = "Meetup Topic 3",
+                Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
+                Date = DateTime.Now.AddDays(21),
+                Location = "Chapel Hill Tech Hub"
+            }
+        };
+
+        Organizers = new List<Organizer>
+        {
+            new Organizer
+            {
+                Name = "Organizer Name 1",
+                Bio = "Brief bio or role description goes here.",
+                ImageUrl = "/images/placeholder-1.jpg",
+                TwitterUrl = "#",
+                LinkedInUrl = "#",
+                GitHubUrl = "#"
+            },
+            new Organizer
+            {
+                Name = "Organizer Name 2",
+                Bio = "Brief bio or role description goes here.",
+                ImageUrl = "/images/placeholder-2.jpg",
+                TwitterUrl = "#",
+                LinkedInUrl = "#",
+                GitHubUrl = "#"
+            },
+            new Organizer
+            {
+                Name = "Organizer Name 3",
+                Bio = "Brief bio or role description goes here.",
+                ImageUrl = "/images/placeholder-3.jpg",
+                TwitterUrl = "#",
+                LinkedInUrl = "#",
+                GitHubUrl = "#"
+            }
+        };
+    }
+
+    public class Feature
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string IconColor { get; set; }
+        public string IconName { get; set; }
+    }
+
+    public class Event
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime Date { get; set; }
+        public string Location { get; set; }
+    }
+
+    public class Organizer
+    {
+        public string Name { get; set; }
+        public string Bio { get; set; }
+        public string ImageUrl { get; set; }
+        public string TwitterUrl { get; set; }
+        public string LinkedInUrl { get; set; }
+        public string GitHubUrl { get; set; }
+    }
+}

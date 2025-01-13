@@ -3,14 +3,14 @@
     <StaticWebAssetEndpoint Include="_content/ChapelHillDotNet/app.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2900"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 31 Dec 2024 14:10:50 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-jjtdWN81Jb2hIVo1sPtZAJK\u002BZrTwB9VH4FykBYZMJg8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"18719"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022jjtdWN81Jb2hIVo1sPtZAJK\u002BZrTwB9VH4FykBYZMJg8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 31 Dec 2024 20:41:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ChapelHillDotNet/app.khy4lop6wu.css">
+    <StaticWebAssetEndpoint Include="_content/ChapelHillDotNet/app.udwmzx58l8.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"khy4lop6wu"},{"Name":"integrity","Value":"sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="},{"Name":"label","Value":"_content/ChapelHillDotNet/app.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2900"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 31 Dec 2024 14:10:50 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"udwmzx58l8"},{"Name":"integrity","Value":"sha256-jjtdWN81Jb2hIVo1sPtZAJK\u002BZrTwB9VH4FykBYZMJg8="},{"Name":"label","Value":"_content/ChapelHillDotNet/app.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18719"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022jjtdWN81Jb2hIVo1sPtZAJK\u002BZrTwB9VH4FykBYZMJg8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 31 Dec 2024 20:41:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ChapelHillDotNet/ChapelHillDotNet.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ChapelHillDotNet.sf8o4928cl.bundle.scp.css'))</AssetFile>

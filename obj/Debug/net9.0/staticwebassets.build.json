@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EcJSMh1d/2fNF9oSznIlA0cB8pUDbAmr7Xdpw12rSVM=",
+  "Hash": "3qYo1Pg7cK3L4bwf1Xg1qaZ7fuobMMBCryUdKwCmLy4=",
   "Source": "ChapelHillDotNet",
   "BasePath": "_content/ChapelHillDotNet",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\appio\\.nuget\\packages\\blazicons\\2.1.30\\staticwebassets\\Blazicons.ugzwxlf6d1.bundle.scp.css",
+      "SourceId": "Blazicons",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\appio\\.nuget\\packages\\blazicons\\2.1.30\\staticwebassets\\",
+      "BasePath": "_content/Blazicons",
+      "RelativePath": "Blazicons.ugzwxlf6d1.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "ugzwxlf6d1",
+      "Integrity": "jiA9KaGozNtDILg6qDFmGbFgnSKZBQ1YxEwdDGsG9lc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\appio\\.nuget\\packages\\blazicons\\2.1.30\\staticwebassets\\Blazicons.ugzwxlf6d1.bundle.scp.css"
+    },
     {
       "Identity": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\15bv0vfq9z-kbrnm935zg.gz",
       "SourceId": "ChapelHillDotNet",
@@ -500,12 +521,12 @@
       "OriginalItemSpec": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-khy4lop6wu.gz",
+      "Identity": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-udwmzx58l8.gz",
       "SourceId": "ChapelHillDotNet",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ChapelHillDotNet",
-      "RelativePath": "app#[.{fingerprint=khy4lop6wu}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=udwmzx58l8}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -514,8 +535,8 @@
       "RelatedAsset": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "596e5mu3rg",
-      "Integrity": "KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=",
+      "Fingerprint": "d9bub9g8z6",
+      "Integrity": "gUMNbPDkOKVXEry8zsXPYgrtaDfosxFEIAHbCDEp7E8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\wwwroot\\app.css"
@@ -563,12 +584,12 @@
       "OriginalItemSpec": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-sf8o4928cl.gz",
+      "Identity": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-76eo1lvswe.gz",
       "SourceId": "ChapelHillDotNet",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ChapelHillDotNet",
-      "RelativePath": "ChapelHillDotNet#[.{fingerprint=sf8o4928cl}]?.styles.css.gz",
+      "RelativePath": "ChapelHillDotNet#[.{fingerprint=76eo1lvswe}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -577,8 +598,8 @@
       "RelatedAsset": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\scopedcss\\bundle\\ChapelHillDotNet.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "lrx2admpv8",
-      "Integrity": "j6oE+o7c8LS/FO3i5GlC2sapOLqx8K9Ogz3Bk969884=",
+      "Fingerprint": "m6w4n9i3at",
+      "Integrity": "Emln1LyLTcrkm86RYWGrB9Dxc3S8IPeURl55ALVSX+A=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\scopedcss\\bundle\\ChapelHillDotNet.styles.css"
@@ -771,6 +792,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\rvt9lig6b8-ugzwxlf6d1.gz",
+      "SourceId": "Blazicons",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Blazicons",
+      "RelativePath": "Blazicons.ugzwxlf6d1.bundle.scp.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\appio\\.nuget\\packages\\blazicons\\2.1.30\\staticwebassets\\Blazicons.ugzwxlf6d1.bundle.scp.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "z3ngoyaodz",
+      "Integrity": "/1iirNYKQcZZlAp6aWhc9Lua9yx77eQPPQq/hLCKyw4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\appio\\.nuget\\packages\\blazicons\\2.1.30\\staticwebassets\\Blazicons.ugzwxlf6d1.bundle.scp.css"
     },
     {
       "Identity": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\sqmoedmfvu-r4e9w2rdcm.gz",
@@ -1018,8 +1060,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "sf8o4928cl",
-      "Integrity": "SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA=",
+      "Fingerprint": "76eo1lvswe",
+      "Integrity": "QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\scopedcss\\bundle\\ChapelHillDotNet.styles.css"
@@ -1060,8 +1102,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "khy4lop6wu",
-      "Integrity": "aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=",
+      "Fingerprint": "udwmzx58l8",
+      "Integrity": "jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -2014,13 +2056,50 @@
   ],
   "Endpoints": [
     {
-      "Route": "app.css",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-khy4lop6wu.gz",
+      "Route": "_content/Blazicons/Blazicons.bundle.scp.css",
+      "AssetFile": "C:\\Users\\appio\\.nuget\\packages\\blazicons\\2.1.30\\staticwebassets\\Blazicons.ugzwxlf6d1.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jiA9KaGozNtDILg6qDFmGbFgnSKZBQ1YxEwdDGsG9lc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 15:26:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jiA9KaGozNtDILg6qDFmGbFgnSKZBQ1YxEwdDGsG9lc="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Blazicons/Blazicons.bundle.scp.css",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\rvt9lig6b8-ugzwxlf6d1.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.007518796992"
         }
       ],
       "ResponseHeaders": [
@@ -2030,15 +2109,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "132"
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"/1iirNYKQcZZlAp6aWhc9Lua9yx77eQPPQq/hLCKyw4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:10:50 GMT"
+          "Value": "Thu, 05 Dec 2024 15:26:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2058,13 +2137,158 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"jiA9KaGozNtDILg6qDFmGbFgnSKZBQ1YxEwdDGsG9lc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-jiA9KaGozNtDILg6qDFmGbFgnSKZBQ1YxEwdDGsG9lc="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Blazicons/Blazicons.ugzwxlf6d1.bundle.scp.css",
+      "AssetFile": "C:\\Users\\appio\\.nuget\\packages\\blazicons\\2.1.30\\staticwebassets\\Blazicons.ugzwxlf6d1.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jiA9KaGozNtDILg6qDFmGbFgnSKZBQ1YxEwdDGsG9lc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 15:26:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ugzwxlf6d1"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jiA9KaGozNtDILg6qDFmGbFgnSKZBQ1YxEwdDGsG9lc="
+        },
+        {
+          "Name": "label",
+          "Value": "_content/Blazicons/Blazicons.bundle.scp.css"
+        }
+      ]
+    },
+    {
+      "Route": "_content/Blazicons/Blazicons.ugzwxlf6d1.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\rvt9lig6b8-ugzwxlf6d1.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/1iirNYKQcZZlAp6aWhc9Lua9yx77eQPPQq/hLCKyw4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 15:26:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/1iirNYKQcZZlAp6aWhc9Lua9yx77eQPPQq/hLCKyw4="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-udwmzx58l8.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000214454214"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4662"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gUMNbPDkOKVXEry8zsXPYgrtaDfosxFEIAHbCDEp7E8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 20:41:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8="
         }
       ]
     },
@@ -2079,7 +2303,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "18719"
         },
         {
           "Name": "Content-Type",
@@ -2087,11 +2311,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:10:50 GMT"
+          "Value": "Tue, 31 Dec 2024 20:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2101,13 +2325,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8="
         }
       ]
     },
     {
       "Route": "app.css.gz",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-khy4lop6wu.gz",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-udwmzx58l8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2116,7 +2340,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "4662"
         },
         {
           "Name": "Content-Type",
@@ -2124,11 +2348,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"gUMNbPDkOKVXEry8zsXPYgrtaDfosxFEIAHbCDEp7E8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:10:50 GMT"
+          "Value": "Tue, 31 Dec 2024 20:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2146,18 +2370,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0="
+          "Value": "sha256-gUMNbPDkOKVXEry8zsXPYgrtaDfosxFEIAHbCDEp7E8="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-khy4lop6wu.gz",
+      "Route": "app.udwmzx58l8.css",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-udwmzx58l8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.000214454214"
         }
       ],
       "ResponseHeaders": [
@@ -2167,15 +2391,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "4662"
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"gUMNbPDkOKVXEry8zsXPYgrtaDfosxFEIAHbCDEp7E8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:10:50 GMT"
+          "Value": "Tue, 31 Dec 2024 20:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2195,13 +2419,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "udwmzx58l8"
         },
         {
           "Name": "label",
@@ -2209,12 +2433,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
+      "Route": "app.udwmzx58l8.css",
       "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2224,7 +2448,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "18719"
         },
         {
           "Name": "Content-Type",
@@ -2232,11 +2456,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:10:50 GMT"
+          "Value": "Tue, 31 Dec 2024 20:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2246,7 +2470,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "udwmzx58l8"
         },
         {
           "Name": "label",
@@ -2254,13 +2478,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-jjtdWN81Jb2hIVo1sPtZAJK+ZrTwB9VH4FykBYZMJg8="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css.gz",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-khy4lop6wu.gz",
+      "Route": "app.udwmzx58l8.css.gz",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\mnm0yvugw6-udwmzx58l8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2269,7 +2493,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "4662"
         },
         {
           "Name": "Content-Type",
@@ -2277,11 +2501,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"gUMNbPDkOKVXEry8zsXPYgrtaDfosxFEIAHbCDEp7E8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:10:50 GMT"
+          "Value": "Tue, 31 Dec 2024 20:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2299,7 +2523,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "udwmzx58l8"
         },
         {
           "Name": "label",
@@ -2307,7 +2531,176 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0="
+          "Value": "sha256-gUMNbPDkOKVXEry8zsXPYgrtaDfosxFEIAHbCDEp7E8="
+        }
+      ]
+    },
+    {
+      "Route": "ChapelHillDotNet.76eo1lvswe.styles.css",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-76eo1lvswe.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000550357733"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1816"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Emln1LyLTcrkm86RYWGrB9Dxc3S8IPeURl55ALVSX+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 20:55:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4=\""
+        },
+        {
+          "Name": "Link",
+          "Value": "<_content/Blazicons/Blazicons.ugzwxlf6d1.bundle.scp.css>; rel=\"preload\"; as=\"style\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "76eo1lvswe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4="
+        },
+        {
+          "Name": "label",
+          "Value": "ChapelHillDotNet.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "ChapelHillDotNet.76eo1lvswe.styles.css",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\scopedcss\\bundle\\ChapelHillDotNet.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6048"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 20:55:40 GMT"
+        },
+        {
+          "Name": "Link",
+          "Value": "<_content/Blazicons/Blazicons.ugzwxlf6d1.bundle.scp.css>; rel=\"preload\"; as=\"style\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "76eo1lvswe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4="
+        },
+        {
+          "Name": "label",
+          "Value": "ChapelHillDotNet.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "ChapelHillDotNet.76eo1lvswe.styles.css.gz",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-76eo1lvswe.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1816"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Emln1LyLTcrkm86RYWGrB9Dxc3S8IPeURl55ALVSX+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 31 Dec 2024 20:55:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "76eo1lvswe"
+        },
+        {
+          "Name": "label",
+          "Value": "ChapelHillDotNet.styles.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Emln1LyLTcrkm86RYWGrB9Dxc3S8IPeURl55ALVSX+A="
         }
       ]
     },
@@ -2610,174 +3003,13 @@
       ]
     },
     {
-      "Route": "ChapelHillDotNet.sf8o4928cl.styles.css",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-sf8o4928cl.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000560224090"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1784"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"j6oE+o7c8LS/FO3i5GlC2sapOLqx8K9Ogz3Bk969884=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:19:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "sf8o4928cl"
-        },
-        {
-          "Name": "label",
-          "Value": "ChapelHillDotNet.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA="
-        }
-      ]
-    },
-    {
-      "Route": "ChapelHillDotNet.sf8o4928cl.styles.css",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\scopedcss\\bundle\\ChapelHillDotNet.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5979"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:19:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "sf8o4928cl"
-        },
-        {
-          "Name": "label",
-          "Value": "ChapelHillDotNet.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA="
-        }
-      ]
-    },
-    {
-      "Route": "ChapelHillDotNet.sf8o4928cl.styles.css.gz",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-sf8o4928cl.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1784"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"j6oE+o7c8LS/FO3i5GlC2sapOLqx8K9Ogz3Bk969884=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:19:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "sf8o4928cl"
-        },
-        {
-          "Name": "label",
-          "Value": "ChapelHillDotNet.styles.css.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-j6oE+o7c8LS/FO3i5GlC2sapOLqx8K9Ogz3Bk969884="
-        }
-      ]
-    },
-    {
       "Route": "ChapelHillDotNet.styles.css",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-sf8o4928cl.gz",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-76eo1lvswe.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000560224090"
+          "Quality": "0.000550357733"
         }
       ],
       "ResponseHeaders": [
@@ -2787,15 +3019,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1784"
+          "Value": "1816"
         },
         {
           "Name": "ETag",
-          "Value": "\"j6oE+o7c8LS/FO3i5GlC2sapOLqx8K9Ogz3Bk969884=\""
+          "Value": "\"Emln1LyLTcrkm86RYWGrB9Dxc3S8IPeURl55ALVSX+A=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:19:47 GMT"
+          "Value": "Tue, 31 Dec 2024 20:55:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2815,13 +3047,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA=\""
+          "Value": "W/\"QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4=\""
+        },
+        {
+          "Name": "Link",
+          "Value": "<_content/Blazicons/Blazicons.ugzwxlf6d1.bundle.scp.css>; rel=\"preload\"; as=\"style\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA="
+          "Value": "sha256-QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4="
         }
       ]
     },
@@ -2835,8 +3071,12 @@
           "Value": "bytes"
         },
         {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
           "Name": "Content-Length",
-          "Value": "5979"
+          "Value": "6048"
         },
         {
           "Name": "Content-Type",
@@ -2844,27 +3084,27 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA=\""
+          "Value": "\"QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:19:47 GMT"
+          "Value": "Tue, 31 Dec 2024 20:55:40 GMT"
         },
         {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Name": "Link",
+          "Value": "<_content/Blazicons/Blazicons.ugzwxlf6d1.bundle.scp.css>; rel=\"preload\"; as=\"style\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SFd4g8usK8OrlTrvMpbkESh5aMgukqJVsJy1Et0h+jA="
+          "Value": "sha256-QZ0bvAl/bwbeBSEEDMTL2zuqdukPBld3zvPa873Ids4="
         }
       ]
     },
     {
       "Route": "ChapelHillDotNet.styles.css.gz",
-      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-sf8o4928cl.gz",
+      "AssetFile": "C:\\Users\\appio\\source\\repos\\GitHub\\ChapelHillDotNet\\obj\\Debug\\net9.0\\compressed\\p4qvbiu1tp-76eo1lvswe.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2873,7 +3113,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1784"
+          "Value": "1816"
         },
         {
           "Name": "Content-Type",
@@ -2881,11 +3121,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6oE+o7c8LS/FO3i5GlC2sapOLqx8K9Ogz3Bk969884=\""
+          "Value": "\"Emln1LyLTcrkm86RYWGrB9Dxc3S8IPeURl55ALVSX+A=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 14:19:47 GMT"
+          "Value": "Tue, 31 Dec 2024 20:55:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2903,7 +3143,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6oE+o7c8LS/FO3i5GlC2sapOLqx8K9Ogz3Bk969884="
+          "Value": "sha256-Emln1LyLTcrkm86RYWGrB9Dxc3S8IPeURl55ALVSX+A="
         }
       ]
     },

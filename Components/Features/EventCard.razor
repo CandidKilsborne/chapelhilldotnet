@@ -1,0 +1,19 @@
+﻿@using ChapelHillDotNet.Data
+
+<div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+    <div class="flex items-center space-x-2 text-blue-600 mb-2">
+        <Blazicon Svg="Lucide.Calendar" />
+        <span>@Event.Date.ToString("MMMM d, yyyy")</span>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">@Event.Title</h3>
+    <p class="text-gray-600 mb-4">@Event.Description</p>
+    <div class="flex items-center space-x-2 text-gray-500">
+        <Blazicon Svg="Lucide.MapPinned" />
+        <span>@Event.Location</span>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Event Event { get; set; }
+}

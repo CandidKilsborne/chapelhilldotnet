@@ -1,7 +1,6 @@
 ﻿@page "/"
-@using System;
 @using ChapelHillDotNet.Components.Layout
-@using Microsoft.AspNetCore.Components.Web
+@using ChapelHillDotNet.Data
 
 <div class="flex flex-col min-h-screen dark:bg-gray-900 dark:text-white">
     <header class="bg-white dark:bg-gray-800 shadow-sm">
@@ -70,18 +69,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach (var evt in Events)
                     {
-                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-                            <div class="flex items-center space-x-2 text-blue-600 mb-2">
-                                <Blazicon Svg="Lucide.Calendar" />
-                                <span>@evt.Date.ToString("MMMM d, yyyy")</span>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-2">@evt.Title</h3>
-                            <p class="text-gray-600 mb-4">@evt.Description</p>
-                            <div class="flex items-center space-x-2 text-gray-500">
-                                <Blazicon Svg="Lucide.MapPinned" />
-                                <span>@evt.Location</span>
-                            </div>
-                        </div>
+                        <EventCard Event="@evt" />
                     }
                 </div>
             </div>
@@ -257,13 +245,7 @@
         public string IconName { get; set; }
     }
 
-    public class Event
-    {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public DateTime Date { get; set; }
-        public string Location { get; set; }
-    }
+
 
     public class Organizer
     {

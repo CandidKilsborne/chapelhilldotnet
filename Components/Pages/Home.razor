@@ -11,16 +11,16 @@
                 </svg>
                 <span class="text-xl font-bold text-gray-800 dark:text-white">Chapel Hill .NET & Azure</span>
             </div>
-            <nav class="hidden md:flex space-x-4">
-                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
-                <a href="#events" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Events</a>
-                <a href="#organizers" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Organizers</a>
-                <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-            </nav>
-            <div class="flex items-center space-x-2">
-                <DarkModeToggle />
-                <button class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-md">Join Us</button>
-            </div>
+            @* <nav class="hidden md:flex space-x-4"> *@
+            @*     <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a> *@
+            @*     <a href="#events" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Events</a> *@
+            @*     <a href="#organizers" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Organizers</a> *@
+            @*     <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a> *@
+            @* </nav> *@
+            @* <div class="flex items-center space-x-2"> *@
+            @*     <DarkModeToggle /> *@
+            @*     <button class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-md">Join Us</button> *@
+            @* </div> *@
         </div>
     </header>
 
@@ -87,58 +87,16 @@
         </section>
     </main>
 
-    <Footer />
+    <Footer></Footer>
 </div>
 
 @code {
-    private List<Feature> Features { get; set; } = new();
-    private List<Event> Events { get; set; } = new();
-    private List<Organizer> Organizers { get; set; } = new();
+    private List<Event> Events { get; set; } = [];
+    private List<Organizer> Organizers { get; set; } = [];
 
     protected override void OnInitialized()
     {
-        Features = new List<Feature>
-        {
-            new Feature
-            {
-                Title = ".NET Development",
-                Description = "Explore the latest in .NET development, from C# features to ASP.NET Core best practices.",
-                IconColor = "text-blue-600",
-                IconName = "<Blazicon Svg=\"Lucide.Code\" />"
-            },
-            new Feature
-            {
-                Title = "Azure Cloud",
-                Description = "Dive into Azure services, cloud architecture, and DevOps practices for scalable applications.",
-                IconColor = "text-purple-600",
-                IconName = "<Blazicon Svg=\"Lucide.Cloud\" />"
-            }
-        };
-
-        Events = new List<Event>
-        {
-            new Event
-            {
-                Title = "Meetup Topic 1",
-                Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
-                Date = DateTime.Now.AddDays(7),
-                Location = "Chapel Hill Tech Hub"
-            },
-            new Event
-            {
-                Title = "Meetup Topic 2",
-                Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
-                Date = DateTime.Now.AddDays(14),
-                Location = "Chapel Hill Tech Hub"
-            },
-            new Event
-            {
-                Title = "Meetup Topic 3",
-                Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
-                Date = DateTime.Now.AddDays(21),
-                Location = "Chapel Hill Tech Hub"
-            }
-        };
+        Events = EventsList.Events;
 
         Organizers =
         [

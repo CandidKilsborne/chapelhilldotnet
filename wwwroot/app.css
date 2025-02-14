@@ -790,6 +790,12 @@ video {
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-orange-600 {
+    --tw-gradient-from: #ea580c var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(239 144 32 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .to-purple-600 {
     --tw-gradient-to: #9333ea var(--tw-gradient-to-position);
 }

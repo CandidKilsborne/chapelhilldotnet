@@ -5,7 +5,7 @@
     <header class="bg-white dark:bg-gray-800 shadow-sm">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="/" class="flex items-center space-x-2">
-                <CalendarIcon class="h-8 w-8 text-blue-600 dark:text-blue-400"/>
+                <Blazicon Svg="FontAwesomeRegularIcon.Calendar)" class="h-8 w-8 text-blue-600 dark:text-blue-400"/>
                 <span class="text-xl font-bold text-gray-800 dark:text-white">CH .NET & Azure Events</span>
             </a>
             <nav class="hidden md:flex space-x-4">
@@ -32,19 +32,23 @@
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                         @* <h3 class="text-xl font-semibold mb-2">@event.Title</h3> *@
                         <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
-                            <CalendarIcon class="h-5 w-5"/>
+                            @* <CalendarIcon class="h-5 w-5"/> *@
+                            <Blazicon Svg="FontAwesomeRegularIcon.Calendar)" class="h-5 w-5"/>
                             <span>@upcomingEvent.Date.ToShortDateString()</span>
                         </div>
                         <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
-                            <ClockIcon class="h-5 w-5"/>
+                            @* <ClockIcon class="h-5 w-5"/> *@
+                            <Blazicon Svg="FontAwesomeRegularIcon.Clock)" class="h-5 w-5"/>
                             <span>@upcomingEvent.Time</span>
                         </div>
                         <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
-                            <MapPinIcon class="h-5 w-5"/>
+                            @* <MapPinIcon class="h-5 w-5"/> *@
+                            <Blazicon Svg="FontAwesomeRegularIcon.Map)" class="h-5 w-5"/>
                             <span>@upcomingEvent.Location</span>
                         </div>
                         <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-4">
-                            <UsersIcon class="h-5 w-5"/>
+                            @* <UsersIcon class="h-5 w-5"/> *@
+                            <Blazicon Svg="FontAwesomeRegularIcon.User)" class="h-5 w-5"/>
                             <span>@upcomingEvent.Attendees attendees</span>
                         </div>
                         <button class="btn btn-primary w-full">RSVP Now</button>
@@ -121,34 +125,17 @@
 </div>
 
 @code {
-
-    public List<Event> UpcomingEvents { get; set; } = new()
-    {
+    private List<Event> UpcomingEvents { get; set; } =
+    [
         new Event { Id = 1, Title = "Introduction to Azure Functions", Date = new DateTime(2023, 7, 15), Time = "6:30 PM - 8:30 PM", Location = "Chapel Hill Tech Hub", Attendees = 42 },
         new Event { Id = 2, Title = "Building Microservices with .NET 6", Date = new DateTime(2023, 8, 5), Time = "6:30 PM - 8:30 PM", Location = "UNC Computer Science Building", Attendees = 38 },
-        new Event { Id = 3, Title = "Azure DevOps: CI/CD Pipeline Workshop", Date = new DateTime(2023, 8, 26), Time = "10:00 AM - 2:00 PM", Location = "Chapel Hill Public Library", Attendees = 30 },
-    };
+        new Event { Id = 3, Title = "Azure DevOps: CI/CD Pipeline Workshop", Date = new DateTime(2023, 8, 26), Time = "10:00 AM - 2:00 PM", Location = "Chapel Hill Public Library", Attendees = 30 }
+    ];
 
-    public List<Event> PastEvents { get; set; } = new()
-    {
+    private List<Event> PastEvents { get; set; } =
+    [
         new Event { Id = 4, Title = "Getting Started with Blazor", Date = new DateTime(2023, 6, 10), Location = "Virtual Meetup" },
         new Event { Id = 5, Title = ".NET MAUI: Cross-platform Development", Date = new DateTime(2023, 5, 20), Location = "Chapel Hill Tech Hub" },
-        new Event { Id = 6, Title = "Azure Cosmos DB: Deep Dive", Date = new DateTime(2023, 4, 29), Location = "UNC Computer Science Building" },
-    };
-
-    public class Event
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public DateTime Date { get; set; }
-        public string Time { get; set; }
-        public string Location { get; set; }
-        public int? Attendees { get; set; }
-    }
-
-    // Placeholder for icons
-    private string CalendarIcon(string @class) => "<!-- Calendar Icon Placeholder -->";
-    private string ClockIcon(string @class) => "<!-- Clock Icon Placeholder -->";
-    private string MapPinIcon(string @class) => "<!-- Map Pin Icon Placeholder -->";
-    private string UsersIcon(string @class) => "<!-- Users Icon Placeholder -->";
+        new Event { Id = 6, Title = "Azure Cosmos DB: Deep Dive", Date = new DateTime(2023, 4, 29), Location = "UNC Computer Science Building" }
+    ];
 }

@@ -693,6 +693,10 @@ video {
     width: 2rem;
 }
 
+.w-half {
+    width: 50%;
+}
+
 .flex-grow {
     flex-grow: 1;
 }

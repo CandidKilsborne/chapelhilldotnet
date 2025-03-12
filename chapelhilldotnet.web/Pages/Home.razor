@@ -134,7 +134,7 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-8">Upcoming Events</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @foreach (var evt in Events)
+                    @foreach (var evt in @Events)
                     {
                         <EventCard Event="@evt"/>
                     }
@@ -146,7 +146,7 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Meet Our Organizers</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @foreach (var organizer in Organizers)
+                    @foreach (var organizer in @Organizers)
                     {
                         <OrganizerCard Organizer="@organizer"/>
                     }
@@ -191,36 +191,7 @@
     {
         Events = EventsList.Events;
 
-        Organizers =
-        [
-            new Organizer
-            {
-                Name = "This Could Be You!",
-                Bio = "We're always looking for passionate community members who are eager to help organize events and grow our group. If you're interested, let us know!",
-                ImageUrl = "/images/organizers/undraw_profile-pic_fatv.png",
-                TwitterUrl = "#",
-                LinkedInUrl = "#",
-                GitHubUrl = "#"
-            },
-            new Organizer
-            {
-                Name = "Aaron Piotrowski",
-                Bio = "Software Developer / Cloud Architect / Community Organizer / Entrepreneur",
-                ImageUrl = "/images/organizers/aaron_piotrowski.jpg",
-                TwitterUrl = "#",
-                LinkedInUrl = "https://www.linkedin.com/in/aaronpiotrowski/",
-                GitHubUrl = "https://github.com/CandidKilsborne"
-            },
-            new Organizer
-            {
-                Name = "This Could Be You!",
-                Bio = "We're always looking for passionate community members who are eager to help organize events and grow our group. If you're interested, let us know!",
-                ImageUrl = "/images/organizers/undraw_male-avatar_zkzx.png",
-                TwitterUrl = "#",
-                LinkedInUrl = "#",
-                GitHubUrl = "#"
-            }
-        ];
+        Organizers = OrganizersList.Organizers;
     }
 
 }

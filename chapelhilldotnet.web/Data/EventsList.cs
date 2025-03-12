@@ -4,7 +4,7 @@ namespace chapelhilldotnet.web.Data;
 
 public static class EventsList
 {
-    public static List<Event> Events { get; set; } =
+    public static List<Event> Events { get; } =
     [
         new()
         {

@@ -27,10 +27,10 @@
         <section id="upcoming" class="mb-12">
             <h2 class="text-3xl font-bold mb-6">Upcoming Events</h2>
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                @foreach (var upcomingEvent in UpcomingEvents)
+                @foreach (var upcomingEvent in _upcomingEvents)
                 {
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                        @* <h3 class="text-xl font-semibold mb-2">@event.Title</h3> *@
+                        <h3 class="text-xl font-semibold mb-2">@upcomingEvent.Title</h3>
                         <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
                             @* <CalendarIcon class="h-5 w-5"/> *@
                             <Blazicon Svg="FontAwesomeRegularIcon.Calendar)" class="h-5 w-5"/>
@@ -79,7 +79,7 @@
                     </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
-                    @foreach (var pastEvent in PastEvents)
+                    @foreach (var pastEvent in _pastEvents)
                     {
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap">@pastEvent.Title</td>
@@ -125,17 +125,17 @@
 </div>
 
 @code {
-    private List<Event> UpcomingEvents { get; set; } =
+    private readonly List<Event> _upcomingEvents =
     [
-        new Event { Id = 1, Title = "Introduction to Azure Functions", Date = new DateTime(2023, 7, 15), Time = "6:30 PM - 8:30 PM", Location = "Chapel Hill Tech Hub", Attendees = 42 },
-        new Event { Id = 2, Title = "Building Microservices with .NET 6", Date = new DateTime(2023, 8, 5), Time = "6:30 PM - 8:30 PM", Location = "UNC Computer Science Building", Attendees = 38 },
-        new Event { Id = 3, Title = "Azure DevOps: CI/CD Pipeline Workshop", Date = new DateTime(2023, 8, 26), Time = "10:00 AM - 2:00 PM", Location = "Chapel Hill Public Library", Attendees = 30 }
+        new() { Id = 1, Title = "Introduction to Azure Functions", Date = new DateTime(2023, 7, 15), Time = "6:30 PM - 8:30 PM", Location = "Chapel Hill Tech Hub", Attendees = 42 },
+        new() { Id = 2, Title = "Building Microservices with .NET 6", Date = new DateTime(2023, 8, 5), Time = "6:30 PM - 8:30 PM", Location = "UNC Computer Science Building", Attendees = 38 },
+        new() { Id = 3, Title = "Azure DevOps: CI/CD Pipeline Workshop", Date = new DateTime(2023, 8, 26), Time = "10:00 AM - 2:00 PM", Location = "Chapel Hill Public Library", Attendees = 30 }
     ];
 
-    private List<Event> PastEvents { get; set; } =
+    private readonly List<Event> _pastEvents =
     [
-        new Event { Id = 4, Title = "Getting Started with Blazor", Date = new DateTime(2023, 6, 10), Location = "Virtual Meetup" },
-        new Event { Id = 5, Title = ".NET MAUI: Cross-platform Development", Date = new DateTime(2023, 5, 20), Location = "Chapel Hill Tech Hub" },
-        new Event { Id = 6, Title = "Azure Cosmos DB: Deep Dive", Date = new DateTime(2023, 4, 29), Location = "UNC Computer Science Building" }
+        new() { Id = 4, Title = "Getting Started with Blazor", Date = new DateTime(2023, 6, 10), Location = "Virtual Meetup" },
+        new() { Id = 5, Title = ".NET MAUI: Cross-platform Development", Date = new DateTime(2023, 5, 20), Location = "Chapel Hill Tech Hub" },
+        new() { Id = 6, Title = "Azure Cosmos DB: Deep Dive", Date = new DateTime(2023, 4, 29), Location = "UNC Computer Science Building" }
     ];
 }

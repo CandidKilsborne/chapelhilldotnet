@@ -15,4 +15,9 @@
         <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Components\EventCard.razor" />
+      <AdditionalFiles Include="Components\OrganizerCard.razor" />
+    </ItemGroup>
+
 </Project>

@@ -1076,6 +1076,12 @@ video {
     color: #ef9020;
 }
 
+.dark .item-description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #1a1d20;
+}
+
 .item-description {
     font-size: 1rem;
     line-height: 1.5rem;

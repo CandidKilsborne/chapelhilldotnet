@@ -1,0 +1,17 @@
+{
+    "name": "Development Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "JetBrains.rider-ide",
+                "ms-dotnettools.csharp"
+            ]
+        }
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "dotnet restore",
+    "remoteUser": "vscode"
+}

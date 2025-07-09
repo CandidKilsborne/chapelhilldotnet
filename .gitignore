@@ -4,3 +4,10 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 .fake
+
+# Playwright
+**/bin/Debug/**/playwright.ps1
+**/bin/Release/**/playwright.ps1
+test-results/
+playwright-report/
+TestResults/

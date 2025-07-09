@@ -1,0 +1,37 @@
+{
+  "name": "Chapel Hill .NET User Group Website",
+  "description": "A Blazor WebAssembly application for the Chapel Hill .NET User Group featuring events, organizers, and community information.",
+  "primaryLanguage": "csharp",
+  "frameworks": [
+    "Blazor WebAssembly",
+    ".NET 9.0",
+    "Tailwind CSS"
+  ],
+  "projectType": "web-application",
+  "dependencies": [
+    "Microsoft.AspNetCore.Components.WebAssembly",
+    "Blazicons.FontAwesome",
+    "Blazicons.Lucide",
+    "Blazicons.Devicon"
+  ],
+  "structure": {
+    "Components": "Reusable Blazor components (EventCard, OrganizerCard)",
+    "Data": "Static data classes for events and organizers",
+    "Layout": "Layout components and navigation",
+    "Models": "Data models (Event, Organizer, Feature)",
+    "Pages": "Blazor page components",
+    "wwwroot": "Static web assets including CSS, images, and HTML"
+  },
+  "codingConventions": {
+    "style": "Microsoft C# coding conventions",
+    "patterns": [
+      "Component-based architecture",
+      "Razor syntax for UI",
+      "CSS classes using Tailwind utility-first approach",
+      "Static typed models for data"
+    ]
+  },
+  "buildSystem": "MSBuild (.NET SDK)",
+  "testingFramework": null,
+  "documentation": "README files and inline code comments"
+}

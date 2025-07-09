@@ -1,0 +1,28 @@
+# Build outputs
+bin/
+obj/
+.vs/
+*.user
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large data files that shouldn't be used for context
+*.db
+*.sqlite
+*.backup
+
+# Generated CSS from Tailwind (since it's large and auto-generated)
+wwwroot/css/tailwindcss.css

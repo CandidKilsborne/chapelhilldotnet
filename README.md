@@ -46,6 +46,18 @@ chapelhilldotnet.web/
     ├── css/              # Stylesheets
     ├── images/           # Images and assets
     └── index.html        # Entry point
+
+chapelhilldotnet.Tests/
+├── Components/         # Unit tests for components
+│   ├── EventCardTests.cs
+│   └── OrganizerCardTests.cs
+└── Layout/             # Unit tests for layout components
+    └── DarkModeToggleTests.cs
+
+chapelhilldotnet.E2ETests/
+├── NavigationTests.cs  # E2E tests for navigation
+├── DarkModeTests.cs    # E2E tests for dark mode
+└── EventsPageTests.cs  # E2E tests for Events page
 ```
 
 ## Development Guidelines
@@ -102,9 +114,76 @@ dotnet build
 # Run in development mode
 dotnet run
 
+# Run unit tests
+dotnet test
+
+# Run unit tests only
+dotnet test chapelhilldotnet.Tests/chapelhilldotnet.Tests.csproj
+
+# Run E2E tests (requires app to be running)
+dotnet test chapelhilldotnet.E2ETests/chapelhilldotnet.E2ETests.csproj
+
 # Publish for production
 dotnet publish -c Release
 ```
+
+## Testing
+
+This project includes comprehensive test coverage using industry-standard tools:
+
+### Unit Tests (bUnit)
+
+The project uses **bUnit** for testing Blazor components. Unit tests are located in the `chapelhilldotnet.Tests` project.
+
+**Running Unit Tests:**
+```bash
+dotnet test chapelhilldotnet.Tests/chapelhilldotnet.Tests.csproj
+```
+
+**Test Coverage:**
+- **EventCard Component**: Tests for rendering event information, dates, and locations
+- **OrganizerCard Component**: Tests for displaying organizer profiles and social links
+- **DarkModeToggle Component**: Tests for theme switching functionality
+
+### End-to-End Tests (Playwright)
+
+The project uses **Playwright** for end-to-end testing. E2E tests are located in the `chapelhilldotnet.E2ETests` project.
+
+**Prerequisites:**
+```bash
+# Install Playwright browsers (first time only)
+cd chapelhilldotnet.E2ETests
+dotnet build
+pwsh bin/Debug/net9.0/playwright.ps1 install
+```
+
+**Running E2E Tests:**
+```bash
+# Start the application in one terminal
+cd chapelhilldotnet.web
+dotnet run
+
+# Run E2E tests in another terminal
+cd chapelhilldotnet.E2ETests
+dotnet test
+```
+
+**Test Coverage:**
+- **Navigation Tests**: Page routing, links, and navigation flows
+- **Dark Mode Tests**: Theme toggle, persistence, and styling
+- **Events Page Tests**: Event display, responsiveness, and interactions
+
+### Testing Best Practices
+
+When writing tests:
+1. Follow the Arrange-Act-Assert pattern
+2. Use descriptive test names that explain what is being tested
+3. Test one thing per test method
+4. Mock external dependencies appropriately
+5. Ensure tests are independent and can run in any order
+6. Update tests when modifying components
+
+For more details on E2E testing, see `chapelhilldotnet.E2ETests/README.md`.
 
 ## Contributing
 
@@ -115,6 +194,8 @@ When contributing to this project:
 3. Test both light and dark themes
 4. Maintain component isolation
 5. Update documentation as needed
+6. **Write tests for new features and components**
+7. **Ensure all tests pass before submitting a pull request**
 
 ## File Naming Conventions
 

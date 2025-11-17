@@ -1,0 +1,11 @@
+# Chapel Hill .NET User Group - robots.txt
+# Allow all search engines to index all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://chapelhilldotnet.com/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1

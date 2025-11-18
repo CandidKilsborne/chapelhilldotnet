@@ -1,15 +1,15 @@
-﻿<div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+﻿<article class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
     <div class="flex items-center space-x-2 text-white mb-2">
-        <Blazicon Svg="Lucide.Calendar"/>
-        <span>@Event.Date.ToString("MMMM d, yyyy")</span>
+        <Blazicon Svg="Lucide.Calendar" aria-hidden="true"/>
+        <time datetime="@Event.Date.ToString("yyyy-MM-dd")">@Event.Date.ToString("MMMM d, yyyy")</time>
     </div>
     <h3 class="text-xl event-title font-semibold mb-2">@Event.Title</h3>
     <p class="text-white mb-4">@Event.Description</p>
     <div class="flex items-center space-x-2 text-white">
-        <Blazicon Svg="Lucide.MapPinned"/>
+        <Blazicon Svg="Lucide.MapPinned" aria-hidden="true"/>
         <span>@Event.Location</span>
     </div>
-</div>
+</article>
 
 @code {
     [Parameter] public required Event Event { get; set; }

@@ -128,17 +128,17 @@
 
 <body>
     <div id="app">
-        <svg class="loading-progress">
+        <svg class="loading-progress" role="img" aria-label="Loading Chapel Hill .NET application">
             <circle r="40%" cx="50%" cy="50%" />
             <circle r="40%" cx="50%" cy="50%" />
         </svg>
-        <div class="loading-progress-text"></div>
+        <div class="loading-progress-text" role="status" aria-live="polite"></div>
     </div>
 
-    <div id="blazor-error-ui">
+    <div id="blazor-error-ui" role="alert">
         An unhandled error has occurred.
-        <a href="." class="reload">Reload</a>
-        <span class="dismiss">🗙</span>
+        <a href="." class="reload" aria-label="Reload page to recover from error">Reload</a>
+        <button type="button" class="dismiss" aria-label="Dismiss error message">×</button>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>

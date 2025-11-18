@@ -1,18 +1,17 @@
 ﻿@page "/"
 
 <div class="flex flex-col min-h-screen text-gray-900 dark:bg-gray-900 dark:text-white">
-    <header class="bg-white dark:bg-gray-800 shadow-sm">
+    <header class="bg-white dark:bg-gray-800 shadow-sm" role="banner">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <svg class="h-8 w-8 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
+                     stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
-                <span class="text-xl font-bold text-gray-800 dark:text-white"
-                      tabindex="1">Chapel Hill .NET</span>
+                <span class="text-xl font-bold text-gray-800 dark:text-white">Chapel Hill .NET</span>
             </div>
-            <nav class="hidden md:flex space-x-4">
+            <nav class="hidden md:flex space-x-4" aria-label="Primary navigation">
                 <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">About</a>
                 <a href="#events" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Events</a>
                 <a href="#organizers"
@@ -21,13 +20,15 @@
             </nav>
             <div class="flex items-center space-x-2">
                 <DarkModeToggle />
-                <button class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-md">Join Us</button>
+                <button type="button"
+                        class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+                        aria-label="Join Chapel Hill .NET community">Join Us</button>
             </div>
         </div>
     </header>
 
     <main class="flex-grow">
-        <section class="bg-gradient-to-r from-orange-600 to-purple-600 text-white py-20">
+        <section class="bg-gradient-to-r from-orange-600 to-purple-600 text-white py-20" aria-label="Hero section">
             <div class="container mx-auto px-4 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Connect, Learn, and Grow with .NET &
                     Azure</h1>
@@ -39,9 +40,9 @@
             </div>
         </section>
 
-        <section id="about" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <section id="about" class="py-16 bg-gray-50 dark:bg-gray-800" aria-labelledby="about-heading">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">What We're About</h2>
+                <h2 id="about-heading" class="text-3xl font-bold text-center mb-8">What We're About</h2>
                 <div class="grid md:grid-cols-2 gap-8">
 
                     <div class="flex items-center space-x-6">
@@ -130,9 +131,9 @@
             </div>
         </section>
 
-        <section id="events" class="py-16">
+        <section id="events" class="py-16" aria-labelledby="events-heading">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">Upcoming Events</h2>
+                <h2 id="events-heading" class="text-3xl font-bold text-center mb-8">Upcoming Events</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach (var evt in @Events)
                     {
@@ -142,9 +143,9 @@
             </div>
         </section>
 
-        <section id="organizers" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <section id="organizers" class="py-16 bg-gray-50 dark:bg-gray-800" aria-labelledby="organizers-heading">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Meet Our Organizers</h2>
+                <h2 id="organizers-heading" class="text-3xl font-bold text-center mb-8 dark:text-white">Meet Our Organizers</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach (var organizer in @Organizers)
                     {
@@ -154,10 +155,10 @@
             </div>
         </section>
 
-        <section class="sponsors-section">
+        <section class="sponsors-section" aria-labelledby="sponsors-heading">
             <div class="container">
                 <header class="sponsors-header">
-                    <h2 class="sponsors-title">Our Sponsors</h2>
+                    <h2 id="sponsors-heading" class="sponsors-title">Our Sponsors</h2>
                     <p class="sponsors-description">
                         We are grateful for the support of our amazing sponsors who make our events possible.
                     </p>

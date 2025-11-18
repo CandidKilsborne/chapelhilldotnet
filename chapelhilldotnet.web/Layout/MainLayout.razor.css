@@ -1,3 +1,23 @@
+/* Skip to main content link - visually hidden until focused */
+::deep .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #258cfb;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    z-index: 100;
+    font-weight: bold;
+}
+
+::deep .skip-link:focus {
+    top: 0;
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
 .page {
     position: relative;
     display: flex;

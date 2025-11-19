@@ -57,7 +57,30 @@ public class NavMenuAccessibilityTests : TestContext
         var button = cut.Find("button.navbar-toggler");
         var ariaExpanded = button.GetAttribute("aria-expanded");
         Assert.NotNull(ariaExpanded);
-        Assert.True(ariaExpanded == "true" || ariaExpanded == "False");
+        Assert.True(ariaExpanded == "true" || ariaExpanded == "false");
+    }
+
+    [Fact]
+    public void NavMenu_AriaExpandedReflectsMenuState()
+    {
+        // Act
+        var cut = RenderComponent<NavMenu>();
+        var button = cut.Find("button.navbar-toggler");
+
+        // Assert - Initially collapsed, so aria-expanded should be "false"
+        Assert.Equal("false", button.GetAttribute("aria-expanded"));
+
+        // Click to expand
+        button.Click();
+
+        // Assert - Now expanded, so aria-expanded should be "true"
+        Assert.Equal("true", button.GetAttribute("aria-expanded"));
+
+        // Click to collapse again
+        button.Click();
+
+        // Assert - Back to collapsed, aria-expanded should be "false"
+        Assert.Equal("false", button.GetAttribute("aria-expanded"));
     }
 
     [Fact]
@@ -174,8 +197,10 @@ public class NavMenuAccessibilityTests : TestContext
         var button = cut.Find("button.navbar-toggler");
 
         // Assert
+        // Menu starts collapsed (collapseNavMenu = true)
+        // So aria-expanded should be false (menu not expanded)
         var ariaExpanded = button.GetAttribute("aria-expanded");
-        Assert.Equal("False", ariaExpanded);
+        Assert.Equal("false", ariaExpanded);
     }
 
     [Fact]

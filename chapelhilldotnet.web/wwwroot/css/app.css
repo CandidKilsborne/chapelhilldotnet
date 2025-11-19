@@ -2,8 +2,22 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+/* Screen reader only - visually hidden but accessible */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 h1:focus {
-    outline: none;
+    outline: 2px solid #258cfb;
+    outline-offset: 2px;
 }
 
 a, .btn-link {
@@ -55,6 +69,22 @@ a, .btn-link {
     position: absolute;
     right: 0.75rem;
     top: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: inherit;
+    padding: 0;
+    line-height: 1;
+}
+
+#blazor-error-ui .dismiss:hover {
+    opacity: 0.7;
+}
+
+#blazor-error-ui .dismiss:focus {
+    outline: 2px solid #258cfb;
+    outline-offset: 2px;
 }
 
 .blazor-error-boundary {

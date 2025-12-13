@@ -13,7 +13,7 @@ This is a static website built with Blazor WebAssembly and styled with Tailwind 
 
 ## Technology Stack
 
-- **.NET 10.0**: Latest .NET framework
+- **.NET 9.0**: Latest .NET framework
 - **Blazor WebAssembly**: Client-side web application framework
 - **Tailwind CSS**: Utility-first CSS framework
 - **Blazicons**: Icon libraries (FontAwesome, Lucide, Devicon)
@@ -154,7 +154,7 @@ The project uses **Playwright** for end-to-end testing. E2E tests are located in
 # Install Playwright browsers (first time only)
 cd chapelhilldotnet.E2ETests
 dotnet build
-pwsh bin/Debug/net10.0/playwright.ps1 install
+pwsh bin/Debug/net9.0/playwright.ps1 install
 ```
 
 **Running E2E Tests:**

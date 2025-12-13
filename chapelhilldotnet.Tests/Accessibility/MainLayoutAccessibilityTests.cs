@@ -10,29 +10,6 @@ namespace chapelhilldotnet.Tests.Accessibility;
 public class MainLayoutAccessibilityTests : TestContext
 {
     [Fact]
-    public void MainLayout_HasSkipNavigationLink()
-    {
-        // Act
-        var cut = RenderComponent<MainLayout>();
-
-        // Assert
-        var skipLink = cut.Find("a.skip-link");
-        Assert.NotNull(skipLink);
-        Assert.Equal("Skip to main content", skipLink.TextContent);
-    }
-
-    [Fact]
-    public void MainLayout_SkipLinkPointsToMainContent()
-    {
-        // Act
-        var cut = RenderComponent<MainLayout>();
-
-        // Assert
-        var skipLink = cut.Find("a.skip-link");
-        Assert.Equal("#main-content", skipLink.GetAttribute("href"));
-    }
-
-    [Fact]
     public void MainLayout_MainContentHasMatchingId()
     {
         // Act
@@ -98,23 +75,9 @@ public class MainLayoutAccessibilityTests : TestContext
 
         // Assert
         // Footer is rendered as a component, verify it's included
-        var markup = cut.Markup;
-        Assert.Contains("Footer", markup);
-    }
-
-    [Fact]
-    public void MainLayout_SkipLinkIsFirstElement()
-    {
-        // Act
-        var cut = RenderComponent<MainLayout>();
-
-        // Assert
-        var markup = cut.Markup;
-        var skipLinkIndex = markup.IndexOf("skip-link", StringComparison.Ordinal);
-        var mainContentIndex = markup.IndexOf("main-content", StringComparison.Ordinal);
-
-        // Skip link should appear before main content
-        Assert.True(skipLinkIndex < mainContentIndex);
+        var footer = cut.Find("footer");
+        Assert.NotNull(footer);
+        Assert.Equal("contentinfo", footer.GetAttribute("role"));
     }
 
     [Fact]

@@ -8,6 +8,7 @@ public static class OrganizersList
     [
         new()
         {
+            Id = 1,
             Name = "This Could Be You!",
             Bio =
                 "We're always looking for passionate community members who are eager to help organize events and grow our group. If you're interested, let us know!",
@@ -18,6 +19,7 @@ public static class OrganizersList
         },
         new()
         {
+            Id = 2,
             Name = "Aaron Piotrowski",
             Bio = "Software Developer / Cloud Architect / Community Organizer / Entrepreneur",
             ImageUrl = "/images/organizers/aaron_piotrowski.jpg",
@@ -27,6 +29,7 @@ public static class OrganizersList
         },
         new()
         {
+            Id = 3,
             Name = "This Could Be You!",
             Bio =
                 "We're always looking for passionate community members who are eager to help organize events and grow our group. If you're interested, let us know!",

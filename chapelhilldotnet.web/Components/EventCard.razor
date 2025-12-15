@@ -1,11 +1,11 @@
-﻿<article class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-    <div class="flex items-center space-x-2 text-white mb-2">
+﻿<article class="bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl p-6 transition-all duration-300 hover:-translate-y-1">
+    <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
         <Blazicon Svg="Lucide.Calendar" aria-hidden="true"/>
         <time datetime="@Event.Date.ToString("yyyy-MM-dd")">@Event.Date.ToString("MMMM d, yyyy")</time>
     </div>
     <h3 class="text-xl event-title font-semibold mb-2">@Event.Title</h3>
-    <p class="text-white mb-4">@Event.Description</p>
-    <div class="flex items-center space-x-2 text-white">
+    <p class="text-gray-700 dark:text-gray-300 mb-4">@Event.Description</p>
+    <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
         <Blazicon Svg="Lucide.MapPinned" aria-hidden="true"/>
         <span>@Event.Location</span>
     </div>

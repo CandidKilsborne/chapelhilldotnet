@@ -30,7 +30,7 @@ public class EventCardTests : TestContext
         var title = cut.Find("h3.event-title");
         Assert.Equal("Test Event", title.TextContent);
         
-        var description = cut.Find("p.text-white");
+        var description = cut.Find("p.text-gray-700");
         Assert.Equal("Test Description", description.TextContent);
     }
 
@@ -54,7 +54,7 @@ public class EventCardTests : TestContext
             .Add(p => p.Event, testEvent));
 
         // Assert
-        var dateSpan = cut.Find("div.flex.items-center.space-x-2.text-white.mb-2 span");
+        var dateSpan = cut.Find("div.flex.items-center.space-x-2.text-gray-600.mb-2 time");
         Assert.Equal("January 1, 2025", dateSpan.TextContent);
     }
 
@@ -78,7 +78,7 @@ public class EventCardTests : TestContext
             .Add(p => p.Event, testEvent));
 
         // Assert
-        var locationSpan = cut.FindAll("div.flex.items-center.space-x-2.text-white span")[1];
+        var locationSpan = cut.Find("div.flex.items-center.space-x-2.text-gray-600 span");
         Assert.Equal("Chapel Hill Library", locationSpan.TextContent);
     }
 }

@@ -42,13 +42,13 @@
 
         <section id="about" class="py-16 bg-gray-50 dark:bg-gray-800" aria-labelledby="about-heading">
             <div class="container mx-auto px-4">
-                <h2 id="about-heading" class="text-3xl font-bold text-center mb-8">What We're About</h2>
+                <h2 id="about-heading" class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">What We're About</h2>
                 <div class="grid md:grid-cols-2 gap-8">
 
                     <div class="flex items-center space-x-6">
                         <Blazicon Svg="DeviconOriginal.Dotnetcore" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">.NET Development</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">.NET Development</h3>
                             <p class="item-description">Explore the latest in .NET development, from C# features to
                                 ASP.NET
                                 Core best practices.</p>
@@ -58,7 +58,7 @@
                     <div class="flex items-center space-x-4">
                         <Blazicon Svg="DeviconOriginal.Azure" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">Azure Cloud</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Azure Cloud</h3>
                             <p class="item-description">Dive into Azure services, cloud architecture, and DevOps
                                 practices
                                 for scalable applications.</p>
@@ -69,7 +69,7 @@
                     <div class="flex items-center space-x-6">
                         <Blazicon Svg="DeviconOriginal.Raspberrypi" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">Internet of Things (IoT)</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Internet of Things (IoT)</h3>
                             <p class="item-description">Discover how IoT connects devices and builds smart systems for
                                 innovative solutions.</p>
                         </div>
@@ -79,7 +79,7 @@
                     <div class="flex items-center space-x-6">
                         <Blazicon Svg="DeviconOriginal.Blazor" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">Blazor Development</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Blazor Development</h3>
                             <p class="item-description">Build interactive web UIs using C# instead of JavaScript with
                                 Blazor.</p>
                         </div>
@@ -89,7 +89,7 @@
                     <div class="flex items-center space-x-6">
                         <Blazicon Svg="DeviconOriginal.Csharp" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">C# Development</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">C# Development</h3>
                             <p class="item-description">Learn advanced C# techniques, design patterns, and best
                                 practices
                                 for building robust applications.</p>
@@ -100,7 +100,7 @@
                     <div class="flex items-center space-x-6">
                         <Blazicon Svg="DeviconOriginal.Powershell" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">PowerShell</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">PowerShell</h3>
                             <p class="item-description">Leverage PowerShell for task automation, system management, and
                                 scripting solutions.</p>
                         </div>
@@ -110,7 +110,7 @@
                     <div class="flex items-center space-x-6">
                         <Blazicon Svg="DeviconOriginal.Python" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">Python Development</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Python Development</h3>
                             <p class="item-description">Master Python for scripting, web development, data analytics,
                                 and
                                 beyond.</p>
@@ -121,7 +121,7 @@
                     <div class="flex items-center space-x-6">
                         <Blazicon Svg="DeviconOriginal.Pytorch" class="w-half"/>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold mb-2">Machine Learning</h3>
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Machine Learning</h3>
                             <p class="item-description">Dive into ML algorithms to build predictive models and
                                 intelligent
                                 applications.</p>
@@ -131,9 +131,9 @@
             </div>
         </section>
 
-        <section id="events" class="py-16" aria-labelledby="events-heading">
+        <section id="events" class="py-16 bg-white dark:bg-gray-900" aria-labelledby="events-heading">
             <div class="container mx-auto px-4">
-                <h2 id="events-heading" class="text-3xl font-bold text-center mb-8">Upcoming Events</h2>
+                <h2 id="events-heading" class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Upcoming Events</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach (var evt in @Events)
                     {
@@ -145,7 +145,7 @@
 
         <section id="organizers" class="py-16 bg-gray-50 dark:bg-gray-800" aria-labelledby="organizers-heading">
             <div class="container mx-auto px-4">
-                <h2 id="organizers-heading" class="text-3xl font-bold text-center mb-8 dark:text-white">Meet Our Organizers</h2>
+                <h2 id="organizers-heading" class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Meet Our Organizers</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach (var organizer in @Organizers)
                     {
@@ -155,11 +155,11 @@
             </div>
         </section>
 
-        <section class="sponsors-section" aria-labelledby="sponsors-heading">
+        <section class="sponsors-section bg-white dark:bg-gray-900" aria-labelledby="sponsors-heading">
             <div class="container">
                 <header class="sponsors-header">
-                    <h2 id="sponsors-heading" class="sponsors-title">Our Sponsors</h2>
-                    <p class="sponsors-description">
+                    <h2 id="sponsors-heading" class="sponsors-title text-gray-900 dark:text-white">Our Sponsors</h2>
+                    <p class="sponsors-description text-gray-600 dark:text-gray-400">
                         We are grateful for the support of our amazing sponsors who make our events possible.
                     </p>
                 </header>

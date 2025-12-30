@@ -1,5 +1,29 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1f2937;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+/* Dark mode styles */
+html.dark {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+html.dark body {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+/* Ensure page content inherits dark mode */
+html.dark .page {
+    background-color: #111827;
+}
+
+html.dark main {
+    background-color: #111827;
 }
 
 /* Screen reader only - visually hidden but accessible */

@@ -697,6 +697,103 @@ video {
     width: 50%;
 }
 
+/* Technology Feature Cards */
+.tech-feature-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tech-feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark .tech-feature-card {
+    background-color: rgba(31, 41, 55, 0.7);
+    border: 1px solid rgba(75, 85, 99, 0.6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark .tech-feature-card:hover {
+    background-color: rgba(31, 41, 55, 0.95);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    border-color: rgba(96, 165, 250, 0.4);
+}
+
+/* Technology Icon Wrapper */
+.tech-icon-wrapper {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+    transition: all 0.3s ease;
+}
+
+.tech-feature-card:hover .tech-icon-wrapper {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(147, 51, 234, 0.15));
+    transform: scale(1.05);
+}
+
+.dark .tech-icon-wrapper {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+}
+
+.dark .tech-feature-card:hover .tech-icon-wrapper {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+}
+
+/* Technology Icon Sizing */
+.tech-icon {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+}
+
+/* Section Spacing and Typography Improvements */
+section h2 {
+    letter-spacing: -0.025em;
+}
+
+section h3 {
+    letter-spacing: -0.015em;
+}
+
+/* Improved Event and Organizer Cards */
+article {
+    border: 1px solid transparent;
+    margin: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+article:hover {
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dark article {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark article:hover {
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
 .flex-grow {
     flex-grow: 1;
 }

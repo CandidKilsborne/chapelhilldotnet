@@ -1,5 +1,50 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1f2937;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Dark mode styles */
+html.dark {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+html.dark body {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+/* Ensure page content inherits dark mode */
+html.dark .page {
+    background-color: #111827;
+}
+
+html.dark main {
+    background-color: #111827;
+}
+
+/* Remove any default spacing on page wrapper */
+.page {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#main-content {
+    margin: 0;
+    padding: 0;
+}
+
+/* Only target the direct child article wrapper, not card articles */
+#main-content > article {
+    margin: 0;
+    padding: 0;
 }
 
 /* Screen reader only - visually hidden but accessible */
@@ -141,4 +186,8 @@ code {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
+}
+
+.sponsors-section:hover {
+    shadow: 0;
 }

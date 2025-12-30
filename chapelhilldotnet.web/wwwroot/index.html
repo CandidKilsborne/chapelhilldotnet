@@ -8,8 +8,10 @@
     <!-- Primary Meta Tags -->
     <title>Chapel Hill .NET User Group - Connect, Learn, and Grow with .NET & Azure</title>
     <meta name="title" content="Chapel Hill .NET User Group - Connect, Learn, and Grow with .NET & Azure" />
-    <meta name="description" content="Join Chapel Hill's vibrant .NET and Azure community. Learn about C#, Blazor, Azure Cloud, IoT, Python, PowerShell, and Machine Learning. Attend meetups, workshops, and connect with fellow developers in Chapel Hill, NC." />
-    <meta name="keywords" content="Chapel Hill .NET, Azure meetup, C# developers, Blazor, ASP.NET Core, .NET user group, Chapel Hill developers, North Carolina tech community, Azure cloud, IoT development, PowerShell, Python, Machine Learning, software development Chapel Hill" />
+    <meta name="description"
+        content="Join Chapel Hill's vibrant .NET and Azure community. Learn about C#, Blazor, Azure Cloud, IoT, Python, PowerShell, and Machine Learning. Attend meetups, workshops, and connect with fellow developers in Chapel Hill, NC." />
+    <meta name="keywords"
+        content="Chapel Hill .NET, Azure meetup, C# developers, Blazor, ASP.NET Core, .NET user group, Chapel Hill developers, North Carolina tech community, Azure cloud, IoT development, PowerShell, Python, Machine Learning, software development Chapel Hill" />
     <meta name="author" content="Chapel Hill .NET User Group" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
@@ -19,7 +21,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://chapelhilldotnet.com/" />
     <meta property="og:title" content="Chapel Hill .NET User Group - Connect, Learn, and Grow with .NET & Azure" />
-    <meta property="og:description" content="Join Chapel Hill's vibrant .NET and Azure community. Learn about C#, Blazor, Azure Cloud, IoT, Python, PowerShell, and Machine Learning." />
+    <meta property="og:description"
+        content="Join Chapel Hill's vibrant .NET and Azure community. Learn about C#, Blazor, Azure Cloud, IoT, Python, PowerShell, and Machine Learning." />
     <meta property="og:image" content="https://chapelhilldotnet.com/images/og-image.png" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Chapel Hill .NET User Group" />
@@ -28,7 +31,8 @@
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://chapelhilldotnet.com/" />
     <meta property="twitter:title" content="Chapel Hill .NET User Group - Connect, Learn, and Grow with .NET & Azure" />
-    <meta property="twitter:description" content="Join Chapel Hill's vibrant .NET and Azure community. Learn about C#, Blazor, Azure Cloud, IoT, Python, PowerShell, and Machine Learning." />
+    <meta property="twitter:description"
+        content="Join Chapel Hill's vibrant .NET and Azure community. Learn about C#, Blazor, Azure Cloud, IoT, Python, PowerShell, and Machine Learning." />
     <meta property="twitter:image" content="https://chapelhilldotnet.com/images/twitter-image.png" />
 
     <!-- Theme Color -->
@@ -127,6 +131,15 @@
 </head>
 
 <body>
+    <script>
+        // Initialize light mode as default if no preference is saved
+        (function () {
+            const savedMode = localStorage.getItem('darkMode');
+            if (savedMode === 'true') {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
     <div id="app">
         <svg class="loading-progress" role="img" aria-label="Loading Chapel Hill .NET application">
             <circle r="40%" cx="50%" cy="50%" />

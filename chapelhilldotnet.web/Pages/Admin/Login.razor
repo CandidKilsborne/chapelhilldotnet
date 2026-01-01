@@ -1,0 +1,126 @@
+@page "/admin/login"
+@inject IAuthenticationService AuthService
+@inject NavigationManager Navigation
+
+<div class="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-gray-900 px-4 py-12">
+    <div class="w-full max-w-md space-y-8">
+        <div class="text-center">
+            <h2 class="mt-6 text-3xl font-bold text-gray-900 dark:text-white">Admin Login</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Sign in to manage events
+            </p>
+        </div>
+        
+        <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+            <EditForm Model="@_loginModel" OnValidSubmit="@HandleLogin" FormName="loginForm">
+                <DataAnnotationsValidator />
+                
+                @if (!string.IsNullOrEmpty(_errorMessage))
+                {
+                    <div class="mb-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-md" role="alert">
+                        @_errorMessage
+                    </div>
+                }
+                
+                <div class="space-y-6">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                            Username
+                        </label>
+                        <InputText 
+                            id="username" 
+                            @bind-Value="_loginModel.Username" 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                            placeholder="Enter username"
+                            aria-required="true" />
+                        <ValidationMessage For="@(() => _loginModel.Username)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                            Password
+                        </label>
+                        <InputText 
+                            id="password" 
+                            type="password" 
+                            @bind-Value="_loginModel.Password" 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                            placeholder="Enter password"
+                            aria-required="true" />
+                        <ValidationMessage For="@(() => _loginModel.Password)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                    </div>
+                    
+                    <div>
+                        <button 
+                            type="submit" 
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+                            disabled="@_isLoading"
+                            aria-label="Sign in to admin panel">
+                            @if (_isLoading)
+                            {
+                                <span>Signing in...</span>
+                            }
+                            else
+                            {
+                                <span>Sign In</span>
+                            }
+                        </button>
+                    </div>
+                </div>
+            </EditForm>
+            
+            <div class="mt-4 text-center">
+                <a href="/" class="text-sm text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+        
+        <div class="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
+            <p>Default credentials: admin / Chapel2024!</p>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginModel _loginModel = new();
+    private string? _errorMessage;
+    private bool _isLoading;
+
+    private async Task HandleLogin()
+    {
+        _isLoading = true;
+        _errorMessage = null;
+
+        try
+        {
+            var success = await AuthService.LoginAsync(_loginModel.Username, _loginModel.Password);
+            
+            if (success)
+            {
+                Navigation.NavigateTo("/admin/events");
+            }
+            else
+            {
+                _errorMessage = "Invalid username or password.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"An error occurred: {ex.Message}";
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    public class LoginModel
+    {
+        [Required(ErrorMessage = "Username is required")]
+        public string Username { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; } = string.Empty;
+    }
+}

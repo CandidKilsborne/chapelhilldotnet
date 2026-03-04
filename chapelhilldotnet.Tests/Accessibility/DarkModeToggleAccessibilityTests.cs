@@ -109,8 +109,8 @@ public class DarkModeToggleAccessibilityTests : TestContext
 
         // Verify label contains appropriate text
         Assert.True(
-            initialLabel.Contains("light mode", StringComparison.OrdinalIgnoreCase) ||
-            initialLabel.Contains("dark mode", StringComparison.OrdinalIgnoreCase)
+            initialLabel?.Contains("light mode", StringComparison.OrdinalIgnoreCase) == true ||
+            initialLabel?.Contains("dark mode", StringComparison.OrdinalIgnoreCase) == true
         );
     }
 

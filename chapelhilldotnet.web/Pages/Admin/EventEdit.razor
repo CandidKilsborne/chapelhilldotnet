@@ -1,0 +1,252 @@
+@page "/admin/events/new"
+@page "/admin/events/edit/{EventId:int}"
+@inject IEventService EventService
+@inject IAuthenticationService AuthService
+@inject NavigationManager Navigation
+
+<div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <!-- Admin Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+                @(EventId.HasValue ? "Edit Event" : "New Event")
+            </h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-3xl">
+        @if (_isLoading)
+        {
+            <div class="text-center py-12">
+                <p class="text-gray-600 dark:text-gray-400">Loading...</p>
+            </div>
+        }
+        else
+        {
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <EditForm Model="@_eventModel" OnValidSubmit="@HandleSubmit" FormName="eventForm">
+                    <DataAnnotationsValidator />
+                    
+                    @if (!string.IsNullOrEmpty(_errorMessage))
+                    {
+                        <div class="mb-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-md" role="alert">
+                            @_errorMessage
+                        </div>
+                    }
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                Title <span class="text-red-500">*</span>
+                            </label>
+                            <InputText 
+                                id="title" 
+                                @bind-Value="_eventModel.Title" 
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                                placeholder="Event title"
+                                aria-required="true" />
+                            <ValidationMessage For="@(() => _eventModel.Title)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                        </div>
+
+                        <div>
+                            <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                Description
+                            </label>
+                            <InputTextArea 
+                                id="description" 
+                                @bind-Value="_eventModel.Description" 
+                                rows="4"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                                placeholder="Event description" />
+                            <ValidationMessage For="@(() => _eventModel.Description)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Date <span class="text-red-500">*</span>
+                                </label>
+                                <InputDate 
+                                    id="date" 
+                                    @bind-Value="_eventModel.Date" 
+                                    class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                                    aria-required="true" />
+                                <ValidationMessage For="@(() => _eventModel.Date)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                            </div>
+
+                            <div>
+                                <label for="time" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Time
+                                </label>
+                                <InputText 
+                                    id="time" 
+                                    @bind-Value="_eventModel.Time" 
+                                    class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                                    placeholder="6:00 PM - 8:00 PM" />
+                                <ValidationMessage For="@(() => _eventModel.Time)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="location" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                Location <span class="text-red-500">*</span>
+                            </label>
+                            <InputText 
+                                id="location" 
+                                @bind-Value="_eventModel.Location" 
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                                placeholder="Event location"
+                                aria-required="true" />
+                            <ValidationMessage For="@(() => _eventModel.Location)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                        </div>
+
+                        <div>
+                            <label for="attendees" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                Expected Attendees
+                            </label>
+                            <InputNumber 
+                                id="attendees" 
+                                @bind-Value="_eventModel.Attendees" 
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                                placeholder="0" />
+                            <ValidationMessage For="@(() => _eventModel.Attendees)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
+                        </div>
+
+                        <div class="flex justify-between items-center pt-6 border-t border-gray-200 dark:border-gray-700">
+                            <a 
+                                href="/admin/events" 
+                                class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md">
+                                Cancel
+                            </a>
+                            <button 
+                                type="submit" 
+                                class="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md disabled:opacity-50"
+                                disabled="@_isSaving"
+                                aria-label="@(EventId.HasValue ? "Update event" : "Create event")">
+                                @if (_isSaving)
+                                {
+                                    <span>Saving...</span>
+                                }
+                                else
+                                {
+                                    <span>@(EventId.HasValue ? "Update Event" : "Create Event")</span>
+                                }
+                            </button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        }
+    </main>
+</div>
+
+@code {
+    [Parameter]
+    public int? EventId { get; set; }
+
+    private EventModel _eventModel = new();
+    private string? _errorMessage;
+    private bool _isLoading = true;
+    private bool _isSaving;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Check authentication
+        var isAuthenticated = await AuthService.IsAuthenticatedAsync();
+        if (!isAuthenticated)
+        {
+            Navigation.NavigateTo("/admin/login");
+            return;
+        }
+
+        if (EventId.HasValue)
+        {
+            var evt = await EventService.GetEventByIdAsync(EventId.Value);
+            if (evt != null)
+            {
+                _eventModel = new EventModel
+                {
+                    Id = evt.Id,
+                    Title = evt.Title,
+                    Description = evt.Description,
+                    Date = evt.Date,
+                    Time = evt.Time,
+                    Location = evt.Location,
+                    Attendees = evt.Attendees
+                };
+            }
+            else
+            {
+                Navigation.NavigateTo("/admin/events");
+                return;
+            }
+        }
+        else
+        {
+            // Set default date to today
+            _eventModel.Date = DateTime.Today;
+        }
+
+        _isLoading = false;
+    }
+
+    private async Task HandleSubmit()
+    {
+        _isSaving = true;
+        _errorMessage = null;
+
+        try
+        {
+            var evt = new Event
+            {
+                Id = _eventModel.Id,
+                Title = _eventModel.Title,
+                Description = _eventModel.Description,
+                Date = _eventModel.Date,
+                Time = _eventModel.Time,
+                Location = _eventModel.Location,
+                Attendees = _eventModel.Attendees
+            };
+
+            if (EventId.HasValue)
+            {
+                await EventService.UpdateEventAsync(evt);
+            }
+            else
+            {
+                await EventService.CreateEventAsync(evt);
+            }
+
+            Navigation.NavigateTo("/admin/events");
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"An error occurred: {ex.Message}";
+        }
+        finally
+        {
+            _isSaving = false;
+        }
+    }
+
+    public class EventModel
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "Title is required")]
+        public string Title { get; set; } = string.Empty;
+
+        public string? Description { get; set; }
+
+        [Required(ErrorMessage = "Date is required")]
+        public DateTime Date { get; set; }
+
+        public string Time { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Location is required")]
+        public string Location { get; set; } = string.Empty;
+
+        [Range(0, int.MaxValue, ErrorMessage = "Attendees must be a positive number")]
+        public int Attendees { get; set; }
+    }
+}

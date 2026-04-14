@@ -1,141 +1,144 @@
-﻿@page "/events"
+@page "/events"
 
-<div class="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-    <!-- Header Section -->
-    <header class="bg-white dark:bg-gray-800 shadow-sm" role="banner">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center space-x-2" aria-label="Chapel Hill .NET and Azure Events - Home">
-                <Blazicon Svg="FontAwesomeRegularIcon.Calendar" class="h-8 w-8 text-blue-600 dark:text-blue-400" aria-hidden="true"/>
-                <span class="text-xl font-bold text-gray-800 dark:text-white">CH .NET & Azure Events</span>
-            </a>
-            <nav class="hidden md:flex space-x-4" aria-label="Events page navigation">
-                <a href="/"
-                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-                <a href="#upcoming"
-                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Upcoming
-                    Events</a>
-                <a href="#past" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Past
-                    Events</a>
-            </nav>
-            <DarkModeToggle/>
+<PageTitle>Events | Chapel Hill .NET</PageTitle>
+
+<section class="page-hero">
+    <div class="hero-card hero-card--events">
+        <div class="hero-card__grid">
+            <div class="hero-card__content">
+                <span class="eyebrow eyebrow--light">Events and programming</span>
+                <h1 class="hero-card__title">A steady calendar for developers who want practical conversations.</h1>
+                <p class="hero-card__lede">
+                    The event schedule mixes evening talks, working sessions, and focused discussions across .NET, Azure,
+                    front-end quality, architecture, and the tooling around modern delivery.
+                </p>
+
+                <dl class="hero-metrics">
+                    <div>
+                        <dt>Upcoming</dt>
+                        <dd>@_upcomingEvents.Count sessions</dd>
+                    </div>
+                    <div>
+                        <dt>Archive</dt>
+                        <dd>@_pastEvents.Count recent meetups</dd>
+                    </div>
+                    <div>
+                        <dt>Cadence</dt>
+                        <dd>Recurring local programming</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <aside class="hero-spotlight">
+                <p class="hero-spotlight__label">Speaker-friendly format</p>
+                <h2>Talks, demos, and collaborative working time.</h2>
+                <ul class="hero-spotlight__list">
+                    <li>Technical talks that stay grounded in implementation details.</li>
+                    <li>Smaller sessions that make it easier to ask questions and compare approaches.</li>
+                    <li>Room for local teams and individual builders to share what they have learned.</li>
+                </ul>
+            </aside>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8">
-        <!-- Upcoming Events Section -->
-        <section id="upcoming" class="mb-12" aria-labelledby="upcoming-heading">
-            <h2 id="upcoming-heading" class="text-3xl font-bold mb-6">Upcoming Events</h2>
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                @foreach (var upcomingEvent in _upcomingEvents)
-                {
-                    <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-2">@upcomingEvent.Title</h3>
-                        <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
-                            <Blazicon Svg="FontAwesomeRegularIcon.Calendar" class="h-5 w-5" aria-hidden="true"/>
-                            <time datetime="@upcomingEvent.Date.ToString("yyyy-MM-dd")">@upcomingEvent.Date.ToShortDateString()</time>
-                        </div>
-                        <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
-                            <Blazicon Svg="FontAwesomeRegularIcon.Clock" class="h-5 w-5" aria-hidden="true"/>
-                            <span>@upcomingEvent.Time</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-2">
-                            <Blazicon Svg="FontAwesomeRegularIcon.Map" class="h-5 w-5" aria-hidden="true"/>
-                            <span>@upcomingEvent.Location</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 mb-4">
-                            <Blazicon Svg="FontAwesomeRegularIcon.User" class="h-5 w-5" aria-hidden="true"/>
-                            <span>@upcomingEvent.Attendees attendees</span>
-                        </div>
-                        <button type="button" class="btn btn-primary w-full" aria-label="RSVP for @upcomingEvent.Title">RSVP Now</button>
-                    </article>
-                }
-            </div>
-        </section>
-
-        <!-- Past Events Section -->
-        <section id="past" class="mb-12" aria-labelledby="past-heading">
-            <h2 id="past-heading" class="text-3xl font-bold mb-6">Past Events</h2>
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                <table class="w-full" aria-label="Past events history">
-                    <caption class="sr-only">List of past Chapel Hill .NET and Azure meetup events</caption>
-                    <thead class="bg-gray-50 dark:bg-gray-700">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Event
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Date
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Location
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Resources
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
-                    @foreach (var pastEvent in _pastEvents)
-                    {
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">@pastEvent.Title</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <time datetime="@pastEvent.Date.ToString("yyyy-MM-dd")">@pastEvent.Date.ToShortDateString()</time>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">@pastEvent.Location</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-gray-500 dark:text-gray-400" aria-label="Resources coming soon">Slides | Recording</span>
-                            </td>
-                        </tr>
-                    }
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="bg-blue-100 dark:bg-blue-900 rounded-lg p-8 text-center" aria-labelledby="cta-heading">
-            <h2 id="cta-heading" class="text-2xl font-bold mb-4">Want to speak at our next event?</h2>
-            <p class="mb-6 text-gray-700 dark:text-gray-300">
-                We're always looking for speakers to share their knowledge and experience with our community.
-            </p>
-            <button type="button"
-                    class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 btn btn-primary"
-                    aria-label="Submit a talk proposal for Chapel Hill .NET">
-                Submit a Talk Proposal
-            </button>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8" role="contentinfo" aria-label="Events page footer">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p>&copy; @(DateTime.Now.Year) Chapel Hill .NET & Azure Meetup. All rights reserved.</p>
-                </div>
-                <nav class="flex space-x-4" aria-label="Social media links">
-                    <a href="https://twitter.com/chapelhilldotnet" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="Follow us on Twitter">Twitter</a>
-                    <a href="https://github.com/chapelhilldotnet" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="View our GitHub organization">GitHub</a>
-                </nav>
+<section id="upcoming" class="page-section">
+    <div class="page-shell">
+        <div class="section-heading">
+            <div class="section-heading__content">
+                <span class="eyebrow">Upcoming events</span>
+                <h2 class="section-title">What is on deck for the next stretch of the meetup calendar.</h2>
+                <p class="section-lede">
+                    Each session is designed to give people something concrete to take back to their own work.
+                </p>
             </div>
         </div>
-    </footer>
-</div>
+
+        <div class="card-grid card-grid--events">
+            @foreach (var upcomingEvent in _upcomingEvents)
+            {
+                <EventCard Event="@upcomingEvent" />
+            }
+        </div>
+    </div>
+</section>
+
+<section id="past" class="page-section page-section--muted">
+    <div class="page-shell">
+        <div class="section-heading">
+            <div class="section-heading__content">
+                <span class="eyebrow">Recent archive</span>
+                <h2 class="section-title">A quick look at the kinds of sessions the group has hosted.</h2>
+                <p class="section-lede">
+                    The archive gives newcomers a sense of the technical range and tone of the meetup.
+                </p>
+            </div>
+        </div>
+
+        <div class="archive-grid">
+            @foreach (var pastEvent in _pastEvents)
+            {
+                <article class="section-card archive-card">
+                    <time class="archive-card__date" datetime="@pastEvent.Date.ToString("yyyy-MM-dd")">
+                        @pastEvent.Date.ToString("MMMM d, yyyy")
+                    </time>
+                    <h3>@pastEvent.Title</h3>
+                    <p class="story-copy">@pastEvent.Location</p>
+                    <span class="archive-card__pill">Resources coming soon</span>
+                </article>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="page-shell">
+        <div class="cta-panel">
+            <div>
+                <span class="eyebrow">Call for speakers</span>
+                <h2 class="section-title">Have a topic worth sharing with the local .NET community?</h2>
+                <p class="section-lede">
+                    We are always interested in sessions that explain how something was built, debugged, migrated, or improved.
+                </p>
+            </div>
+
+            <div class="cta-panel__actions">
+                <a class="site-button site-button--primary" href="/#organizers">Talk with an organizer</a>
+                <a class="site-button site-button--secondary" href="/about">See what the group is about</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 @code {
-    private readonly List<Event> _upcomingEvents =
-    [
-        new() { Id = 1, Title = "Introduction to Azure Functions", Date = new DateTime(2023, 7, 15), Time = "6:30 PM - 8:30 PM", Location = "Chapel Hill Tech Hub", Attendees = 42 },
-        new() { Id = 2, Title = "Building Microservices with .NET 6", Date = new DateTime(2023, 8, 5), Time = "6:30 PM - 8:30 PM", Location = "UNC Computer Science Building", Attendees = 38 },
-        new() { Id = 3, Title = "Azure DevOps: CI/CD Pipeline Workshop", Date = new DateTime(2023, 8, 26), Time = "10:00 AM - 2:00 PM", Location = "Chapel Hill Public Library", Attendees = 30 }
-    ];
-
+    private readonly List<Event> _upcomingEvents = [];
     private readonly List<Event> _pastEvents =
     [
-        new() { Id = 4, Title = "Getting Started with Blazor", Date = new DateTime(2023, 6, 10), Location = "Virtual Meetup" },
-        new() { Id = 5, Title = ".NET MAUI: Cross-platform Development", Date = new DateTime(2023, 5, 20), Location = "Chapel Hill Tech Hub" },
-        new() { Id = 6, Title = "Azure Cosmos DB: Deep Dive", Date = new DateTime(2023, 4, 29), Location = "UNC Computer Science Building" }
+        new()
+        {
+            Id = 4,
+            Title = "Shipping Better Blazor Forms",
+            Date = DateTime.Today.AddDays(-24),
+            Location = "Chapel Hill Public Library"
+        },
+        new()
+        {
+            Id = 5,
+            Title = "Observability Basics for Azure App Services",
+            Date = DateTime.Today.AddDays(-51),
+            Location = "Launch Chapel Hill"
+        },
+        new()
+        {
+            Id = 6,
+            Title = "Designing .NET APIs for Front-End Teams",
+            Date = DateTime.Today.AddDays(-86),
+            Location = "Virtual meetup"
+        }
     ];
+
+    protected override void OnInitialized()
+    {
+        _upcomingEvents.AddRange(EventsList.Events.OrderBy(evt => evt.Date));
+    }
 }

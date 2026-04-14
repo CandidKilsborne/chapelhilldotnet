@@ -38,6 +38,7 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#2563eb" />
     <meta name="msapplication-TileColor" content="#2563eb" />
+    <meta name="color-scheme" content="light dark" />
 
     <!-- Geo Tags -->
     <meta name="geo.region" content="US-NC" />
@@ -52,8 +53,8 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="apple-touch-icon" href="favicon.png" />
     <link rel="stylesheet" href="css/tailwindcss.css" />
-    <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/app.css" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -132,13 +133,35 @@
 
 <body>
     <script>
-        // Initialize light mode as default if no preference is saved
-        (function () {
-            const savedMode = localStorage.getItem('darkMode');
-            if (savedMode === 'true') {
-                document.documentElement.classList.add('dark');
+        window.themePreference = {
+            get: function () {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme === 'light' || storedTheme === 'dark') {
+                    return storedTheme;
+                }
+
+                const legacyDarkMode = localStorage.getItem('darkMode');
+                if (legacyDarkMode === 'true') {
+                    return 'dark';
+                }
+
+                return 'light';
+            },
+            set: function (theme) {
+                const isDark = theme === 'dark';
+                document.documentElement.classList.toggle('dark', isDark);
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+
+                const themeColor = document.querySelector('meta[name="theme-color"]');
+                if (themeColor) {
+                    themeColor.setAttribute('content', isDark ? '#07111f' : '#f5efe2');
+                }
             }
-        })();
+        };
+
+        window.themePreference.set(window.themePreference.get());
     </script>
     <div id="app">
         <svg class="loading-progress" role="img" aria-label="Loading Chapel Hill .NET application">

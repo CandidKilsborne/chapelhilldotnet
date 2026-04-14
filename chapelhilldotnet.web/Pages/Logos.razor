@@ -1,0 +1,210 @@
+@page "/logos"
+
+<PageTitle>Logo Concepts | Chapel Hill .NET</PageTitle>
+
+<section class="page-hero">
+    <div class="hero-card hero-card--about">
+        <div class="hero-card__grid">
+            <div class="hero-card__content">
+                <span class="eyebrow eyebrow--light">Temporary review page</span>
+                <h1 class="hero-card__title">Logo directions for Chapel Hill .NET.</h1>
+                <p class="hero-card__lede">
+                    This page collects the current mark, the earlier local variant, and four additional concepts so you can
+                    compare them in one place before we pick a direction to refine.
+                </p>
+
+                <dl class="hero-metrics">
+                    <div>
+                        <dt>Total concepts</dt>
+                        <dd>@LogoConcepts.Count</dd>
+                    </div>
+                    <div>
+                        <dt>New additions</dt>
+                        <dd>4 fresh directions</dd>
+                    </div>
+                    <div>
+                        <dt>Goal</dt>
+                        <dd>Find the strongest Chapel Hill tie-in</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <aside class="hero-spotlight" aria-label="Logo review guidance">
+                <p class="hero-spotlight__label">What to watch for</p>
+                <h2>Pick the concept that feels local, distinct, and durable.</h2>
+                <ul class="hero-spotlight__list">
+                    <li>Does it feel specific to Chapel Hill instead of generic developer branding?</li>
+                    <li>Does it still read clearly at header and favicon size?</li>
+                    <li>Does it feel like a community mark, not a company logo?</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="page-shell">
+        <div class="section-heading">
+            <div class="section-heading__content">
+                <span class="eyebrow">Concept gallery</span>
+                <h2 class="section-title">Six options, each pushing the identity in a different direction.</h2>
+                <p class="section-lede">
+                    Every card includes a larger preview plus light and dark interface swatches so the marks can be judged in a
+                    more realistic setting.
+                </p>
+            </div>
+        </div>
+
+        <div class="logo-grid">
+            @foreach (var logo in LogoConcepts)
+            {
+                <article class="section-card logo-option-card">
+                    <div class="logo-option-card__topline">
+                        <span class="eyebrow">@logo.Label</span>
+                        @if (logo.IsCurrent)
+                        {
+                            <span class="logo-status-pill">Current active</span>
+                        }
+                    </div>
+
+                    <div class="logo-preview-stage">
+                        <img src="@logo.Path" alt="@($"{logo.Name} concept preview")" class="logo-preview-stage__image" loading="lazy" />
+                    </div>
+
+                    <div class="logo-swatch-grid" aria-label="@($"{logo.Name} light and dark previews")">
+                        <figure class="logo-swatch">
+                            <div class="logo-swatch__canvas logo-swatch__canvas--light">
+                                <img src="@logo.Path" alt="" loading="lazy" />
+                            </div>
+                            <figcaption>Light UI</figcaption>
+                        </figure>
+
+                        <figure class="logo-swatch">
+                            <div class="logo-swatch__canvas logo-swatch__canvas--dark">
+                                <img src="@logo.Path" alt="" loading="lazy" />
+                            </div>
+                            <figcaption>Dark UI</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="logo-option-card__content">
+                        <h3>@logo.Name</h3>
+                        <p class="story-copy">@logo.Description</p>
+
+                        <ul class="story-list logo-notes">
+                            @foreach (var note in logo.Notes)
+                            {
+                                <li>@note</li>
+                            }
+                        </ul>
+                    </div>
+                </article>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="page-section page-section--muted">
+    <div class="page-shell page-shell--compact">
+        <div class="cta-panel">
+            <div>
+                <span class="eyebrow">Next step</span>
+                <h2 class="section-title">Once you pick a direction, I can refine it instead of spreading effort across six drafts.</h2>
+                <p class="section-lede">
+                    After that, I can turn the winner into the active header mark, favicon, social card badge, and a horizontal wordmark if needed.
+                </p>
+            </div>
+
+            <div class="cta-panel__actions">
+                <a class="site-button site-button--primary" href="/">Back to the public site</a>
+                <a class="site-button site-button--secondary" href="/events">See the logo in context</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private readonly List<LogoConcept> LogoConcepts = new()
+    {
+        new(
+            "Option A",
+            "Blue Ridge Code",
+            "images/branding/chapel-hill-dotnet-mark.svg",
+            "The current active mark: a balanced developer-first icon with code brackets, a hill stroke, and a warm sunrise accent.",
+            true,
+            new[]
+            {
+                "Most technical of the set.",
+                "Feels clean and versatile in the header.",
+                "Local cue comes mostly from the hill line."
+            }),
+        new(
+            "Option B",
+            "Dogwood Contour",
+            "images/branding/chapel-hill-dotnet-mark-local.svg",
+            "A more explicitly local option that mixes topographic contour lines, rolling hills, and a dogwood-inspired center bloom.",
+            false,
+            new[]
+            {
+                "Strongest North Carolina reference in the first pair.",
+                "Feels more civic and community-oriented.",
+                "Still keeps code brackets in the composition."
+            }),
+        new(
+            "Option C",
+            "Dogwood Badge",
+            "images/branding/chapel-hill-dotnet-mark-dogwood-badge.svg",
+            "A circular emblem direction that leans into the dogwood flower and feels closer to a chapter badge or meetup seal.",
+            false,
+            new[]
+            {
+                "Most badge-like and community-group oriented.",
+                "Leans floral without dropping the engineering cue.",
+                "Could work well on stickers and profile avatars."
+            }),
+        new(
+            "Option D",
+            "Map Pin Meetup",
+            "images/branding/chapel-hill-dotnet-mark-map-pin.svg",
+            "A location-driven concept built around a map pin, contour lines, and a hill horizon to emphasize local meetups.",
+            false,
+            new[]
+            {
+                "Most explicitly about place and gathering.",
+                "Readable idea even at a glance.",
+                "Feels event-driven rather than organization-driven."
+            }),
+        new(
+            "Option E",
+            "Tree Canopy Circuit",
+            "images/branding/chapel-hill-dotnet-mark-tree.svg",
+            "A Chapel Hill through-line using canopy and roots, with the lower structure turned into circuit-like connections.",
+            false,
+            new[]
+            {
+                "Most organic and environmental direction.",
+                "Connects local identity to engineering in a softer way.",
+                "Distinct from the hill-and-sun concepts."
+            }),
+        new(
+            "Option F",
+            "Arch and Sunrise",
+            "images/branding/chapel-hill-dotnet-mark-arch.svg",
+            "A more architectural mark built around an archway, sunrise, hillside path, and small code cues.",
+            false,
+            new[]
+            {
+                "Most architectural and civic-feeling option.",
+                "More symbolic than literal.",
+                "Could become a strong wordmark companion."
+            })
+    };
+
+    private sealed record LogoConcept(
+        string Label,
+        string Name,
+        string Path,
+        string Description,
+        bool IsCurrent,
+        string[] Notes);
+}

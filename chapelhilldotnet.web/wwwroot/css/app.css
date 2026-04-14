@@ -1496,6 +1496,10 @@ html.dark .admin-action--danger {
     margin-top: 1rem;
 }
 
+.organizer-actions {
+    margin-top: 1.5rem;
+}
+
 .btn-primary {
     color: white;
     background: linear-gradient(135deg, var(--accent), var(--accent-strong));

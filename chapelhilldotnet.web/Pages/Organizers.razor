@@ -1,0 +1,121 @@
+@page "/organizers"
+
+<PageTitle>Organizers | Chapel Hill .NET</PageTitle>
+
+<section class="page-hero">
+    <div class="hero-card hero-card--organizers">
+        <div class="hero-card__grid">
+            <div class="hero-card__content">
+                <span class="eyebrow eyebrow--light">Organizers and community stewards</span>
+                <h1 class="hero-card__title">The people shaping the tone, consistency, and technical quality of the group.</h1>
+                <p class="hero-card__lede">
+                    Chapel Hill .NET is run by local builders who care about practical sessions, approachable conversations,
+                    and a community that keeps showing up for one another.
+                </p>
+
+                <dl class="hero-metrics">
+                    <div>
+                        <dt>Focus</dt>
+                        <dd>Useful sessions, honest technical conversations</dd>
+                    </div>
+                    <div>
+                        <dt>Approach</dt>
+                        <dd>Welcoming, practical, and grounded in real work</dd>
+                    </div>
+                    <div>
+                        <dt>Goal</dt>
+                        <dd>A stronger local .NET community</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <aside class="hero-spotlight" aria-label="Organizer page summary">
+                <p class="hero-spotlight__label">Why a dedicated organizer page</p>
+                <h2>The community works better when the people behind it are visible and accessible.</h2>
+                <ul class="hero-spotlight__list">
+                    <li>See who is helping coordinate the meetup.</li>
+                    <li>Find the right people to talk to about speaking or helping out.</li>
+                    <li>Understand the kind of engineering culture the group is trying to build.</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="page-shell">
+        <div class="section-heading">
+            <div class="section-heading__content">
+                <span class="eyebrow">Meet the organizers</span>
+                <h2 class="section-title">A local group run by people who value clear talks, solid engineering, and a low-ego community.</h2>
+                <p class="section-lede">
+                    These organizers keep the group moving, shape the programming, and make sure the meetup stays useful
+                    for both new and experienced developers.
+                </p>
+            </div>
+        </div>
+
+        <div class="card-grid card-grid--organizers">
+            @foreach (var organizer in OrganizerProfiles)
+            {
+                <OrganizerCard Organizer="@organizer" />
+            }
+        </div>
+    </div>
+</section>
+
+<section class="page-section page-section--muted">
+    <div class="page-shell">
+        <div class="story-grid">
+            <article class="section-card story-panel">
+                <span class="eyebrow">What organizers care about</span>
+                <h2 class="section-title">A meetup format that stays helpful after the event ends.</h2>
+                <p class="section-lede">
+                    The goal is not just to host events. It is to create conversations, technical depth, and useful
+                    follow-up connections that keep paying off over time.
+                </p>
+                <div class="value-grid">
+                    <div class="value-card">
+                        <h3>Practical programming</h3>
+                        <p>Sessions should leave attendees with patterns, ideas, or cautionary lessons they can actually use.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Approachable tone</h3>
+                        <p>People should feel comfortable asking questions whether they are early-career or deeply experienced.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Local continuity</h3>
+                        <p>The best meetups create relationships that continue between events, not just one-night attendance.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="section-card story-panel">
+                <span class="eyebrow">Get involved</span>
+                <h2 class="section-title">Want to help organize, speak, or support the group?</h2>
+                <p class="story-copy">
+                    We are always interested in hearing from people who want to host a session, mentor newer attendees,
+                    help with logistics, or contribute ideas for future meetup formats.
+                </p>
+                <ul class="story-list">
+                    <li>Share a talk idea or walkthrough from real project work.</li>
+                    <li>Help improve the event experience for new attendees.</li>
+                    <li>Contribute energy, connections, or ideas that strengthen the local community.</li>
+                </ul>
+                <div class="cta-panel__actions organizer-actions">
+                    <a class="site-button site-button--primary" href="/events">See upcoming sessions</a>
+                    <a class="site-button site-button--secondary" href="/about">Learn more about the group</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+@code {
+    private List<Organizer> OrganizerProfiles { get; set; } = [];
+
+    protected override void OnInitialized()
+    {
+        OrganizerProfiles = OrganizersList.Organizers;
+    }
+}

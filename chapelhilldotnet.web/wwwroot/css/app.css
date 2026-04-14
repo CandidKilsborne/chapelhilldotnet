@@ -518,14 +518,15 @@ html.dark .page-section--muted::before {
     height: 3rem;
     flex-shrink: 0;
     border-radius: 18px;
-    background: linear-gradient(135deg, var(--accent), var(--highlight));
-    color: white;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
 }
 
+.site-brand__mark img,
 .site-brand__mark svg {
-    width: 1.45rem;
-    height: 1.45rem;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .site-brand__text {

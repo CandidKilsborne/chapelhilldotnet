@@ -3,6 +3,30 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="admin-shell">
+    <header class="admin-header-wrap" role="banner">
+        <div class="admin-header">
+            <div class="admin-header__inner">
+                <a class="site-brand" href="/admin/events">
+                    <span class="site-brand__mark" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M4 12c0-4.418 3.582-8 8-8 2.117 0 4.147.842 5.645 2.34C19.143 7.838 20 9.87 20 12c0 4.418-3.582 8-8 8S4 16.418 4 12Z" />
+                            <path d="M8.5 12.5 11 15l5-6" />
+                        </svg>
+                    </span>
+                    <span class="site-brand__text">
+                        <span class="site-brand__eyebrow">Admin workspace</span>
+                        <span class="site-brand__name">Chapel Hill .NET</span>
+                    </span>
+                </a>
+
+                <div class="admin-header__actions">
+                    <a class="site-button site-button--secondary" href="/">Public site</a>
+                    <DarkModeToggle />
+                </div>
+            </div>
+        </div>
+    </header>
+
     <main id="main-content" role="main" class="admin-main">
         @Body
     </main>

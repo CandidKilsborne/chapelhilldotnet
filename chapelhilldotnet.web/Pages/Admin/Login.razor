@@ -3,80 +3,89 @@
 @inject IAuthenticationService AuthService
 @inject NavigationManager Navigation
 
-<div class="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-gray-900 px-4 py-12">
-    <div class="w-full max-w-md space-y-8">
-        <div class="text-center">
-            <h2 class="mt-6 text-3xl font-bold text-gray-900 dark:text-white">Admin Login</h2>
-            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                Sign in to manage events
-            </p>
-        </div>
-        
-        <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-            <EditForm Model="@_loginModel" OnValidSubmit="@HandleLogin" FormName="loginForm">
-                <DataAnnotationsValidator />
-                
-                @if (!string.IsNullOrEmpty(_errorMessage))
-                {
-                    <div class="mb-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-md" role="alert">
-                        @_errorMessage
-                    </div>
-                }
-                
-                <div class="space-y-6">
-                    <div>
-                        <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Username
-                        </label>
-                        <InputText 
-                            id="username" 
-                            @bind-Value="_loginModel.Username" 
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                            placeholder="Enter username"
-                            aria-required="true" />
-                        <ValidationMessage For="@(() => _loginModel.Username)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                    </div>
-                    
-                    <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Password
-                        </label>
-                        <InputText 
-                            id="password" 
-                            type="password" 
-                            @bind-Value="_loginModel.Password" 
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                            placeholder="Enter password"
-                            aria-required="true" />
-                        <ValidationMessage For="@(() => _loginModel.Password)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                    </div>
-                    
-                    <div>
-                        <button 
-                            type="submit" 
-                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
-                            disabled="@_isLoading"
-                            aria-label="Sign in to admin panel">
-                            @if (_isLoading)
-                            {
-                                <span>Signing in...</span>
-                            }
-                            else
-                            {
-                                <span>Sign In</span>
-                            }
-                        </button>
-                    </div>
+<PageTitle>Admin Login | Chapel Hill .NET</PageTitle>
+
+<div class="admin-page admin-page--auth">
+    <section class="page-shell">
+        <div class="hero-card hero-card--admin-auth">
+            <div class="hero-card__grid admin-auth-grid">
+                <div class="hero-card__content">
+                    <span class="eyebrow eyebrow--light">Admin access</span>
+                    <h1 class="hero-card__title">Keep the meetup calendar polished without leaving the new design language.</h1>
+                    <p class="hero-card__lede">
+                        Sign in to update event details, keep the public schedule accurate, and manage the small content changes
+                        that make the site feel maintained.
+                    </p>
+
+                    <ul class="hero-spotlight__list admin-auth-list">
+                        <li>Review upcoming sessions before they show up on the public site.</li>
+                        <li>Edit dates, descriptions, and locations in one place.</li>
+                        <li>Stay in the same visual system as the refreshed public pages.</li>
+                    </ul>
                 </div>
-            </EditForm>
-            
-            <div class="mt-4 text-center">
-                <a href="/" class="text-sm text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
-                    Back to Home
-                </a>
+
+                <div class="admin-form-card admin-form-card--auth">
+                    <div class="admin-form-card__header">
+                        <span class="eyebrow">Admin login</span>
+                        <h2>Sign in to manage events</h2>
+                        <p>Use your credentials to access the event workspace.</p>
+                    </div>
+
+                    <EditForm Model="@_loginModel" OnValidSubmit="@HandleLogin" FormName="loginForm">
+                        <DataAnnotationsValidator />
+
+                        @if (!string.IsNullOrEmpty(_errorMessage))
+                        {
+                            <div class="admin-alert admin-alert--error" role="alert">
+                                @_errorMessage
+                            </div>
+                        }
+
+                        <div class="admin-form-grid">
+                            <div class="admin-field">
+                                <label for="username" class="admin-label">Username</label>
+                                <InputText id="username"
+                                           @bind-Value="_loginModel.Username"
+                                           class="admin-input"
+                                           placeholder="Enter username"
+                                           aria-required="true" />
+                                <ValidationMessage For="@(() => _loginModel.Username)" class="validation-message" />
+                            </div>
+
+                            <div class="admin-field">
+                                <label for="password" class="admin-label">Password</label>
+                                <InputText id="password"
+                                           type="password"
+                                           @bind-Value="_loginModel.Password"
+                                           class="admin-input"
+                                           placeholder="Enter password"
+                                           aria-required="true" />
+                                <ValidationMessage For="@(() => _loginModel.Password)" class="validation-message" />
+                            </div>
+
+                            <div class="admin-form-actions admin-form-actions--stack">
+                                <button type="submit"
+                                        class="site-button site-button--primary"
+                                        disabled="@_isLoading"
+                                        aria-label="Sign in to admin panel">
+                                    @if (_isLoading)
+                                    {
+                                        <span>Signing in...</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Sign in</span>
+                                    }
+                                </button>
+
+                                <a href="/" class="admin-text-link">Back to public site</a>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
 @code {
@@ -92,7 +101,7 @@
         try
         {
             var success = await AuthService.LoginAsync(_loginModel.Username, _loginModel.Password);
-            
+
             if (success)
             {
                 Navigation.NavigateTo("/admin/events");

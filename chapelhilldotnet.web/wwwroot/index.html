@@ -164,11 +164,28 @@
         window.themePreference.set(window.themePreference.get());
     </script>
     <div id="app">
-        <svg class="loading-progress" role="img" aria-label="Loading Chapel Hill .NET application">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text" role="status" aria-live="polite"></div>
+        <div class="loading-shell">
+            <div class="loading-shell__panel">
+                <div class="loading-badge">Chapel Hill .NET</div>
+                <div class="loading-progress-wrap">
+                    <span class="loading-progress-core" aria-hidden="true"></span>
+                    <svg class="loading-progress" viewBox="0 0 120 120" role="img" aria-label="Loading Chapel Hill .NET application">
+                        <defs>
+                            <linearGradient id="loading-gradient" x1="12%" y1="12%" x2="88%" y2="88%">
+                                <stop offset="0%" style="stop-color: var(--highlight);" />
+                                <stop offset="55%" style="stop-color: var(--accent);" />
+                                <stop offset="100%" style="stop-color: var(--hero-end);" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="loading-progress__track" r="42" cx="60" cy="60" />
+                        <circle class="loading-progress__value" r="42" cx="60" cy="60" stroke="url(#loading-gradient)" />
+                    </svg>
+                </div>
+                <div class="loading-title">Loading Chapel Hill .NET</div>
+                <p class="loading-caption">Gathering events, organizers, and community updates for the next meetup.</p>
+                <div class="loading-progress-text" role="status" aria-live="polite"></div>
+            </div>
+        </div>
     </div>
 
     <div id="blazor-error-ui" role="alert">

@@ -1,4 +1,5 @@
-﻿using chapelhilldotnet.web.Models;
+﻿using System.Runtime.InteropServices;
+using chapelhilldotnet.web.Models;
 
 namespace chapelhilldotnet.web.Data;
 
@@ -11,9 +12,9 @@ public static class EventsList
             Id = 1,
             Title = "Coffee and Coworking for .NET Builders",
             Description = "A lower-pressure morning session for swapping notes, getting unstuck, and meeting other local developers.",
-            Date = DateTime.Today.AddDays(9),
-            Location = "Perennial Cafe, Chapel Hill",
-            Time = "8:00 AM - 10:00 AM",
+            Date = new DateTime(2026, 4, 24),
+            Location = "La Vita Dolce",
+            Time = "8:30 AM - 10:30 AM",
             Attendees = 16
         },
 
@@ -22,9 +23,9 @@ public static class EventsList
             Id = 2,
             Title = "Building Blazor Interfaces That Feel Fast",
             Description = "A practical evening session on component structure, perceived performance, and interface polish in Blazor apps.",
-            Date = DateTime.Today.AddDays(18),
-            Location = "Launch Chapel Hill",
-            Time = "6:00 PM - 8:00 PM",
+            Date = new DateTime(2026, 5, 12),
+            Location = "Online session",
+            Time = "4:00 PM - 5:00 PM",
             Attendees = 30
         },
 
@@ -33,9 +34,9 @@ public static class EventsList
             Id = 3,
             Title = "Azure Operations Office Hours",
             Description = "Bring your deployment, diagnostics, or platform questions and work through them with other engineers.",
-            Date = DateTime.Today.AddDays(32),
-            Location = "Online and Chapel Hill hybrid session",
-            Time = "6:30 PM - 8:00 PM",
+            Date = new DateTime(2026, 6, 5),
+            Location = "Online session",
+            Time = "7:30 PM - 8:30 PM",
             Attendees = 24
         }
     ];

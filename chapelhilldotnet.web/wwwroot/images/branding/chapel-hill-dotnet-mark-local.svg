@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Chapel Hill .NET local logo option</title>
+  <desc id="desc">A rounded-square logo with contour lines, rolling hills, code brackets, and a dogwood-inspired flower to tie the mark to Chapel Hill and North Carolina.</desc>
+  <defs>
+    <linearGradient id="bg-local" x1="24" y1="18" x2="136" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4e9d" />
+      <stop offset="0.52" stop-color="#2453a6" />
+      <stop offset="1" stop-color="#0b766a" />
+    </linearGradient>
+    <radialGradient id="glow-local" cx="0" cy="0" r="1" gradientTransform="translate(52 32) rotate(37) scale(92 70)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hill-local" x1="30" y1="116" x2="132" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1c274" />
+      <stop offset="1" stop-color="#ffe8be" />
+    </linearGradient>
+    <filter id="soft-shadow-local" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0d1f3e" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#soft-shadow-local)">
+    <rect x="12" y="12" width="136" height="136" rx="34" fill="url(#bg-local)" />
+    <rect x="12" y="12" width="136" height="136" rx="34" fill="url(#glow-local)" />
+    <rect x="12.75" y="12.75" width="134.5" height="134.5" rx="33.25" fill="none" stroke="#ffffff" stroke-opacity="0.22" />
+
+    <g fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2">
+      <path d="M34 44C45 35 61 31 77 33C93 35 109 32 124 25" />
+      <path d="M29 57C42 46 59 42 76 44C94 46 112 42 131 33" />
+      <path d="M25 71C41 58 60 54 79 57C97 60 115 56 135 45" />
+    </g>
+
+    <path d="M34 111C46 98 60 92 75 95C88 97 99 106 112 106C121 106 129 102 136 95" fill="none" stroke="url(#hill-local)" stroke-width="8" stroke-linecap="round" />
+
+    <path d="M57 55L39 80L57 105" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M103 55L121 80L103 105" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+
+    <g transform="translate(80 78)">
+      <path d="M0-24C-8-34-20-34-23-23C-26-11-18-2 0 6C18-2 26-11 23-23C20-34 8-34 0-24Z" fill="#fff8ee" />
+      <path d="M24 0C34-8 34-20 23-23C11-26 2-18-6 0C2 18 11 26 23 23C34 20 34 8 24 0Z" fill="#fff8ee" />
+      <path d="M0 24C8 34 20 34 23 23C26 11 18 2 0-6C-18 2-26 11-23 23C-20 34-8 34 0 24Z" fill="#fff8ee" />
+      <path d="M-24 0C-34 8-34 20-23 23C-11 26-2 18 6 0C-2-18-11-26-23-23C-34-20-34-8-24 0Z" fill="#fff8ee" />
+      <circle cx="0" cy="0" r="7" fill="#e5b264" />
+      <circle cx="0" cy="0" r="2.6" fill="#fff6e6" />
+    </g>
+
+    <circle cx="114" cy="46" r="8" fill="#efb356" />
+    <circle cx="114" cy="46" r="13" fill="#efb356" opacity="0.14" />
+  </g>
+</svg>

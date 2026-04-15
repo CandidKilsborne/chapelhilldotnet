@@ -1,194 +1,127 @@
-﻿@page "/About"
+@page "/about"
 
-<div class="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-    <header class="bg-white dark:bg-gray-800 shadow-sm" role="banner">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center space-x-2" aria-label="Chapel Hill .NET and Azure - Home">
-                <svg class="h-8 w-8 text-blue-600 dark:text-blue-400" aria-hidden="true" focusable="false">
-                    <use href="#cloud-icon"/>
-                </svg>
-                <span class="text-xl font-bold text-gray-800 dark:text-white">
-                    Chapel Hill .NET & Azure
-                </span>
-            </a>
-            <nav class="hidden md:flex space-x-4" aria-label="About page navigation">
-                <a href="/"
-                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-                <a href="/about" class="text-blue-600 dark:text-blue-400" aria-current="page">About</a>
-                <a href="/events" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Events</a>
-                <a href="#contact"
-                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-            </nav>
-            <div class="flex items-center space-x-2">
-                <DarkModeToggle/>
-                <button type="button"
-                        class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white py-2 px-4 rounded"
-                        aria-label="Join Chapel Hill .NET community">
-                    Join Us
-                </button>
+<PageTitle>About | Chapel Hill .NET</PageTitle>
+
+<section class="page-hero">
+    <div class="hero-card hero-card--about">
+        <div class="hero-card__grid">
+            <div class="hero-card__content">
+                <span class="eyebrow eyebrow--light">About the community</span>
+                <h1 class="hero-card__title">A meetup built around useful sessions and durable local connections.</h1>
+                <p class="hero-card__lede">
+                    Chapel Hill .NET exists to create a consistent place for developers to learn together, compare notes,
+                    and stay sharp across the Microsoft ecosystem and the practical tooling around it.
+                </p>
+            </div>
+
+            <aside class="hero-spotlight">
+                <p class="hero-spotlight__label">What to expect</p>
+                <h2>Clear topics, approachable formats, and a local point of view.</h2>
+                <ul class="hero-spotlight__list">
+                    <li>Sessions grounded in real engineering work.</li>
+                    <li>Plenty of room for questions and follow-up discussion.</li>
+                    <li>An environment that welcomes newcomers without flattening the technical depth.</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="page-shell story-grid">
+        <article class="section-card story-panel">
+            <span class="eyebrow">Our mission</span>
+            <h2 class="section-title">Help local developers learn faster and build with more confidence.</h2>
+            <p class="section-lede">
+                We organize meetups, working sessions, and practical talks that help people understand the tradeoffs behind
+                modern application development on .NET and Azure.
+            </p>
+            <p class="story-copy">
+                The goal is not to chase hype. It is to surface what is actually useful: architecture lessons, platform
+                decisions, debugging stories, deployment patterns, and the small implementation details that make a project
+                better over time.
+            </p>
+        </article>
+
+        <article class="section-card story-panel">
+            <span class="eyebrow">How we operate</span>
+            <h2 class="section-title">A community format that favors substance over noise.</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>Practical first</h3>
+                    <p>Talks and demos should leave people with ideas they can use next week.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Locally grounded</h3>
+                    <p>The group is meant to connect people who can keep the conversation going after the event.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Technically honest</h3>
+                    <p>We prefer clear tradeoffs and real constraints over polished but shallow answers.</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="page-section page-section--muted">
+    <div class="page-shell">
+        <div class="section-heading">
+            <div class="section-heading__content">
+                <span class="eyebrow">What we cover</span>
+                <h2 class="section-title">Breadth where it helps, depth where it matters.</h2>
+                <p class="section-lede">
+                    The agenda centers on the Microsoft stack, but the conversation is broader whenever broader tools help teams work better.
+                </p>
             </div>
         </div>
-    </header>
 
-    <main class="flex-grow">
-        <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20" aria-label="Hero section">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">About Our Meetup</h1>
-                <p class="text-xl mb-8">Discover the story behind Chapel Hill's .NET and Azure community</p>
-            </div>
-        </section>
+        <div class="topic-grid">
+            <article class="section-card topic-card">
+                <h3>Application engineering</h3>
+                <ul class="story-list">
+                    <li>C#, ASP.NET Core, Blazor, and service design</li>
+                    <li>Testing, maintainability, and architectural tradeoffs</li>
+                    <li>Performance, accessibility, and front-end quality</li>
+                </ul>
+            </article>
 
-        <section class="py-16" aria-labelledby="mission-heading">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto">
-                    <h2 id="mission-heading" class="text-3xl font-bold mb-8">Our Mission</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                        The Chapel Hill .NET and Azure Meetup is dedicated to fostering a vibrant community of
-                        developers,
-                        architects, and technology enthusiasts. Our mission is to provide a platform for learning,
-                        collaboration, and networking, focusing on Microsoft's .NET ecosystem and Azure cloud services.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="flex items-start space-x-4">
-                            <svg class="h-8 w-8 text-blue-600 mt-1" aria-hidden="true" focusable="false">
-                                <use href="#lightbulb-icon"/>
-                            </svg>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2">Knowledge Sharing</h3>
-                                <p class="text-gray-600 dark:text-gray-300">
-                                    We organize regular meetups, workshops, and presentations to share knowledge and
-                                    best practices.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <svg class="h-8 w-8 text-purple-600 mt-1" aria-hidden="true" focusable="false">
-                                <use href="#users-icon"/>
-                            </svg>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2">Community Building</h3>
-                                <p class="text-gray-600 dark:text-gray-300">
-                                    We create opportunities for developers to connect, collaborate, and grow together.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <article class="section-card topic-card">
+                <h3>Cloud and delivery</h3>
+                <ul class="story-list">
+                    <li>Azure hosting, identity, observability, and operations</li>
+                    <li>CI/CD pipelines, release safety, and platform patterns</li>
+                    <li>Infrastructure decisions that hold up as teams grow</li>
+                </ul>
+            </article>
 
-        <section class="py-16 bg-gray-50 dark:bg-gray-800" aria-labelledby="coverage-heading">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto">
-                    <h2 id="coverage-heading" class="text-3xl font-bold mb-8">What We Cover</h2>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-                            <svg class="h-12 w-12 text-blue-600 mb-4" aria-hidden="true" focusable="false">
-                                <use href="#code-icon"/>
-                            </svg>
-                            <h3 class="text-xl font-semibold mb-4">.NET Development</h3>
-                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-                                <li>C# and F# programming</li>
-                                <li>ASP.NET Core web development</li>
-                                <li>Blazor for interactive web UIs</li>
-                                <li>Entity Framework Core</li>
-                                <li>Cross-platform development with .NET</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-                            <svg class="h-12 w-12 text-purple-600 mb-4" aria-hidden="true" focusable="false">
-                                <use href="#cloud-icon"/>
-                            </svg>
-                            <h3 class="text-xl font-semibold mb-4">Azure Cloud</h3>
-                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-                                <li>Azure App Services and Functions</li>
-                                <li>Azure DevOps and CI/CD pipelines</li>
-                                <li>Cosmos DB and Azure SQL</li>
-                                <li>Containerization with Docker and Kubernetes</li>
-                                <li>Serverless architectures</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <article class="section-card topic-card">
+                <h3>Developer workflow</h3>
+                <ul class="story-list">
+                    <li>Automation, scripting, and day-to-day productivity</li>
+                    <li>AI-assisted development used with engineering discipline</li>
+                    <li>Tooling choices that reduce friction instead of adding it</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
 
-        <section class="py-16" aria-labelledby="join-heading">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto">
-                    <h2 id="join-heading" class="text-3xl font-bold mb-8">Join Our Community</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                        Whether you're a seasoned professional or just starting your journey in .NET and Azure, our
-                        community
-                        welcomes you. Attend our events, share your knowledge, and connect with like-minded individuals
-                        who are
-                        passionate about Microsoft technologies.
-                    </p>
-                    <div class="flex justify-center">
-                        <button type="button"
-                                class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white text-lg py-2 px-6 rounded"
-                                aria-label="Become a member of Chapel Hill .NET community">
-                            Become a Member
-                        </button>
-                    </div>
-                </div>
+<section class="page-section">
+    <div class="page-shell">
+        <div class="cta-panel">
+            <div>
+                <span class="eyebrow">Join the community</span>
+                <h2 class="section-title">Whether you are deep in production systems or just getting started, there is a place for you here.</h2>
+                <p class="section-lede">
+                    Show up for an event, bring a question, or propose a topic you want to unpack with other local developers.
+                </p>
             </div>
-        </section>
-    </main>
 
-    <footer id="contact" class="bg-gray-800 dark:bg-gray-900 text-white py-12" role="contentinfo" aria-label="About page footer">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">About Us</h3>
-                    <p class="text-gray-400">
-                        We're a community of .NET and Azure enthusiasts in Chapel Hill, NC, dedicated to learning and
-                        sharing knowledge.
-                    </p>
-                </div>
-                <nav aria-label="Footer navigation">
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="/about" class="text-gray-400 hover:text-white">About</a></li>
-                        <li><a href="/events" class="text-gray-400 hover:text-white">Events</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
-                    </ul>
-                </nav>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                    <address class="not-italic">
-                        <p class="text-gray-400">
-                            <span class="sr-only">Email: </span>
-                            <a href="mailto:info@chapelhilldotnet.com" class="text-gray-400 hover:text-white">info@chapelhilldotnet.com</a>
-                        </p>
-                        <p class="text-gray-400">
-                            <span class="sr-only">Phone: </span>
-                            <a href="tel:+15551234567" class="text-gray-400 hover:text-white">(555) 123-4567</a>
-                        </p>
-                    </address>
-                    <nav class="flex space-x-4 mt-4" aria-label="Social media links">
-                        <a href="https://twitter.com/chapelhilldotnet" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="Follow us on Twitter">
-                            <svg class="h-6 w-6" aria-hidden="true" focusable="false">
-                                <use href="#twitter-icon"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/company/chapelhilldotnet" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="Connect with us on LinkedIn">
-                            <svg class="h-6 w-6" aria-hidden="true" focusable="false">
-                                <use href="#linkedin-icon"/>
-                            </svg>
-                        </a>
-                        <a href="https://github.com/chapelhilldotnet" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="View our GitHub organization">
-                            <svg class="h-6 w-6" aria-hidden="true" focusable="false">
-                                <use href="#github-icon"/>
-                            </svg>
-                        </a>
-                    </nav>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p>&copy; @DateTime.Now.Year Chapel Hill .NET & Azure Meetup. All rights reserved.</p>
+            <div class="cta-panel__actions">
+                <a class="site-button site-button--primary" href="/events">See upcoming sessions</a>
+                <a class="site-button site-button--secondary" href="/organizers">Meet the organizers</a>
             </div>
         </div>
-    </footer>
-</div>
+    </div>
+</section>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Chapel Hill .NET tree and circuit logo</title>
+  <desc id="desc">A logo with a tree canopy above circuit-like roots to suggest Chapel Hill's tree canopy and modern engineering.</desc>
+  <defs>
+    <linearGradient id="tree-bg" x1="22" y1="18" x2="138" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#18376f" />
+      <stop offset="0.6" stop-color="#2453a6" />
+      <stop offset="1" stop-color="#0e766b" />
+    </linearGradient>
+    <radialGradient id="tree-glow" cx="0" cy="0" r="1" gradientTransform="translate(52 34) rotate(32) scale(88 72)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="tree-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#102444" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#tree-shadow)">
+    <rect x="12" y="12" width="136" height="136" rx="34" fill="url(#tree-bg)" />
+    <rect x="12" y="12" width="136" height="136" rx="34" fill="url(#tree-glow)" />
+    <rect x="12.75" y="12.75" width="134.5" height="134.5" rx="33.25" fill="none" stroke="#ffffff" stroke-opacity="0.22" />
+
+    <g fill="#f7fbff">
+      <circle cx="58" cy="56" r="17" />
+      <circle cx="79" cy="49" r="21" />
+      <circle cx="101" cy="58" r="18" />
+      <circle cx="71" cy="67" r="15" />
+      <circle cx="93" cy="69" r="14" />
+    </g>
+
+    <path d="M80 70V96" fill="none" stroke="#e7b56a" stroke-width="7" stroke-linecap="round" />
+    <path d="M80 96V108" fill="none" stroke="#e7b56a" stroke-width="6" stroke-linecap="round" />
+
+    <path d="M56 116H70" fill="none" stroke="#8cb8ff" stroke-width="5" stroke-linecap="round" />
+    <path d="M90 116H104" fill="none" stroke="#8cb8ff" stroke-width="5" stroke-linecap="round" />
+    <path d="M80 108V124" fill="none" stroke="#8cb8ff" stroke-width="5" stroke-linecap="round" />
+    <path d="M80 108L63 116" fill="none" stroke="#8cb8ff" stroke-width="5" stroke-linecap="round" />
+    <path d="M80 108L97 116" fill="none" stroke="#8cb8ff" stroke-width="5" stroke-linecap="round" />
+    <circle cx="56" cy="116" r="4.5" fill="#f5efe2" />
+    <circle cx="104" cy="116" r="4.5" fill="#f5efe2" />
+    <circle cx="80" cy="126" r="4.5" fill="#f5efe2" />
+
+    <path d="M36 95C47 89 59 87 71 89C83 91 95 97 107 98C117 99 126 96 132 90" fill="none" stroke="#f1c274" stroke-width="6" stroke-linecap="round" />
+  </g>
+</svg>

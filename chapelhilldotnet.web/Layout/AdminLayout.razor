@@ -1,0 +1,30 @@
+@inherits LayoutComponentBase
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<div class="admin-shell">
+    <header class="admin-header-wrap" role="banner">
+        <div class="admin-header">
+            <div class="admin-header__inner">
+                <a class="site-brand" href="/admin/events">
+                    <span class="site-brand__mark" aria-hidden="true">
+                        <img src="images/branding/chapel-hill-dotnet-mark.svg" alt="" />
+                    </span>
+                    <span class="site-brand__text">
+                        <span class="site-brand__eyebrow">Admin workspace</span>
+                        <span class="site-brand__name">Chapel Hill .NET</span>
+                    </span>
+                </a>
+
+                <div class="admin-header__actions">
+                    <a class="site-button site-button--secondary" href="/">Public site</a>
+                    <DarkModeToggle />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main" class="admin-main">
+        @Body
+    </main>
+</div>

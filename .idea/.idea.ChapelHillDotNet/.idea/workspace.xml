@@ -14,11 +14,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdf700c5-8c03-441f-be82-f71e49ca7efa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Models/Feature.cs" beforeDir="false" />
-    </list>
+    <list default="true" id="cdf700c5-8c03-441f-be82-f71e49ca7efa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1766071727696</updated>
       <workItem from="1766071730563" duration="2975000" />
-      <workItem from="1777057224999" duration="1669000" />
+      <workItem from="1777057224999" duration="2378000" />
     </task>
     <task id="LOCAL-00001" summary="Add project configuration files and refine admin panel UI with enhanced styles">
       <option name="closed" value="true" />
@@ -167,7 +163,55 @@
       <option name="project" value="LOCAL" />
       <updated>1777057997110</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Remove unused `Feature` model, adjust component attributes, and refine private fields in `NavMenu.razor`.">
+      <option name="closed" value="true" />
+      <created>1777058908830</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777058908830</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor E2E tests: remove unused imports, improve code formatting, and enhance readability across Navigation, Footer, EventsPage, and DarkMode tests.">
+      <option name="closed" value="true" />
+      <created>1777058961879</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777058961879</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Remove unused `Xunit` imports and update summary comments for accessibility test classes.">
+      <option name="closed" value="true" />
+      <created>1777059043536</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059043536</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Remove unused `Xunit` imports across test classes and clean up whitespace formatting.">
+      <option name="closed" value="true" />
+      <created>1777059103529</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059103529</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Remove redundant variable assignment in `GeneralAccessibilityTests`.">
+      <option name="closed" value="true" />
+      <created>1777059134861</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059134861</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update `aria-expanded` logic in `NavMenu.razor` and modify user settings file with updated test session state">
+      <option name="closed" value="true" />
+      <created>1777059591692</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059591692</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +224,13 @@
     <MESSAGE value="Add project configuration files and refine admin panel UI with enhanced styles" />
     <MESSAGE value="Add .idea project metadata file for ChapelHillDotNet" />
     <MESSAGE value="Add .idea project configuration file for ChapelHillDotNet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .idea project configuration file for ChapelHillDotNet" />
+    <MESSAGE value="Remove unused `Feature` model, adjust component attributes, and refine private fields in `NavMenu.razor`." />
+    <MESSAGE value="Refactor E2E tests: remove unused imports, improve code formatting, and enhance readability across Navigation, Footer, EventsPage, and DarkMode tests." />
+    <MESSAGE value="Remove unused `Xunit` imports and update summary comments for accessibility test classes." />
+    <MESSAGE value="Remove unused `Xunit` imports across test classes and clean up whitespace formatting." />
+    <MESSAGE value="Remove redundant variable assignment in `GeneralAccessibilityTests`." />
+    <MESSAGE value="Update `aria-expanded` logic in `NavMenu.razor` and modify user settings file with updated test session state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update `aria-expanded` logic in `NavMenu.razor` and modify user settings file with updated test session state" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

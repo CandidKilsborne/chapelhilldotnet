@@ -168,9 +168,7 @@ public class OrganizerCardAccessibilityTests : TestContext
             Name = "John Doe",
             Bio = "Software Engineer",
             ImageUrl = "https://example.com/image.jpg",
-            TwitterUrl = "https://twitter.com/johndoe",
-            LinkedInUrl = "https://linkedin.com/in/johndoe",
-            GitHubUrl = "https://github.com/johndoe"
+            LinkedInUrl = "https://linkedin.com/in/johndoe"
         };
 
         // Act

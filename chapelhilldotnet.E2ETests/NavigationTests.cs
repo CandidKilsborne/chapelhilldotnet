@@ -60,7 +60,7 @@ public class NavigationTests : PageTest
         await Page.GotoAsync(BaseUrl);
 
         // Check for the text or logo in the header
-        var headerText = await Page.Locator("header").TextContentAsync();
+        var headerText = await Page.Locator("header[role='banner']").TextContentAsync();
         Assert.That(headerText, Does.Contain("Chapel Hill").Or.Contain(".NET"));
     }
 }

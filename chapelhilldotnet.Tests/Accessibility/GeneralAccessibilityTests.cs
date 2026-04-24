@@ -115,7 +115,7 @@ public class GeneralAccessibilityTests : TestContext
         var cut = RenderComponent<Events>();
 
         // Assert
-        var table = cut.Find("table");
+        cut.Find("table");
         var caption = cut.Find("caption");
         Assert.NotNull(caption);
     }

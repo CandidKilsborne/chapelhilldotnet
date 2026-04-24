@@ -1,11 +1,10 @@
 using Bunit;
 using chapelhilldotnet.web.Layout;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Accessibility;
 
 /// <summary>
-/// Accessibility tests for NavMenu component to ensure WCAG 2.1 AA compliance
+/// Accessibility tests for the NavMenu component to ensure WCAG 2.1 AA compliance
 /// </summary>
 public class NavMenuAccessibilityTests : TestContext
 {

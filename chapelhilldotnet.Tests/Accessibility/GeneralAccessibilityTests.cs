@@ -1,7 +1,5 @@
 using Bunit;
 using chapelhilldotnet.web.Pages;
-using Microsoft.JSInterop;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Accessibility;
 
@@ -253,6 +251,7 @@ public class GeneralAccessibilityTests : TestContext
             count++;
             index += pattern.Length;
         }
+
         return count;
     }
 }

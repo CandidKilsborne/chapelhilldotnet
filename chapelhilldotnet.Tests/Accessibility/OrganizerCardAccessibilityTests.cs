@@ -1,12 +1,11 @@
 using Bunit;
 using chapelhilldotnet.web.Components;
 using chapelhilldotnet.web.Models;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Accessibility;
 
 /// <summary>
-/// Accessibility tests for OrganizerCard component to ensure WCAG 2.1 AA compliance
+/// Accessibility tests for the OrganizerCard component to ensure WCAG 2.1 AA compliance
 /// </summary>
 public class OrganizerCardAccessibilityTests : TestContext
 {

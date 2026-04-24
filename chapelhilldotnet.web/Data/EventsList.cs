@@ -1,4 +1,5 @@
-﻿using chapelhilldotnet.web.Models;
+﻿using System.Runtime.InteropServices;
+using chapelhilldotnet.web.Models;
 
 namespace chapelhilldotnet.web.Data;
 
@@ -8,26 +9,35 @@ public static class EventsList
     [
         new()
         {
-            Title = "Coffee & Coworking",
-            Description = "Meet other developers and learn about the latest .NET and Azure technologies.",
-            Date = DateTime.Now.AddDays(7),
-            Location = "TBD"
+            Id = 1,
+            Title = "Coffee and Coworking for .NET Builders",
+            Description = "A lower-pressure morning session for swapping notes, getting unstuck, and meeting other local developers.",
+            Date = new DateTime(2026, 4, 24),
+            Location = "La Vita Dolce",
+            Time = "8:30 AM - 10:30 AM",
+            Attendees = 16
         },
 
         new()
         {
-            Title = "Coffee & Coworking",
-            Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
-            Date = DateTime.Now.AddDays(14),
-            Location = "TBD"
+            Id = 2,
+            Title = "Building Blazor Interfaces That Feel Fast",
+            Description = "A practical evening session on component structure, perceived performance, and interface polish in Blazor apps.",
+            Date = new DateTime(2026, 5, 12),
+            Location = "Online session",
+            Time = "4:00 PM - 5:00 PM",
+            Attendees = 30
         },
 
         new()
         {
-            Title = "Coffee & Coworking",
-            Description = "Join us for an exciting discussion on the latest .NET and Azure technologies.",
-            Date = DateTime.Now.AddDays(21),
-            Location = "TBD"
+            Id = 3,
+            Title = "Azure Operations Office Hours",
+            Description = "Bring your deployment, diagnostics, or platform questions and work through them with other engineers.",
+            Date = new DateTime(2026, 6, 5),
+            Location = "Online session",
+            Time = "7:30 PM - 8:30 PM",
+            Attendees = 24
         }
     ];
 }

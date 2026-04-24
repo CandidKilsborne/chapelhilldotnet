@@ -1,12 +1,208 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+@inject NavigationManager Navigation
+
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
-        <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+        <PageTitle>@(IsAdminNotFound ? "Admin Page Not Found | Chapel Hill .NET" : "Page Not Found | Chapel Hill .NET")</PageTitle>
+        <LayoutView Layout="@NotFoundLayout">
+            @if (IsAdminNotFound)
+            {
+                <div class="admin-page">
+                    <section class="page-hero">
+                        <div class="hero-card hero-card--admin">
+                            <div class="hero-card__grid">
+                                <div class="hero-card__content">
+                                    <span class="eyebrow eyebrow--light">404 | Admin page not found</span>
+                                    <h1 class="hero-card__title">That admin page does not exist.</h1>
+                                    <p class="hero-card__lede">
+                                        The URL you opened is not a current admin route. Head back to the event workspace,
+                                        sign in again, or return to the public site.
+                                    </p>
+
+                                    <div class="hero-card__actions">
+                                        <a href="/admin/events" class="site-button site-button--hero">Open event workspace</a>
+                                        <a href="/admin/login" class="site-button site-button--ghost">Go to admin login</a>
+                                    </div>
+                                </div>
+
+                                <aside class="hero-spotlight" aria-label="Admin recovery options">
+                                    <p class="hero-spotlight__label">Try these routes</p>
+                                    <h2>Start with the admin pages people use most.</h2>
+                                    <ul class="hero-spotlight__list">
+                                        <li>The event list for reviewing and editing the calendar.</li>
+                                        <li>The login screen if your session expired or you opened an old link.</li>
+                                        <li>The public site if you were trying to get back to the meetup pages.</li>
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="page-section">
+                        <div class="page-shell">
+                            <div class="section-heading">
+                                <div class="section-heading__content">
+                                    <span class="eyebrow">Where to go next</span>
+                                    <h2 class="section-title">Jump back into a valid route.</h2>
+                                    <p class="section-lede">
+                                        These links cover the most common recovery paths when an admin URL is outdated or mistyped.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="topic-grid">
+                                <article class="section-card archive-card">
+                                    <span class="archive-card__date">Admin</span>
+                                    <h3>Events workspace</h3>
+                                    <p class="story-copy">
+                                        Review the calendar, update event details, or create a new meetup entry.
+                                    </p>
+                                    <a href="/admin/events" class="site-button site-button--secondary">Open events</a>
+                                </article>
+
+                                <article class="section-card archive-card">
+                                    <span class="archive-card__date">Access</span>
+                                    <h3>Admin login</h3>
+                                    <p class="story-copy">
+                                        Return to the login screen if you need to start a fresh admin session.
+                                    </p>
+                                    <a href="/admin/login" class="site-button site-button--secondary">Open login</a>
+                                </article>
+
+                                <article class="section-card archive-card">
+                                    <span class="archive-card__date">Public site</span>
+                                    <h3>Chapel Hill .NET homepage</h3>
+                                    <p class="story-copy">
+                                        Go back to the main community site for events, organizers, and group information.
+                                    </p>
+                                    <a href="/" class="site-button site-button--secondary">Back to home</a>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            }
+            else
+            {
+                <section class="page-hero">
+                    <div class="hero-card hero-card--about">
+                        <div class="hero-card__grid">
+                            <div class="hero-card__content">
+                                <span class="eyebrow eyebrow--light">404 | Page not found</span>
+                                <h1 class="hero-card__title">That page is not on the meetup map.</h1>
+                                <p class="hero-card__lede">
+                                    The address you opened does not match a current page on the Chapel Hill .NET site.
+                                    Start with the homepage, see the next event, or jump to one of the main sections below.
+                                </p>
+
+                                <div class="hero-card__actions">
+                                    <a href="/" class="site-button site-button--hero">Go home</a>
+                                    <a href="/events" class="site-button site-button--ghost">See upcoming events</a>
+                                </div>
+                            </div>
+
+                            <aside class="hero-spotlight" aria-label="Suggested pages">
+                                <p class="hero-spotlight__label">Try one of these</p>
+                                <h2>Start with the pages people usually need.</h2>
+                                <ul class="hero-spotlight__list">
+                                    <li>Upcoming meetup sessions and schedule details.</li>
+                                    <li>About information for the group and what it covers.</li>
+                                    <li>Organizer profiles if you want to speak, help, or get involved.</li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page-section">
+                    <div class="page-shell">
+                        <div class="section-heading">
+                            <div class="section-heading__content">
+                                <span class="eyebrow">Useful routes</span>
+                                <h2 class="section-title">The main places to continue from here.</h2>
+                                <p class="section-lede">
+                                    If you followed an old link or typed the URL by hand, these pages are the best places to restart.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="topic-grid">
+                            <article class="section-card archive-card">
+                                <span class="archive-card__date">Start here</span>
+                                <h3>Homepage</h3>
+                                <p class="story-copy">
+                                    Get the main overview of the community, the next meetup, and what the group covers.
+                                </p>
+                                <a href="/" class="site-button site-button--secondary">Open home</a>
+                            </article>
+
+                            <article class="section-card archive-card">
+                                <span class="archive-card__date">Calendar</span>
+                                <h3>Events</h3>
+                                <p class="story-copy">
+                                    See what is coming up next and review the recent archive of meetup sessions.
+                                </p>
+                                <a href="/events" class="site-button site-button--secondary">Open events</a>
+                            </article>
+
+                            <article class="section-card archive-card">
+                                <span class="archive-card__date">Community</span>
+                                <h3>About</h3>
+                                <p class="story-copy">
+                                    Learn how the group works, what it focuses on, and the tone it aims to create.
+                                </p>
+                                <a href="/about" class="site-button site-button--secondary">Open about</a>
+                            </article>
+
+                            <article class="section-card archive-card">
+                                <span class="archive-card__date">People</span>
+                                <h3>Organizers</h3>
+                                <p class="story-copy">
+                                    Meet the people behind the meetup and find the right place to start a conversation.
+                                </p>
+                                <a href="/organizers" class="site-button site-button--secondary">Open organizers</a>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page-section page-section--compressed">
+                    <div class="page-shell page-shell--compact">
+                        <div class="cta-panel">
+                            <div>
+                                <span class="eyebrow">Still looking?</span>
+                                <h2 class="section-title">If this came from an old bookmark, the current site navigation should get you back on track.</h2>
+                                <p class="section-lede">
+                                    Use the header links above, or head to the event page if you are looking for the next meetup.
+                                </p>
+                            </div>
+
+                            <div class="cta-panel__actions">
+                                <a href="/events" class="site-button site-button--primary">View events</a>
+                                <a href="/about" class="site-button site-button--secondary">Learn about the group</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            }
         </LayoutView>
     </NotFound>
 </Router>
+
+@code {
+    private Type NotFoundLayout => IsAdminNotFound ? typeof(AdminLayout) : typeof(MainLayout);
+
+    private bool IsAdminNotFound
+    {
+        get
+        {
+            var relativePath = Navigation.ToBaseRelativePath(Navigation.Uri);
+
+            return relativePath.Equals("admin", StringComparison.OrdinalIgnoreCase)
+                || relativePath.StartsWith("admin/", StringComparison.OrdinalIgnoreCase);
+        }
+    }
+}

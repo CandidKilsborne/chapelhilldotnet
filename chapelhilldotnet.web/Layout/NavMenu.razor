@@ -1,53 +1,57 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ChapelHillDotNet</a>
-        <button class="navbar-toggler"
-                @onclick="ToggleNavMenu"
-                type="button"
-                aria-label="Toggle navigation menu"
-                aria-expanded="@(_collapseNavMenu ? "false" : "true")"
-                aria-controls="main-navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<header class="site-header-wrap" role="banner">
+    <div class="site-header">
+        <div class="site-header__inner">
+            <a class="site-brand" href="/">
+                <span class="site-brand__mark" aria-hidden="true">
+                    <img src="images/branding/chapel-hill-dotnet-mark.svg" alt="" />
+                </span>
+                <span class="site-brand__text">
+                    <span class="site-brand__eyebrow">Chapel Hill, NC</span>
+                    <span class="site-brand__name">Chapel Hill .NET</span>
+                </span>
+            </a>
+
+            <button class="site-nav-toggle"
+                    @onclick="ToggleNavMenu"
+                    type="button"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="@(!collapseNavMenu)"
+                    aria-controls="main-navigation">
+                <span class="site-nav-toggle__bar"></span>
+                <span class="site-nav-toggle__bar"></span>
+                <span class="site-nav-toggle__bar"></span>
+            </button>
+
+            <div class="@NavMenuCssClass" id="main-navigation">
+                <nav class="site-nav" aria-label="Main navigation">
+                    <NavLink class="site-nav__link" href="" Match="NavLinkMatch.All" @onclick="CloseNavMenu">Home</NavLink>
+                    <NavLink class="site-nav__link" href="events" @onclick="CloseNavMenu">Events</NavLink>
+                    <NavLink class="site-nav__link" href="about" @onclick="CloseNavMenu">About</NavLink>
+                    <NavLink class="site-nav__link" href="organizers" @onclick="CloseNavMenu">Organizers</NavLink>
+                    <NavLink class="site-nav__link site-nav__link--admin" href="admin/events" @onclick="CloseNavMenu">Admin</NavLink>
+                </nav>
+
+                <div class="site-header__actions">
+                    <DarkModeToggle />
+                    <a class="site-button site-button--primary" href="events" @onclick="CloseNavMenu">Attend a Meetup</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="@NavMenuCssClass" id="main-navigation">
-    <nav class="nav flex-column" aria-label="Main navigation">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="events">
-                <span class="bi bi-calendar-event" aria-hidden="true"></span> Events
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="about">
-                <span class="bi bi-info-circle" aria-hidden="true"></span> About
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3 mt-4 border-t border-secondary">
-            <NavLink class="nav-link" href="admin/events">
-                <span class="bi bi-gear" aria-hidden="true"></span> Admin
-            </NavLink>
-        </div>
-    </nav>
-</div>
+</header>
 
 @code {
-    private bool _collapseNavMenu = true;
+    private bool collapseNavMenu = true;
 
-    private string NavMenuCssClass => _collapseNavMenu ? "nav-scrollable collapse" : "nav-scrollable";
+    private string NavMenuCssClass => collapseNavMenu ? "site-header__menu" : "site-header__menu is-open";
 
     private void ToggleNavMenu()
     {
-        _collapseNavMenu = !_collapseNavMenu;
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void CloseNavMenu()
+    {
+        collapseNavMenu = true;
     }
 }
-

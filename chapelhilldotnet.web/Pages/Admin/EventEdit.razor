@@ -1,143 +1,151 @@
 @page "/admin/events/new"
 @page "/admin/events/edit/{EventId:int}"
+@layout AdminLayout
 @inject IEventService EventService
 @inject IAuthenticationService AuthService
 @inject NavigationManager Navigation
 
-<div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-    <!-- Admin Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-sm">
-        <div class="container mx-auto px-4 py-4">
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
-                @(EventId.HasValue ? "Edit Event" : "New Event")
-            </h1>
-        </div>
-    </header>
+<PageTitle>@(EventId.HasValue ? "Edit Event" : "New Event") | Chapel Hill .NET Admin</PageTitle>
 
-    <main class="container mx-auto px-4 py-8 max-w-3xl">
-        @if (_isLoading)
-        {
-            <div class="text-center py-12">
-                <p class="text-gray-600 dark:text-gray-400">Loading...</p>
-            </div>
-        }
-        else
-        {
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <EditForm Model="@_eventModel" OnValidSubmit="@HandleSubmit" FormName="eventForm">
-                    <DataAnnotationsValidator />
-                    
-                    @if (!string.IsNullOrEmpty(_errorMessage))
-                    {
-                        <div class="mb-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-md" role="alert">
-                            @_errorMessage
-                        </div>
-                    }
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Title <span class="text-red-500">*</span>
-                            </label>
-                            <InputText 
-                                id="title" 
-                                @bind-Value="_eventModel.Title" 
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                                placeholder="Event title"
-                                aria-required="true" />
-                            <ValidationMessage For="@(() => _eventModel.Title)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                        </div>
+<div class="admin-page">
+    <section class="page-hero">
+        <div class="hero-card hero-card--admin">
+            <div class="hero-card__grid">
+                <div class="hero-card__content">
+                    <span class="eyebrow eyebrow--light">Event editor</span>
+                    <h1 class="hero-card__title">@(EventId.HasValue ? "Refine an existing meetup entry." : "Create the next event in the calendar.")</h1>
+                    <p class="hero-card__lede">
+                        Keep the public site current with clear titles, accurate logistics, and descriptions that help people decide to attend.
+                    </p>
 
-                        <div>
-                            <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Description
-                            </label>
-                            <InputTextArea 
-                                id="description" 
-                                @bind-Value="_eventModel.Description" 
-                                rows="4"
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                                placeholder="Event description" />
-                            <ValidationMessage For="@(() => _eventModel.Description)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="date" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    Date <span class="text-red-500">*</span>
-                                </label>
-                                <InputDate 
-                                    id="date" 
-                                    @bind-Value="_eventModel.Date" 
-                                    class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                                    aria-required="true" />
-                                <ValidationMessage For="@(() => _eventModel.Date)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                            </div>
-
-                            <div>
-                                <label for="time" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                    Time
-                                </label>
-                                <InputText 
-                                    id="time" 
-                                    @bind-Value="_eventModel.Time" 
-                                    class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                                    placeholder="6:00 PM - 8:00 PM" />
-                                <ValidationMessage For="@(() => _eventModel.Time)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="location" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Location <span class="text-red-500">*</span>
-                            </label>
-                            <InputText 
-                                id="location" 
-                                @bind-Value="_eventModel.Location" 
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                                placeholder="Event location"
-                                aria-required="true" />
-                            <ValidationMessage For="@(() => _eventModel.Location)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                        </div>
-
-                        <div>
-                            <label for="attendees" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Expected Attendees
-                            </label>
-                            <InputNumber 
-                                id="attendees" 
-                                @bind-Value="_eventModel.Attendees" 
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-                                placeholder="0" />
-                            <ValidationMessage For="@(() => _eventModel.Attendees)" class="text-red-600 dark:text-red-400 text-sm mt-1" />
-                        </div>
-
-                        <div class="flex justify-between items-center pt-6 border-t border-gray-200 dark:border-gray-700">
-                            <a 
-                                href="/admin/events" 
-                                class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md">
-                                Cancel
-                            </a>
-                            <button 
-                                type="submit" 
-                                class="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md disabled:opacity-50"
-                                disabled="@_isSaving"
-                                aria-label="@(EventId.HasValue ? "Update event" : "Create event")">
-                                @if (_isSaving)
-                                {
-                                    <span>Saving...</span>
-                                }
-                                else
-                                {
-                                    <span>@(EventId.HasValue ? "Update Event" : "Create Event")</span>
-                                }
-                            </button>
-                        </div>
+                    <div class="hero-card__actions">
+                        <a href="/admin/events" class="site-button site-button--hero">Back to events</a>
                     </div>
-                </EditForm>
+                </div>
+
+                <aside class="hero-spotlight" aria-label="Editing guidance">
+                    <p class="hero-spotlight__label">Editing checklist</p>
+                    <h2>Make the public event card easy to scan.</h2>
+                    <ul class="hero-spotlight__list">
+                        <li>Lead with a clear, specific title.</li>
+                        <li>Use descriptions that explain the value of attending.</li>
+                        <li>Double-check the date, time, and location before saving.</li>
+                    </ul>
+                </aside>
             </div>
-        }
-    </main>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="page-shell page-shell--compact">
+            @if (_isLoading)
+            {
+                <div class="section-card admin-empty">
+                    <h2>Loading event editor...</h2>
+                    <p class="story-copy">Preparing the form and current event data.</p>
+                </div>
+            }
+            else
+            {
+                <div class="admin-form-card admin-form-card--editor">
+                    <div class="admin-form-card__header">
+                        <span class="eyebrow">Event details</span>
+                        <h2>@(EventId.HasValue ? "Edit event" : "New event")</h2>
+                        <p>These fields control how the meetup appears in the public event list.</p>
+                    </div>
+
+                    <EditForm Model="@_eventModel" OnValidSubmit="@HandleSubmit" FormName="eventForm">
+                        <DataAnnotationsValidator />
+
+                        @if (!string.IsNullOrEmpty(_errorMessage))
+                        {
+                            <div class="admin-alert admin-alert--error" role="alert">
+                                @_errorMessage
+                            </div>
+                        }
+
+                        <div class="admin-form-grid">
+                            <div class="admin-field">
+                                <label for="title" class="admin-label">Title <span class="admin-required">*</span></label>
+                                <InputText id="title"
+                                           @bind-Value="_eventModel.Title"
+                                           class="admin-input"
+                                           placeholder="Event title"
+                                           aria-required="true" />
+                                <ValidationMessage For="@(() => _eventModel.Title)" class="validation-message" />
+                            </div>
+
+                            <div class="admin-field">
+                                <label for="description" class="admin-label">Description</label>
+                                <InputTextArea id="description"
+                                               @bind-Value="_eventModel.Description"
+                                               rows="5"
+                                               class="admin-input admin-input--textarea"
+                                               placeholder="Describe what people will learn or discuss." />
+                                <ValidationMessage For="@(() => _eventModel.Description)" class="validation-message" />
+                            </div>
+
+                            <div class="admin-form-grid admin-form-grid--split">
+                                <div class="admin-field">
+                                    <label for="date" class="admin-label">Date <span class="admin-required">*</span></label>
+                                    <InputDate id="date"
+                                               @bind-Value="_eventModel.Date"
+                                               class="admin-input"
+                                               aria-required="true" />
+                                    <ValidationMessage For="@(() => _eventModel.Date)" class="validation-message" />
+                                </div>
+
+                                <div class="admin-field">
+                                    <label for="time" class="admin-label">Time</label>
+                                    <InputText id="time"
+                                               @bind-Value="_eventModel.Time"
+                                               class="admin-input"
+                                               placeholder="6:00 PM - 8:00 PM" />
+                                    <ValidationMessage For="@(() => _eventModel.Time)" class="validation-message" />
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label for="location" class="admin-label">Location <span class="admin-required">*</span></label>
+                                <InputText id="location"
+                                           @bind-Value="_eventModel.Location"
+                                           class="admin-input"
+                                           placeholder="Event location"
+                                           aria-required="true" />
+                                <ValidationMessage For="@(() => _eventModel.Location)" class="validation-message" />
+                            </div>
+
+                            <div class="admin-field">
+                                <label for="attendees" class="admin-label">Expected attendees</label>
+                                <InputNumber id="attendees"
+                                             @bind-Value="_eventModel.Attendees"
+                                             class="admin-input"
+                                             placeholder="0" />
+                                <ValidationMessage For="@(() => _eventModel.Attendees)" class="validation-message" />
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <a href="/admin/events" class="site-button site-button--secondary">Cancel</a>
+                                <button type="submit"
+                                        class="site-button site-button--primary"
+                                        disabled="@_isSaving"
+                                        aria-label="@(EventId.HasValue ? "Update event" : "Create event")">
+                                    @if (_isSaving)
+                                    {
+                                        <span>Saving...</span>
+                                    }
+                                    else
+                                    {
+                                        <span>@(EventId.HasValue ? "Update event" : "Create event")</span>
+                                    }
+                                </button>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
+            }
+        </div>
+    </section>
 </div>
 
 @code {
@@ -151,7 +159,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Check authentication
         var isAuthenticated = await AuthService.IsAuthenticatedAsync();
         if (!isAuthenticated)
         {
@@ -183,7 +190,6 @@
         }
         else
         {
-            // Set default date to today
             _eventModel.Date = DateTime.Today;
         }
 

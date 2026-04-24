@@ -1,41 +1,41 @@
-﻿<article class="organizer-card bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl p-6 m-2 text-center transition-all duration-300 hover:-translate-y-1">
-    <img src="@Organizer.ImageUrl" alt="@Organizer.Name" class="w-24 h-24 rounded-full mx-auto mb-4 ring-4 ring-gray-200 dark:ring-gray-600"/>
-    <h3 class="text-xl font-semibold mb-2 dark:text-white">@Organizer.Name</h3>
-    <p class="text-gray-600 dark:text-gray-300 mb-4">@Organizer.Bio</p>
-    <nav class="flex justify-center space-x-4" aria-label="@Organizer.Name's social media profiles">
-        @if (!string.IsNullOrEmpty(Organizer.TwitterUrl))
-        {
-            <a href="@Organizer.TwitterUrl"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-               aria-label="@Organizer.Name on Twitter">
-                @* <TwitterIcon /> *@
-            </a>
-        }
-        @if (!string.IsNullOrEmpty(Organizer.LinkedInUrl))
-        {
-            <a href="@Organizer.LinkedInUrl"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-               aria-label="@Organizer.Name on LinkedIn">
-                <Blazicon Svg="Lucide.Linkedin" aria-hidden="true"/>
-            </a>
-        }
-        @if (!string.IsNullOrEmpty(Organizer.GitHubUrl))
-        {
-            <a href="@Organizer.GitHubUrl"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-               aria-label="@Organizer.Name on GitHub">
-                <Blazicon Svg="Lucide.Github" aria-hidden="true"/>
-            </a>
-        }
-    </nav>
+<article class="community-card organizer-card">
+    <div class="organizer-card__media">
+        <img src="@Organizer.ImageUrl" alt="@Organizer.Name" class="organizer-card__image" />
+    </div>
+
+    <div class="organizer-card__body">
+        <h3 class="organizer-card__name">@Organizer.Name</h3>
+        <p class="organizer-card__bio">@Organizer.Bio</p>
+
+        <nav class="organizer-card__links" aria-label="@Organizer.Name's social media profiles">
+            @if (HasLink(Organizer.LinkedInUrl))
+            {
+                <a href="@Organizer.LinkedInUrl"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="organizer-card__link"
+                   aria-label="@Organizer.Name on LinkedIn">
+                    <Blazicon Svg="Lucide.Linkedin" aria-hidden="true" />
+                </a>
+            }
+
+            @if (HasLink(Organizer.GitHubUrl))
+            {
+                <a href="@Organizer.GitHubUrl"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="organizer-card__link"
+                   aria-label="@Organizer.Name on GitHub">
+                    <Blazicon Svg="Lucide.Github" aria-hidden="true" />
+                </a>
+            }
+        </nav>
+    </div>
 </article>
 
 @code {
     [Parameter] public required Organizer Organizer { get; set; }
+
+    private static bool HasLink(string? url) =>
+        !string.IsNullOrWhiteSpace(url) && !string.Equals(url, "#", StringComparison.Ordinal);
 }

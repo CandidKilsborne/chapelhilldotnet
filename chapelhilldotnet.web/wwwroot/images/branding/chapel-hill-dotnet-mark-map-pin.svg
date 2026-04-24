@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Chapel Hill .NET map pin logo</title>
+  <desc id="desc">A map-pin logo featuring contour lines, a hill horizon, and code brackets to emphasize local meetups.</desc>
+  <defs>
+    <linearGradient id="pin-fill" x1="46" y1="24" x2="116" y2="134" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4e9d" />
+      <stop offset="0.48" stop-color="#2453a6" />
+      <stop offset="1" stop-color="#0b766a" />
+    </linearGradient>
+    <radialGradient id="pin-glow" cx="0" cy="0" r="1" gradientTransform="translate(80 130) rotate(90) scale(18 34)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2453a6" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#2453a6" stop-opacity="0" />
+    </radialGradient>
+    <filter id="pin-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#102444" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <ellipse cx="80" cy="130" rx="30" ry="14" fill="url(#pin-glow)" />
+
+  <g filter="url(#pin-shadow)">
+    <path d="M80 18C111 18 134 41 134 72C134 101 112 119 88 143C84 147 80 151 80 151C80 151 76 147 72 143C48 119 26 101 26 72C26 41 49 18 80 18Z" fill="url(#pin-fill)" />
+    <path d="M80 30C103 30 120 47 120 69C120 91 103 108 80 108C57 108 40 91 40 69C40 47 57 30 80 30Z" fill="#f8fbff" />
+    <path d="M80 18C111 18 134 41 134 72C134 101 112 119 88 143C84 147 80 151 80 151C80 151 76 147 72 143C48 119 26 101 26 72C26 41 49 18 80 18Z" fill="none" stroke="#ffffff" stroke-opacity="0.2" />
+
+    <g fill="none" stroke="#2453a6" stroke-opacity="0.16" stroke-width="2">
+      <path d="M48 58C58 50 70 47 82 49C93 51 104 49 112 44" />
+      <path d="M46 69C57 60 71 57 84 59C96 61 108 58 114 53" />
+      <path d="M48 80C61 71 73 68 86 70C97 72 106 70 112 66" />
+    </g>
+
+    <path d="M59 84C65 78 72 76 80 78C87 80 94 86 101 86C106 86 111 84 114 81" fill="none" stroke="#c97d2c" stroke-width="5" stroke-linecap="round" />
+    <path d="M69 56L59 69L69 82" fill="none" stroke="#0b766a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M91 56L101 69L91 82" fill="none" stroke="#0b766a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="80" cy="79" r="6" fill="#e5b264" />
+  </g>
+</svg>

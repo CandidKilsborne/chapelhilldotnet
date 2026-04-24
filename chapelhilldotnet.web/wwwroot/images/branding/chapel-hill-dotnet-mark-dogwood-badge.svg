@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Chapel Hill .NET dogwood badge logo</title>
+  <desc id="desc">A circular badge logo with a dogwood flower, code brackets, and warm North Carolina-inspired colors.</desc>
+  <defs>
+    <linearGradient id="badge-ring" x1="28" y1="28" x2="132" y2="132" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4e9d" />
+      <stop offset="0.55" stop-color="#2453a6" />
+      <stop offset="1" stop-color="#0b766a" />
+    </linearGradient>
+    <radialGradient id="badge-center" cx="0" cy="0" r="1" gradientTransform="translate(80 78) rotate(90) scale(56)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16376e" />
+      <stop offset="1" stop-color="#0d274d" />
+    </radialGradient>
+    <filter id="badge-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#102444" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#badge-shadow)">
+    <circle cx="80" cy="80" r="64" fill="url(#badge-ring)" />
+    <circle cx="80" cy="80" r="55" fill="url(#badge-center)" />
+    <circle cx="80" cy="80" r="63" fill="none" stroke="#ffffff" stroke-opacity="0.24" />
+    <circle cx="80" cy="80" r="48" fill="none" stroke="#ffffff" stroke-opacity="0.1" />
+
+    <path d="M58 63L45 80L58 97" fill="none" stroke="#8cb8ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M102 63L115 80L102 97" fill="none" stroke="#8cb8ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+    <g transform="translate(80 80)">
+      <path d="M0-23C-7-32-18-32-21-22C-24-11-16-3 0 5C16-3 24-11 21-22C18-32 7-32 0-23Z" fill="#fff9ee" />
+      <path d="M23 0C32-7 32-18 22-21C11-24 3-16-5 0C3 16 11 24 22 21C32 18 32 7 23 0Z" fill="#fff9ee" />
+      <path d="M0 23C7 32 18 32 21 22C24 11 16 3 0-5C-16 3-24 11-21 22C-18 32-7 32 0 23Z" fill="#fff9ee" />
+      <path d="M-23 0C-32 7-32 18-22 21C-11 24-3 16 5 0C-3-16-11-24-22-21C-32-18-32-7-23 0Z" fill="#fff9ee" />
+      <circle cx="0" cy="0" r="8" fill="#e5b264" />
+      <circle cx="0" cy="0" r="2.5" fill="#fff6e6" />
+    </g>
+
+    <path d="M48 113C57 105 67 102 77 104C85 106 92 112 101 113C108 114 115 111 121 105" fill="none" stroke="#f1c274" stroke-width="5" stroke-linecap="round" />
+  </g>
+</svg>

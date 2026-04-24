@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Chapel Hill .NET arch logo</title>
+  <desc id="desc">A logo using an archway, sunrise, and hillside path to suggest Chapel Hill in a more architectural way.</desc>
+  <defs>
+    <linearGradient id="arch-bg" x1="24" y1="18" x2="138" y2="144" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#15356b" />
+      <stop offset="0.52" stop-color="#2453a6" />
+      <stop offset="1" stop-color="#0b766a" />
+    </linearGradient>
+    <linearGradient id="arch-path" x1="80" y1="98" x2="80" y2="132" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe7ba" />
+      <stop offset="1" stop-color="#efb356" />
+    </linearGradient>
+    <filter id="arch-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#102444" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#arch-shadow)">
+    <rect x="12" y="12" width="136" height="136" rx="34" fill="url(#arch-bg)" />
+    <rect x="12.75" y="12.75" width="134.5" height="134.5" rx="33.25" fill="none" stroke="#ffffff" stroke-opacity="0.22" />
+
+    <path d="M80 30C98 30 112 44 112 62V112H48V62C48 44 62 30 80 30Z" fill="#f8fbff" />
+    <path d="M80 39C93 39 103 49 103 62V103H57V62C57 49 67 39 80 39Z" fill="#194072" />
+
+    <circle cx="80" cy="58" r="11" fill="#efb356" />
+    <circle cx="80" cy="58" r="18" fill="#efb356" opacity="0.16" />
+
+    <path d="M67 49L59 60L67 71" fill="none" stroke="#8cb8ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M93 49L101 60L93 71" fill="none" stroke="#8cb8ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <path d="M46 112C59 100 71 95 84 98C94 100 102 107 113 108C122 109 130 106 136 99" fill="none" stroke="#f1c274" stroke-width="7" stroke-linecap="round" />
+    <path d="M80 79C73 88 69 98 67 112H93C91 98 87 88 80 79Z" fill="url(#arch-path)" />
+
+    <path d="M38 124H122" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" />
+  </g>
+</svg>

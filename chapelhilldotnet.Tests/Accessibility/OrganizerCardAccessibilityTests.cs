@@ -19,7 +19,9 @@ public class OrganizerCardAccessibilityTests : TestContext
             Name = "John Doe",
             Bio = "Software Engineer",
             ImageUrl = "https://example.com/image.jpg",
-            TwitterUrl = "https://twitter.com/johndoe"
+            TwitterUrl = "https://twitter.com/johndoe",
+            LinkedInUrl = "https://linkedin.com/in/johndoe",
+            GitHubUrl = "https://github.com/johndoe"
         };
 
         // Act
@@ -40,7 +42,10 @@ public class OrganizerCardAccessibilityTests : TestContext
             Id = 1,
             Name = "Jane Smith",
             Bio = "DevOps Specialist",
-            ImageUrl = "https://example.com/jane.jpg"
+            ImageUrl = "https://example.com/jane.jpg",
+            TwitterUrl = "https://twitter.com/janesmith",
+            LinkedInUrl = "https://linkedin.com/in/janesmith",
+            GitHubUrl = "https://github.com/janesmith"
         };
 
         // Act
@@ -62,6 +67,7 @@ public class OrganizerCardAccessibilityTests : TestContext
             Name = "John Doe",
             Bio = "Software Engineer",
             ImageUrl = "https://example.com/image.jpg",
+            TwitterUrl = "https://twitter.com/johndoe",
             LinkedInUrl = "https://linkedin.com/in/johndoe",
             GitHubUrl = "https://github.com/johndoe"
         };
@@ -86,7 +92,9 @@ public class OrganizerCardAccessibilityTests : TestContext
             Name = "John Doe",
             Bio = "Software Engineer",
             ImageUrl = "https://example.com/image.jpg",
-            LinkedInUrl = "https://linkedin.com/in/johndoe"
+            TwitterUrl = "https://twitter.com/johndoe",
+            LinkedInUrl = "https://linkedin.com/in/johndoe",
+            GitHubUrl = "https://github.com/johndoe"
         };
 
         // Act
@@ -108,6 +116,7 @@ public class OrganizerCardAccessibilityTests : TestContext
             Name = "John Doe",
             Bio = "Software Engineer",
             ImageUrl = "https://example.com/image.jpg",
+            TwitterUrl = "https://twitter.com/johndoe",
             LinkedInUrl = "https://linkedin.com/in/johndoe",
             GitHubUrl = "https://github.com/johndoe"
         };
@@ -135,7 +144,9 @@ public class OrganizerCardAccessibilityTests : TestContext
             Name = "John Doe",
             Bio = "Software Engineer",
             ImageUrl = "https://example.com/image.jpg",
-            LinkedInUrl = "https://linkedin.com/in/johndoe"
+            TwitterUrl = "https://twitter.com/johndoe",
+            LinkedInUrl = "https://linkedin.com/in/johndoe",
+            GitHubUrl = "https://github.com/johndoe"
         };
 
         // Act
@@ -157,7 +168,9 @@ public class OrganizerCardAccessibilityTests : TestContext
             Name = "John Doe",
             Bio = "Software Engineer",
             ImageUrl = "https://example.com/image.jpg",
-            LinkedInUrl = "https://linkedin.com/in/johndoe"
+            TwitterUrl = "https://twitter.com/johndoe",
+            LinkedInUrl = "https://linkedin.com/in/johndoe",
+            GitHubUrl = "https://github.com/johndoe"
         };
 
         // Act

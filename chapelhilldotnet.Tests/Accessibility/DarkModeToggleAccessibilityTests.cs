@@ -1,11 +1,12 @@
-using AngleSharp.Dom;
 using Bunit;
 using chapelhilldotnet.web.Layout;
+using Microsoft.JSInterop;
+using Xunit;
 
 namespace chapelhilldotnet.Tests.Accessibility;
 
 /// <summary>
-/// Accessibility tests for the DarkModeToggle component to ensure WCAG 2.1 AA compliance
+/// Accessibility tests for DarkModeToggle component to ensure WCAG 2.1 AA compliance
 /// </summary>
 public class DarkModeToggleAccessibilityTests : TestContext
 {
@@ -19,10 +20,10 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_ButtonHasTypeAttribute()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
+        var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
-        IElement button = cut.Find("button");
+        var button = cut.Find("button");
         Assert.Equal("button", button.GetAttribute("type"));
     }
 
@@ -30,11 +31,11 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_ButtonHasAriaLabel()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
+        var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
-        IElement button = cut.Find("button");
-        string? ariaLabel = button.GetAttribute("aria-label");
+        var button = cut.Find("button");
+        var ariaLabel = button.GetAttribute("aria-label");
         Assert.NotNull(ariaLabel);
         Assert.Contains("mode", ariaLabel.ToLower());
     }
@@ -43,23 +44,23 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_ButtonHasAriaPressedState()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
+        var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
-        IElement button = cut.Find("button");
-        string? ariaPressed = button.GetAttribute("aria-pressed");
+        var button = cut.Find("button");
+        var ariaPressed = button.GetAttribute("aria-pressed");
         Assert.NotNull(ariaPressed);
-        Assert.True(ariaPressed is "true" or "false");
+        Assert.True(ariaPressed == "true" || ariaPressed == "false");
     }
 
     [Fact]
     public void DarkModeToggle_HasLiveRegionForAnnouncements()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
+        var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
-        IElement liveRegion = cut.Find("div[role='status']");
+        var liveRegion = cut.Find("div[role='status']");
         Assert.NotNull(liveRegion);
         Assert.Equal("polite", liveRegion.GetAttribute("aria-live"));
         Assert.Equal("true", liveRegion.GetAttribute("aria-atomic"));
@@ -69,10 +70,10 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_LiveRegionHasSrOnlyClass()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
+        var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
-        IElement liveRegion = cut.Find("div[role='status']");
+        var liveRegion = cut.Find("div[role='status']");
         Assert.Contains("sr-only", liveRegion.GetAttribute("class"));
     }
 
@@ -80,10 +81,10 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_SvgIconsHaveAriaHidden()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
+        var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
-        IElement svg = cut.Find("svg");
+        var svg = cut.Find("svg");
         Assert.Equal("true", svg.GetAttribute("aria-hidden"));
     }
 
@@ -91,10 +92,10 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_SvgIconsHaveFocusableFalse()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
+        var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
-        IElement svg = cut.Find("svg");
+        var svg = cut.Find("svg");
         Assert.Equal("false", svg.GetAttribute("focusable"));
     }
 
@@ -102,14 +103,14 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_AriaLabelChangesWithState()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
-        IElement button = cut.Find("button");
-        string? initialLabel = button.GetAttribute("aria-label");
+        var cut = RenderComponent<DarkModeToggle>();
+        var button = cut.Find("button");
+        var initialLabel = button.GetAttribute("aria-label");
 
         // Verify label contains appropriate text
         Assert.True(
-            initialLabel!.Contains("light mode", StringComparison.OrdinalIgnoreCase) ||
-            initialLabel.Contains("dark mode", StringComparison.OrdinalIgnoreCase)
+            initialLabel?.Contains("light mode", StringComparison.OrdinalIgnoreCase) == true ||
+            initialLabel?.Contains("dark mode", StringComparison.OrdinalIgnoreCase) == true
         );
     }
 
@@ -117,8 +118,8 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_ButtonIsKeyboardAccessible()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
-        IElement button = cut.Find("button");
+        var cut = RenderComponent<DarkModeToggle>();
+        var button = cut.Find("button");
 
         // Assert - button element is inherently keyboard accessible
         Assert.Equal("BUTTON", button.TagName);
@@ -128,11 +129,11 @@ public class DarkModeToggleAccessibilityTests : TestContext
     public void DarkModeToggle_HasVisibleFocusStyles()
     {
         // Act
-        IRenderedComponent<DarkModeToggle> cut = RenderComponent<DarkModeToggle>();
-        IElement button = cut.Find("button");
+        var cut = RenderComponent<DarkModeToggle>();
+        var button = cut.Find("button");
 
         // Assert - Check for focus-visible classes
-        string? classes = button.GetAttribute("class");
+        var classes = button.GetAttribute("class");
         Assert.Contains("focus-visible", classes);
     }
 }

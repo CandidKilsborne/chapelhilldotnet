@@ -15,11 +15,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdf700c5-8c03-441f-be82-f71e49ca7efa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.Tests/Accessibility/DarkModeToggleAccessibilityTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.Tests/Accessibility/DarkModeToggleAccessibilityTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/EventList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/EventList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/Login.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Layout/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Models/Feature.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,7 @@
     <commands />
     <urls />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
@@ -142,16 +141,46 @@
       <option name="presentableId" value="Default" />
       <updated>1766071727696</updated>
       <workItem from="1766071730563" duration="2975000" />
-      <workItem from="1777057224999" duration="722000" />
+      <workItem from="1777057224999" duration="1669000" />
     </task>
+    <task id="LOCAL-00001" summary="Add project configuration files and refine admin panel UI with enhanced styles">
+      <option name="closed" value="true" />
+      <created>1777057970108</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777057970108</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add .idea project metadata file for ChapelHillDotNet">
+      <option name="closed" value="true" />
+      <created>1777057980767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777057980767</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add .idea project configuration file for ChapelHillDotNet">
+      <option name="closed" value="true" />
+      <created>1777057997110</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777057997110</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Add project configuration files and refine admin panel UI with enhanced styles" />
+    <MESSAGE value="Add .idea project metadata file for ChapelHillDotNet" />
+    <MESSAGE value="Add .idea project configuration file for ChapelHillDotNet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add .idea project configuration file for ChapelHillDotNet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

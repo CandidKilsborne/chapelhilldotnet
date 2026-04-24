@@ -5,7 +5,7 @@
                 @onclick="ToggleNavMenu"
                 type="button"
                 aria-label="Toggle navigation menu"
-                aria-expanded="@(!collapseNavMenu)"
+                aria-expanded="@(!_collapseNavMenu)"
                 aria-controls="main-navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,13 +35,13 @@
 </div>
 
 @code {
-    private bool collapseNavMenu = true;
+    private bool _collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "nav-scrollable collapse" : "nav-scrollable";
+    private string NavMenuCssClass => _collapseNavMenu ? "nav-scrollable collapse" : "nav-scrollable";
 
     private void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        _collapseNavMenu = !_collapseNavMenu;
     }
 }
 

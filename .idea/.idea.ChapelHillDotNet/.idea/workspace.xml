@@ -7,14 +7,19 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdf700c5-8c03-441f-be82-f71e49ca7efa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.Tests/Components/EventCardTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.Tests/Components/EventCardTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Components/EventCard.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Components/EventCard.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Components/OrganizerCard.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Components/OrganizerCard.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Home.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/tailwindcss.css" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/tailwindcss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.Tests/Accessibility/DarkModeToggleAccessibilityTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.Tests/Accessibility/DarkModeToggleAccessibilityTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/EventList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/EventList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Admin/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +30,22 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1" />
+    <option name="cachedIndexableFilesCount" value="36" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="371XoamJmhgy5O7ZxdNKreUwV5S" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,12 +55,17 @@
   "keyToString": {
     ".NET Launch Settings Profile.chapelhilldotnet.web: https.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "copilot/improve-visual-styles",
+    "git-widget-placeholder": "copilot/create-cms-for-events",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -61,6 +78,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\appio\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="d80ceb44-ff9f-4f06-92f8-714702d26813" />
+        <option name="reportName" value="ChapelHillDotNet/qodana/2026-04-24" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\appio\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="d80ceb44-ff9f-4f06-92f8-714702d26813" reportId="ChapelHillDotNet/qodana/2026-04-24" />
+    </option>
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.chapelhilldotnet.web: https">
     <configuration name="chapelhilldotnet.web: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/chapelhilldotnet.web/chapelhilldotnet.web.csproj" />
@@ -108,6 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1766071727696</updated>
       <workItem from="1766071730563" duration="2975000" />
+      <workItem from="1777057224999" duration="722000" />
     </task>
     <servers />
   </component>

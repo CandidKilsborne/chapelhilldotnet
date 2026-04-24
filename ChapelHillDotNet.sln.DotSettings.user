@@ -1,0 +1,12 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=eb403bdd_002Dbc17_002D4dec_002Dafbb_002D9d5596406c93/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DarkModeToggleAccessibilityTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::39C53842-D056-4F01-ACE2-056A498E4BCA::net9.0::chapelhilldotnet.Tests.Accessibility.DarkModeToggleAccessibilityTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f2eb4242_002Df4aa_002D40d8_002Da7ee_002D55427e6aded6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DarkModeToggleAccessibilityTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::39C53842-D056-4F01-ACE2-056A498E4BCA::net9.0::chapelhilldotnet.Tests.Accessibility.DarkModeToggleAccessibilityTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Lucide/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

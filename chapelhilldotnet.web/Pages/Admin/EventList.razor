@@ -3,76 +3,102 @@
 @inject IAuthenticationService AuthService
 @inject NavigationManager Navigation
 
-<div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+<div class="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
     <!-- Admin Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <header class="bg-white dark:bg-gray-800 shadow-lg border-b-2 border-blue-500 dark:border-blue-600">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Event Management</h1>
-                @if (!string.IsNullOrEmpty(_currentUser))
-                {
-                    <span class="text-sm text-gray-600 dark:text-gray-400">Welcome, @_currentUser</span>
-                }
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">📅</span>
+                    <div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">Event Management</h1>
+                        @if (!string.IsNullOrEmpty(_currentUser))
+                        {
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Signed in as <span class="font-semibold text-gray-700 dark:text-gray-300">@_currentUser</span></p>
+                        }
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                    View Site
+            <div class="flex items-center space-x-3">
+                <a href="/" class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all">
+                    <span class="inline-flex items-center gap-2">
+                        <span>🏠</span>
+                        <span>View Site</span>
+                    </span>
                 </a>
                 <button 
                     type="button"
                     @onclick="HandleLogout" 
-                    class="px-4 py-2 text-sm text-white bg-red-600 hover:bg-red-700 rounded-md"
+                    class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-lg shadow-md transition-all transform hover:scale-105"
                     aria-label="Logout from admin panel">
-                    Logout
+                    <span class="inline-flex items-center gap-2">
+                        <span>🚪</span>
+                        <span>Logout</span>
+                    </span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-6 py-8">
         @if (_isLoading)
         {
-            <div class="text-center py-12">
-                <p class="text-gray-600 dark:text-gray-400">Loading events...</p>
+            <div class="text-center py-20">
+                <div class="inline-block">
+                    <span class="text-5xl mb-4 block">⏳</span>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 font-medium">Loading events...</p>
+                </div>
             </div>
         }
         else
         {
-            <div class="mb-6 flex justify-between items-center">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">All Events</h2>
+            <div class="mb-8 flex justify-between items-center">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">All Events</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage your Chapel Hill .NET community events</p>
+                </div>
                 <a 
                     href="/admin/events/new" 
-                    class="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md inline-flex items-center"
+                    class="px-5 py-3 text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg inline-flex items-center gap-2 shadow-lg font-semibold transition-all transform hover:scale-105"
                     aria-label="Add new event">
-                    <span class="mr-2">+</span> Add New Event
+                    <span class="text-xl">➕</span>
+                    <span>Add New Event</span>
                 </a>
             </div>
 
             @if (!_events.Any())
             {
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 text-center">
-                    <p class="text-gray-600 dark:text-gray-400">No events found. Create your first event!</p>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-12 text-center">
+                    <span class="text-6xl block mb-4">📭</span>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">No Events Yet</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Get started by creating your first event!</p>
+                    <a 
+                        href="/admin/events/new" 
+                        class="inline-flex items-center gap-2 px-6 py-3 text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md font-semibold transition-all">
+                        <span>➕</span>
+                        <span>Create First Event</span>
+                    </a>
                 </div>
             }
             else
             {
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
                     <table class="w-full" aria-label="Events management table">
-                        <thead class="bg-gray-50 dark:bg-gray-700">
+                        <thead class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-750 border-b-2 border-gray-200 dark:border-gray-600">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider">
                                     Title
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                    Date
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider">
+                                    Date & Time
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider">
                                     Location
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider">
                                     Attendees
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                <th scope="col" class="px-6 py-4 text-right text-xs font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider">
                                     Actions
                                 </th>
                             </tr>
@@ -80,37 +106,59 @@
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
                             @foreach (var evt in _events)
                             {
-                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
-                                    <td class="px-6 py-4 text-gray-900 dark:text-white">
-                                        <div class="font-medium">@evt.Title</div>
+                                <tr class="hover:bg-blue-50 dark:hover:bg-gray-700/50 transition-colors">
+                                    <td class="px-6 py-5 text-gray-900 dark:text-white">
+                                        <div class="font-semibold text-base">@evt.Title</div>
                                         @if (!string.IsNullOrEmpty(evt.Description))
                                         {
-                                            <div class="text-sm text-gray-500 dark:text-gray-400 truncate max-w-md">@evt.Description</div>
+                                            <div class="text-sm text-gray-500 dark:text-gray-400 truncate max-w-md mt-1">@evt.Description</div>
                                         }
                                     </td>
-                                    <td class="px-6 py-4 text-gray-900 dark:text-white whitespace-nowrap">
-                                        <time datetime="@evt.Date.ToString("yyyy-MM-dd")">@evt.Date.ToShortDateString()</time>
-                                        @if (!string.IsNullOrEmpty(evt.Time))
-                                        {
-                                            <div class="text-sm text-gray-500 dark:text-gray-400">@evt.Time</div>
-                                        }
+                                    <td class="px-6 py-5 text-gray-900 dark:text-white whitespace-nowrap">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-lg">📅</span>
+                                            <div>
+                                                <time datetime="@evt.Date.ToString("yyyy-MM-dd")" class="font-medium">@evt.Date.ToShortDateString()</time>
+                                                @if (!string.IsNullOrEmpty(evt.Time))
+                                                {
+                                                    <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
+                                                        <span>🕐</span>
+                                                        <span>@evt.Time</span>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
                                     </td>
-                                    <td class="px-6 py-4 text-gray-900 dark:text-white">@evt.Location</td>
-                                    <td class="px-6 py-4 text-gray-900 dark:text-white">@evt.Attendees</td>
-                                    <td class="px-6 py-4 text-right space-x-2">
-                                        <a 
-                                            href="/admin/events/edit/@evt.Id" 
-                                            class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
-                                            aria-label="Edit event @evt.Title">
-                                            Edit
-                                        </a>
-                                        <button 
-                                            type="button"
-                                            @onclick="() => ConfirmDelete(evt)" 
-                                            class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
-                                            aria-label="Delete event @evt.Title">
-                                            Delete
-                                        </button>
+                                    <td class="px-6 py-5 text-gray-900 dark:text-white">
+                                        <div class="flex items-center gap-2">
+                                            <span>📍</span>
+                                            <span>@evt.Location</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5 text-gray-900 dark:text-white">
+                                        <div class="flex items-center gap-2">
+                                            <span>👥</span>
+                                            <span class="font-semibold">@evt.Attendees</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5 text-right">
+                                        <div class="flex justify-end gap-2">
+                                            <a 
+                                                href="/admin/events/edit/@evt.Id" 
+                                                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-blue-700 hover:text-white bg-blue-100 hover:bg-blue-600 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white rounded-lg transition-all"
+                                                aria-label="Edit event @evt.Title">
+                                                <span>✏️</span>
+                                                <span>Edit</span>
+                                            </a>
+                                            <button 
+                                                type="button"
+                                                @onclick="() => ConfirmDelete(evt)" 
+                                                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-red-700 hover:text-white bg-red-100 hover:bg-red-600 dark:bg-red-900/30 dark:text-red-400 dark:hover:bg-red-600 dark:hover:text-white rounded-lg transition-all"
+                                                aria-label="Delete event @evt.Title">
+                                                <span>🗑️</span>
+                                                <span>Delete</span>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             }
@@ -124,24 +172,32 @@
 
 @if (_showDeleteConfirm && _eventToDelete != null)
 {
-    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" @onclick:stopPropagation="true">
-        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full mx-4" role="dialog" aria-labelledby="delete-title" aria-modal="true">
-            <h3 id="delete-title" class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Confirm Delete</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-6">
-                Are you sure you want to delete "@_eventToDelete.Title"? This action cannot be undone.
-            </p>
-            <div class="flex justify-end space-x-3">
+    <div class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4" @onclick:stopPropagation="true">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 p-8 max-w-md w-full mx-4 transform transition-all" role="dialog" aria-labelledby="delete-title" aria-modal="true">
+            <div class="flex items-start gap-4 mb-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center">
+                    <span class="text-2xl">⚠️</span>
+                </div>
+                <div>
+                    <h3 id="delete-title" class="text-xl font-bold text-gray-900 dark:text-white mb-2">Confirm Delete</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Are you sure you want to delete <strong class="text-gray-900 dark:text-white">"@_eventToDelete.Title"</strong>? This action cannot be undone.
+                    </p>
+                </div>
+            </div>
+            <div class="flex justify-end gap-3">
                 <button 
                     type="button"
                     @onclick="CancelDelete" 
-                    class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md">
+                    class="px-5 py-2.5 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg font-medium transition-all">
                     Cancel
                 </button>
                 <button 
                     type="button"
                     @onclick="DeleteEvent" 
-                    class="px-4 py-2 text-white bg-red-600 hover:bg-red-700 rounded-md">
-                    Delete
+                    class="inline-flex items-center gap-2 px-5 py-2.5 text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-lg font-medium shadow-md transition-all transform hover:scale-105">
+                    <span>🗑️</span>
+                    <span>Delete Event</span>
                 </button>
             </div>
         </div>

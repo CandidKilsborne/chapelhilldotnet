@@ -1,6 +1,5 @@
 using Microsoft.Playwright.NUnit;
 using Microsoft.Playwright;
-using NUnit.Framework;
 using System.Text.RegularExpressions;
 
 namespace chapelhilldotnet.E2ETests;
@@ -38,10 +37,11 @@ public class NavigationTests : PageTest
     public async Task EventsLink_NavigatesToEventsPage()
     {
         await Page.GotoAsync(BaseUrl);
-        
+
         // Check if there's an Events link in navigation
-        var eventsLinks = await Page.GetByRole(AriaRole.Link, new() { NameRegex = new Regex("Events?", RegexOptions.IgnoreCase) }).AllAsync();
-        
+        var eventsLinks = await Page
+            .GetByRole(AriaRole.Link, new() { NameRegex = new Regex("Events?", RegexOptions.IgnoreCase) }).AllAsync();
+
         if (eventsLinks.Count > 0)
         {
             await eventsLinks[0].ClickAsync();
@@ -58,7 +58,7 @@ public class NavigationTests : PageTest
     public async Task Navigation_ContainsLogo()
     {
         await Page.GotoAsync(BaseUrl);
-        
+
         // Check for the text or logo in the header
         var headerText = await Page.Locator("header").TextContentAsync();
         Assert.That(headerText, Does.Contain("Chapel Hill").Or.Contain(".NET"));

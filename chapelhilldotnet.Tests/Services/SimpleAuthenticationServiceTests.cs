@@ -1,7 +1,6 @@
 using chapelhilldotnet.web.Services;
 using Microsoft.JSInterop;
 using Moq;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Services;
 

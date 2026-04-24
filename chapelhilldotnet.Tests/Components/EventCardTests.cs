@@ -1,7 +1,6 @@
 using Bunit;
 using chapelhilldotnet.web.Components;
 using chapelhilldotnet.web.Models;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Components;
 
@@ -29,7 +28,7 @@ public class EventCardTests : TestContext
         // Assert
         var title = cut.Find("h3.event-title");
         Assert.Equal("Test Event", title.TextContent);
-        
+
         var description = cut.Find("p.text-gray-700");
         Assert.Equal("Test Description", description.TextContent);
     }

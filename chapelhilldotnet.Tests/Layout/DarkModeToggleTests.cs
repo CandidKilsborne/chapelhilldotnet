@@ -1,6 +1,5 @@
 using Bunit;
 using chapelhilldotnet.web.Layout;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Layout;
 
@@ -11,7 +10,7 @@ public class DarkModeToggleTests : TestContext
     {
         // Arrange
         JSInterop.Mode = JSRuntimeMode.Loose;
-        
+
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 
@@ -25,7 +24,7 @@ public class DarkModeToggleTests : TestContext
     {
         // Arrange
         JSInterop.Mode = JSRuntimeMode.Loose;
-        
+
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 
@@ -43,7 +42,7 @@ public class DarkModeToggleTests : TestContext
     {
         // Arrange
         JSInterop.Mode = JSRuntimeMode.Loose;
-        
+
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 

@@ -1,6 +1,5 @@
 using Bunit;
 using chapelhilldotnet.web.Layout;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Layout;
 
@@ -63,7 +62,7 @@ public class FooterTests : TestContext
         // Assert
         var aboutSection = cut.FindAll("h3").FirstOrDefault(h => h.TextContent.Contains("About Us"));
         Assert.NotNull(aboutSection);
-        
+
         var aboutText = cut.Find("footer").TextContent;
         Assert.Contains("community of .NET and Azure enthusiasts", aboutText);
     }

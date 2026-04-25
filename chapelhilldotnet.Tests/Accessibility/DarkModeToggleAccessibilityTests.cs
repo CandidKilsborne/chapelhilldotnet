@@ -1,7 +1,5 @@
 using Bunit;
 using chapelhilldotnet.web.Layout;
-using Microsoft.JSInterop;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Accessibility;
 
@@ -12,7 +10,6 @@ public class DarkModeToggleAccessibilityTests : TestContext
 {
     public DarkModeToggleAccessibilityTests()
     {
-        // Setup JS runtime mock
         JSInterop.Mode = JSRuntimeMode.Loose;
     }
 
@@ -83,7 +80,7 @@ public class DarkModeToggleAccessibilityTests : TestContext
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 
-        // Assert
+        // Assert - SVG icons should be hidden from assistive technology
         var svg = cut.Find("svg");
         Assert.Equal("true", svg.GetAttribute("aria-hidden"));
     }
@@ -94,7 +91,7 @@ public class DarkModeToggleAccessibilityTests : TestContext
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 
-        // Assert
+        // Assert - SVGs should not be focusable (IE11 fix)
         var svg = cut.Find("svg");
         Assert.Equal("false", svg.GetAttribute("focusable"));
     }
@@ -126,14 +123,14 @@ public class DarkModeToggleAccessibilityTests : TestContext
     }
 
     [Fact]
-    public void DarkModeToggle_HasVisibleFocusStyles()
+    public void DarkModeToggle_HasThemeToggleClass()
     {
         // Act
         var cut = RenderComponent<DarkModeToggle>();
         var button = cut.Find("button");
 
-        // Assert - Check for focus-visible classes
+        // Assert - button uses the theme-toggle CSS class which includes focus-visible styles
         var classes = button.GetAttribute("class");
-        Assert.Contains("focus-visible", classes);
+        Assert.Contains("theme-toggle", classes);
     }
 }

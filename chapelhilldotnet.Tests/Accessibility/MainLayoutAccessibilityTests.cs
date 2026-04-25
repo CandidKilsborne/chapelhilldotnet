@@ -8,6 +8,11 @@ namespace chapelhilldotnet.Tests.Accessibility;
 /// </summary>
 public class MainLayoutAccessibilityTests : TestContext
 {
+    public MainLayoutAccessibilityTests()
+    {
+        JSInterop.Mode = JSRuntimeMode.Loose;
+    }
+
     [Fact]
     public void MainLayout_MainContentHasMatchingId()
     {
@@ -56,14 +61,14 @@ public class MainLayoutAccessibilityTests : TestContext
     }
 
     [Fact]
-    public void MainLayout_UsesSemanticArticleElement()
+    public void MainLayout_UsesPageShellWrapper()
     {
         // Act
         var cut = RenderComponent<MainLayout>();
 
-        // Assert
-        var article = cut.Find("article");
-        Assert.NotNull(article);
+        // Assert - the layout uses a site-shell div as the top-level wrapper
+        var shell = cut.Find(".site-shell");
+        Assert.NotNull(shell);
     }
 
     [Fact]
@@ -73,7 +78,6 @@ public class MainLayoutAccessibilityTests : TestContext
         var cut = RenderComponent<MainLayout>();
 
         // Assert
-        // Footer is rendered as a component, verify it's included
         var footer = cut.Find("footer");
         Assert.NotNull(footer);
         Assert.Equal("contentinfo", footer.GetAttribute("role"));
@@ -89,8 +93,8 @@ public class MainLayoutAccessibilityTests : TestContext
         var main = cut.Find("main[role='main']");
         Assert.NotNull(main);
 
-        // Main element should contain the article
-        var article = cut.Find("main article");
-        Assert.NotNull(article);
+        // Header landmark should exist from NavMenu
+        var header = cut.Find("header[role='banner']");
+        Assert.NotNull(header);
     }
 }

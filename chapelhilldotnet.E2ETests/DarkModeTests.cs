@@ -1,13 +1,11 @@
-using Microsoft.Playwright.NUnit;
 using Microsoft.Playwright;
 
 namespace chapelhilldotnet.E2ETests;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public class DarkModeTests : PageTest
+public class DarkModeTests : BlazorPageTest
 {
-    private const string BaseUrl = "http://localhost:5000";
 
     [Test]
     public async Task DarkModeToggle_IsVisible()

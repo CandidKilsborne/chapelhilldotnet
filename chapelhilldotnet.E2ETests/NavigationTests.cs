@@ -1,4 +1,3 @@
-using Microsoft.Playwright.NUnit;
 using Microsoft.Playwright;
 using System.Text.RegularExpressions;
 
@@ -6,10 +5,8 @@ namespace chapelhilldotnet.E2ETests;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public class NavigationTests : PageTest
+public class NavigationTests : BlazorPageTest
 {
-    private const string BaseUrl = "http://localhost:5000";
-
     [Test]
     public async Task HomePage_LoadsSuccessfully()
     {
@@ -22,7 +19,7 @@ public class NavigationTests : PageTest
     {
         await Page.GotoAsync(BaseUrl);
         var heading = Page.Locator("h1");
-        await Expect(heading).ToContainTextAsync("Connect, Learn, and Grow");
+        await Expect(heading).ToContainTextAsync("Connect, learn, and build better");
     }
 
     [Test]

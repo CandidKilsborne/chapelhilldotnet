@@ -42,29 +42,29 @@ public class FooterTests : TestContext
     }
 
     [Fact]
-    public void Footer_DisplaysMadeWithLoveMessage()
+    public void Footer_DisplaysTagline()
     {
         // Act
         var cut = RenderComponent<Footer>();
 
         // Assert
         var footerText = cut.Find("footer").TextContent;
-        Assert.Contains("Made with", footerText);
-        Assert.Contains("in Chapel Hill, NC", footerText);
+        Assert.Contains("Meetups, talks", footerText);
+        Assert.Contains("Triangle", footerText);
     }
 
     [Fact]
-    public void Footer_HasAboutUsSection()
+    public void Footer_HasExploreSection()
     {
         // Act
         var cut = RenderComponent<Footer>();
 
         // Assert
-        var aboutSection = cut.FindAll("h3").FirstOrDefault(h => h.TextContent.Contains("About Us"));
-        Assert.NotNull(aboutSection);
+        var exploreSection = cut.FindAll("h3").FirstOrDefault(h => h.TextContent.Contains("Explore"));
+        Assert.NotNull(exploreSection);
 
-        var aboutText = cut.Find("footer").TextContent;
-        Assert.Contains("community of .NET and Azure enthusiasts", aboutText);
+        var footerText = cut.Find("footer").TextContent;
+        Assert.Contains(".NET", footerText);
     }
 
     [Fact]

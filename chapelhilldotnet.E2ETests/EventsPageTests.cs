@@ -1,4 +1,3 @@
-using Microsoft.Playwright.NUnit;
 using Microsoft.Playwright;
 using System.Text.RegularExpressions;
 
@@ -6,9 +5,8 @@ namespace chapelhilldotnet.E2ETests;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public class EventsPageTests : PageTest
+public class EventsPageTests : BlazorPageTest
 {
-    private const string BaseUrl = "http://localhost:5000";
 
     [Test]
     public async Task EventsPage_LoadsSuccessfully()

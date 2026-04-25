@@ -1,6 +1,5 @@
 using Bunit;
 using chapelhilldotnet.web.Layout;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Layout;
 
@@ -11,7 +10,7 @@ public class DarkModeToggleTests : TestContext
     {
         // Arrange
         JSInterop.Mode = JSRuntimeMode.Loose;
-        
+
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 
@@ -25,7 +24,7 @@ public class DarkModeToggleTests : TestContext
     {
         // Arrange
         JSInterop.Mode = JSRuntimeMode.Loose;
-        
+
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 
@@ -43,13 +42,13 @@ public class DarkModeToggleTests : TestContext
     {
         // Arrange
         JSInterop.Mode = JSRuntimeMode.Loose;
-        
+
         // Act
         var cut = RenderComponent<DarkModeToggle>();
 
         // Assert
         var svgPath = cut.Find("svg path");
-        Assert.Contains("M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z", svgPath.GetAttribute("d"));
+        Assert.Contains("M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z", svgPath.GetAttribute("d"));
     }
 
     [Fact]

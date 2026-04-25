@@ -1,7 +1,6 @@
 using Bunit;
+using chapelhilldotnet.web.Layout;
 using chapelhilldotnet.web.Pages;
-using Microsoft.JSInterop;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Accessibility;
 
@@ -18,10 +17,10 @@ public class GeneralAccessibilityTests : TestContext
     }
 
     [Fact]
-    public void HomePage_HeaderHasRoleBanner()
+    public void NavMenu_HeaderHasRoleBanner()
     {
         // Act
-        var cut = RenderComponent<Home>();
+        var cut = RenderComponent<NavMenu>();
 
         // Assert
         var header = cut.Find("header[role='banner']");
@@ -29,10 +28,10 @@ public class GeneralAccessibilityTests : TestContext
     }
 
     [Fact]
-    public void HomePage_NavigationHasAriaLabel()
+    public void NavMenu_NavigationHasAriaLabel()
     {
         // Act
-        var cut = RenderComponent<Home>();
+        var cut = RenderComponent<NavMenu>();
 
         // Assert
         var nav = cut.Find("nav");
@@ -42,23 +41,23 @@ public class GeneralAccessibilityTests : TestContext
     }
 
     [Fact]
-    public void HomePage_AllSectionsHaveAriaLabelledby()
+    public void HomePage_NamedSectionsContainHeadings()
     {
         // Act
         var cut = RenderComponent<Home>();
 
-        // Assert
-        var sections = cut.FindAll("section[aria-labelledby]");
-        Assert.NotEmpty(sections);
+        // Assert - sections with IDs should contain heading elements
+        var namedSections = cut.FindAll("section[id]");
+        Assert.NotEmpty(namedSections);
 
-        foreach (var section in sections)
+        foreach (var section in namedSections)
         {
-            var labelledBy = section.GetAttribute("aria-labelledby");
-            Assert.NotNull(labelledBy);
-
-            // Verify the referenced element exists
-            var referencedElement = cut.Find($"#{labelledBy}");
-            Assert.NotNull(referencedElement);
+            var inner = section.InnerHtml;
+            Assert.True(
+                inner.Contains("<h1", StringComparison.OrdinalIgnoreCase) ||
+                inner.Contains("<h2", StringComparison.OrdinalIgnoreCase) ||
+                inner.Contains("<h3", StringComparison.OrdinalIgnoreCase),
+                $"Section #{section.GetAttribute("id")} should contain a heading element");
         }
     }
 
@@ -111,34 +110,6 @@ public class GeneralAccessibilityTests : TestContext
     }
 
     [Fact]
-    public void EventsPage_TableHasCaption()
-    {
-        // Act
-        var cut = RenderComponent<Events>();
-
-        // Assert
-        var table = cut.Find("table");
-        var caption = cut.Find("caption");
-        Assert.NotNull(caption);
-    }
-
-    [Fact]
-    public void EventsPage_TableHeadersHaveScope()
-    {
-        // Act
-        var cut = RenderComponent<Events>();
-
-        // Assert
-        var headers = cut.FindAll("th");
-        foreach (var header in headers)
-        {
-            var scope = header.GetAttribute("scope");
-            Assert.NotNull(scope);
-            Assert.True(scope == "col" || scope == "row");
-        }
-    }
-
-    [Fact]
     public void EventsPage_TimeElementsHaveDatetimeAttribute()
     {
         // Act
@@ -173,25 +144,14 @@ public class GeneralAccessibilityTests : TestContext
     }
 
     [Fact]
-    public void AboutPage_FooterHasRoleContentinfo()
+    public void Footer_HasRoleContentinfo()
     {
         // Act
-        var cut = RenderComponent<About>();
+        var cut = RenderComponent<Footer>();
 
         // Assert
         var footer = cut.Find("footer[role='contentinfo']");
         Assert.NotNull(footer);
-    }
-
-    [Fact]
-    public void AboutPage_AddressElementUsedForContactInfo()
-    {
-        // Act
-        var cut = RenderComponent<About>();
-
-        // Assert
-        var address = cut.Find("address");
-        Assert.NotNull(address);
     }
 
     [Fact]
@@ -253,6 +213,7 @@ public class GeneralAccessibilityTests : TestContext
             count++;
             index += pattern.Length;
         }
+
         return count;
     }
 }

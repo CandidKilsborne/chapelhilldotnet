@@ -1,14 +1,18 @@
 using Bunit;
 using chapelhilldotnet.web.Layout;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Accessibility;
 
 /// <summary>
-/// Accessibility tests for NavMenu component to ensure WCAG 2.1 AA compliance
+/// Accessibility tests for the NavMenu component to ensure WCAG 2.1 AA compliance
 /// </summary>
 public class NavMenuAccessibilityTests : TestContext
 {
+    public NavMenuAccessibilityTests()
+    {
+        JSInterop.Mode = JSRuntimeMode.Loose;
+    }
+
     [Fact]
     public void NavMenu_UsesButtonInsteadOfCheckbox()
     {
@@ -16,7 +20,7 @@ public class NavMenuAccessibilityTests : TestContext
         var cut = RenderComponent<NavMenu>();
 
         // Assert
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
         Assert.NotNull(button);
 
         // Ensure no checkbox exists
@@ -30,7 +34,7 @@ public class NavMenuAccessibilityTests : TestContext
         var cut = RenderComponent<NavMenu>();
 
         // Assert
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
         Assert.Equal("button", button.GetAttribute("type"));
     }
 
@@ -41,7 +45,7 @@ public class NavMenuAccessibilityTests : TestContext
         var cut = RenderComponent<NavMenu>();
 
         // Assert
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
         var ariaLabel = button.GetAttribute("aria-label");
         Assert.NotNull(ariaLabel);
         Assert.Contains("navigation", ariaLabel.ToLower());
@@ -54,7 +58,7 @@ public class NavMenuAccessibilityTests : TestContext
         var cut = RenderComponent<NavMenu>();
 
         // Assert
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
         var ariaExpanded = button.GetAttribute("aria-expanded");
         Assert.NotNull(ariaExpanded);
         Assert.True(ariaExpanded == "true" || ariaExpanded == "false");
@@ -65,7 +69,7 @@ public class NavMenuAccessibilityTests : TestContext
     {
         // Act
         var cut = RenderComponent<NavMenu>();
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
 
         // Assert - Initially collapsed, so aria-expanded should be "false"
         Assert.Equal("false", button.GetAttribute("aria-expanded"));
@@ -90,7 +94,7 @@ public class NavMenuAccessibilityTests : TestContext
         var cut = RenderComponent<NavMenu>();
 
         // Assert
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
         var ariaControls = button.GetAttribute("aria-controls");
         Assert.Equal("main-navigation", ariaControls);
     }
@@ -124,7 +128,7 @@ public class NavMenuAccessibilityTests : TestContext
     {
         // Act
         var cut = RenderComponent<NavMenu>();
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
 
         // Get initial state
         var initialExpanded = button.GetAttribute("aria-expanded");
@@ -145,7 +149,7 @@ public class NavMenuAccessibilityTests : TestContext
         // Act
         var cut = RenderComponent<NavMenu>();
         var navContainer = cut.Find("#main-navigation");
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
 
         // Get initial classes
         var initialClasses = navContainer.GetAttribute("class");
@@ -156,7 +160,7 @@ public class NavMenuAccessibilityTests : TestContext
         // Get new classes
         var newClasses = navContainer.GetAttribute("class");
 
-        // Assert - Classes should have changed (collapse class should toggle)
+        // Assert - Classes should have changed
         Assert.NotEqual(initialClasses, newClasses);
     }
 
@@ -166,9 +170,8 @@ public class NavMenuAccessibilityTests : TestContext
         // Act
         var cut = RenderComponent<NavMenu>();
 
-        // Assert
+        // Assert - Theme toggle SVG icons inside the nav should have aria-hidden
         var markup = cut.Markup;
-        // Check that nav link icons have aria-hidden
         Assert.Contains("aria-hidden=\"true\"", markup);
     }
 
@@ -179,7 +182,7 @@ public class NavMenuAccessibilityTests : TestContext
         var cut = RenderComponent<NavMenu>();
 
         // Assert
-        var navLinks = cut.FindAll(".nav-link");
+        var navLinks = cut.FindAll(".site-nav__link");
         Assert.NotEmpty(navLinks);
 
         // All NavLink components render as anchor tags, which are keyboard accessible
@@ -194,23 +197,21 @@ public class NavMenuAccessibilityTests : TestContext
     {
         // Act
         var cut = RenderComponent<NavMenu>();
-        var button = cut.Find("button.navbar-toggler");
+        var button = cut.Find("button.site-nav-toggle");
 
-        // Assert
-        // Menu starts collapsed (collapseNavMenu = true)
-        // So aria-expanded should be false (menu not expanded)
+        // Assert - Menu starts collapsed, aria-expanded should be "false"
         var ariaExpanded = button.GetAttribute("aria-expanded");
         Assert.Equal("false", ariaExpanded);
     }
 
     [Fact]
-    public void NavMenu_ContainsTogglerIcon()
+    public void NavMenu_ContainsTogglerBars()
     {
         // Act
         var cut = RenderComponent<NavMenu>();
 
         // Assert
-        var togglerIcon = cut.Find(".navbar-toggler-icon");
-        Assert.NotNull(togglerIcon);
+        var togglerBars = cut.FindAll(".site-nav-toggle__bar");
+        Assert.NotEmpty(togglerBars);
     }
 }

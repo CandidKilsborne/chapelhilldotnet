@@ -7,15 +7,14 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdf700c5-8c03-441f-be82-f71e49ca7efa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.Tests/Components/EventCardTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.Tests/Components/EventCardTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Components/EventCard.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Components/EventCard.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Components/OrganizerCard.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Components/OrganizerCard.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/Pages/Home.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/tailwindcss.css" beforeDir="false" afterPath="$PROJECT_DIR$/chapelhilldotnet.web/wwwroot/css/tailwindcss.css" afterDir="false" />
-    </list>
+    <list default="true" id="cdf700c5-8c03-441f-be82-f71e49ca7efa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,42 +24,72 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1" />
+    <option name="cachedIndexableFilesCount" value="36" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="371XoamJmhgy5O7ZxdNKreUwV5S" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.chapelhilldotnet.web: https.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "copilot/improve-visual-styles",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.chapelhilldotnet.web: https.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;copilot/create-cms-for-events&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\appio\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="d80ceb44-ff9f-4f06-92f8-714702d26813" />
+        <option name="reportName" value="ChapelHillDotNet/qodana/2026-04-24" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\appio\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="d80ceb44-ff9f-4f06-92f8-714702d26813" reportId="ChapelHillDotNet/qodana/2026-04-24" />
+    </option>
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.chapelhilldotnet.web: https">
     <configuration name="chapelhilldotnet.web: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/chapelhilldotnet.web/chapelhilldotnet.web.csproj" />
@@ -108,15 +137,100 @@
       <option name="presentableId" value="Default" />
       <updated>1766071727696</updated>
       <workItem from="1766071730563" duration="2975000" />
+      <workItem from="1777057224999" duration="2378000" />
     </task>
+    <task id="LOCAL-00001" summary="Add project configuration files and refine admin panel UI with enhanced styles">
+      <option name="closed" value="true" />
+      <created>1777057970108</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777057970108</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add .idea project metadata file for ChapelHillDotNet">
+      <option name="closed" value="true" />
+      <created>1777057980767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777057980767</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add .idea project configuration file for ChapelHillDotNet">
+      <option name="closed" value="true" />
+      <created>1777057997110</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777057997110</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove unused `Feature` model, adjust component attributes, and refine private fields in `NavMenu.razor`.">
+      <option name="closed" value="true" />
+      <created>1777058908830</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777058908830</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor E2E tests: remove unused imports, improve code formatting, and enhance readability across Navigation, Footer, EventsPage, and DarkMode tests.">
+      <option name="closed" value="true" />
+      <created>1777058961879</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777058961879</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Remove unused `Xunit` imports and update summary comments for accessibility test classes.">
+      <option name="closed" value="true" />
+      <created>1777059043536</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059043536</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Remove unused `Xunit` imports across test classes and clean up whitespace formatting.">
+      <option name="closed" value="true" />
+      <created>1777059103529</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059103529</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Remove redundant variable assignment in `GeneralAccessibilityTests`.">
+      <option name="closed" value="true" />
+      <created>1777059134861</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059134861</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update `aria-expanded` logic in `NavMenu.razor` and modify user settings file with updated test session state">
+      <option name="closed" value="true" />
+      <created>1777059591692</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1777059591692</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Add project configuration files and refine admin panel UI with enhanced styles" />
+    <MESSAGE value="Add .idea project metadata file for ChapelHillDotNet" />
+    <MESSAGE value="Add .idea project configuration file for ChapelHillDotNet" />
+    <MESSAGE value="Remove unused `Feature` model, adjust component attributes, and refine private fields in `NavMenu.razor`." />
+    <MESSAGE value="Refactor E2E tests: remove unused imports, improve code formatting, and enhance readability across Navigation, Footer, EventsPage, and DarkMode tests." />
+    <MESSAGE value="Remove unused `Xunit` imports and update summary comments for accessibility test classes." />
+    <MESSAGE value="Remove unused `Xunit` imports across test classes and clean up whitespace formatting." />
+    <MESSAGE value="Remove redundant variable assignment in `GeneralAccessibilityTests`." />
+    <MESSAGE value="Update `aria-expanded` logic in `NavMenu.razor` and modify user settings file with updated test session state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update `aria-expanded` logic in `NavMenu.razor` and modify user settings file with updated test session state" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

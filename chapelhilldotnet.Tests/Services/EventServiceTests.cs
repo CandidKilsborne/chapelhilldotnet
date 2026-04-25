@@ -2,7 +2,6 @@ using chapelhilldotnet.web.Models;
 using chapelhilldotnet.web.Services;
 using Microsoft.JSInterop;
 using Moq;
-using Xunit;
 
 namespace chapelhilldotnet.Tests.Services;
 
@@ -14,7 +13,7 @@ public class EventServiceTests
         // Arrange
         var mockJsRuntime = new Mock<IJSRuntime>();
         var service = new EventService(mockJsRuntime.Object);
-        
+
         var newEvent = new Event
         {
             Title = "Test Event",
@@ -39,14 +38,14 @@ public class EventServiceTests
         // Arrange
         var mockJsRuntime = new Mock<IJSRuntime>();
         var service = new EventService(mockJsRuntime.Object);
-        
+
         var event1 = new Event
         {
             Title = "Future Event",
             Date = DateTime.Now.AddDays(30),
             Location = "Location 1"
         };
-        
+
         var event2 = new Event
         {
             Title = "Near Event",
@@ -73,7 +72,7 @@ public class EventServiceTests
         // Arrange
         var mockJsRuntime = new Mock<IJSRuntime>();
         var service = new EventService(mockJsRuntime.Object);
-        
+
         var originalEvent = new Event
         {
             Title = "Original Title",
@@ -102,7 +101,7 @@ public class EventServiceTests
         // Arrange
         var mockJsRuntime = new Mock<IJSRuntime>();
         var service = new EventService(mockJsRuntime.Object);
-        
+
         var eventToDelete = new Event
         {
             Title = "Event to Delete",
@@ -127,7 +126,7 @@ public class EventServiceTests
         // Arrange
         var mockJsRuntime = new Mock<IJSRuntime>();
         var service = new EventService(mockJsRuntime.Object);
-        
+
         var event1 = new Event
         {
             Title = "Event 1",

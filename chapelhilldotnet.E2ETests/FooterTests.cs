@@ -1,21 +1,14 @@
-using Microsoft.Playwright.NUnit;
-using Microsoft.Playwright;
-using NUnit.Framework;
-
 namespace chapelhilldotnet.E2ETests;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public class FooterTests : PageTest
+public class FooterTests : BlazorPageTest
 {
-    private const string BaseUrl = "http://localhost:5000";
-
     [Test]
     public async Task Footer_IsVisible()
     {
         await Page.GotoAsync(BaseUrl);
-        
-        // Find the footer element
+
         var footer = Page.Locator("footer#contact");
         await Expect(footer).ToBeVisibleAsync();
     }
@@ -24,11 +17,10 @@ public class FooterTests : PageTest
     public async Task Footer_DisplaysCopyrightWithCurrentYear()
     {
         await Page.GotoAsync(BaseUrl);
-        
+
         var currentYear = DateTime.Now.Year.ToString();
         var footer = Page.Locator("footer#contact");
-        
-        // Check for copyright symbol and year
+
         await Expect(footer).ToContainTextAsync("©");
         await Expect(footer).ToContainTextAsync(currentYear);
         await Expect(footer).ToContainTextAsync("Chapel Hill .NET");
@@ -36,57 +28,52 @@ public class FooterTests : PageTest
     }
 
     [Test]
-    public async Task Footer_DisplaysMadeWithLoveMessage()
+    public async Task Footer_DisplaysTagline()
     {
         await Page.GotoAsync(BaseUrl);
-        
+
         var footer = Page.Locator("footer#contact");
-        
-        // Check for the "Made with ❤️ in Chapel Hill, NC" message
-        await Expect(footer).ToContainTextAsync("Made with");
-        await Expect(footer).ToContainTextAsync("in Chapel Hill, NC");
+        await Expect(footer).ToContainTextAsync("Meetups, talks");
+        await Expect(footer).ToContainTextAsync("Triangle");
     }
 
     [Test]
-    public async Task Footer_ContainsAboutUsSection()
+    public async Task Footer_ContainsExploreSection()
     {
         await Page.GotoAsync(BaseUrl);
-        
+
         var footer = Page.Locator("footer#contact");
-        var aboutUsHeading = footer.Locator("h3").Filter(new() { HasText = "About Us" });
-        
-        await Expect(aboutUsHeading).ToBeVisibleAsync();
-        await Expect(footer).ToContainTextAsync("community of .NET and Azure enthusiasts");
+        var exploreHeading = footer.Locator("h3").Filter(new() { HasText = "Explore" });
+
+        await Expect(exploreHeading).ToBeVisibleAsync();
+        await Expect(footer).ToContainTextAsync(".NET");
     }
 
     [Test]
-    public async Task Footer_HasDarkModeSupport()
+    public async Task Footer_HasSiteFooterClass()
     {
         await Page.GotoAsync(BaseUrl);
-        
+
         var footer = Page.Locator("footer#contact");
-        
-        // Check if footer has dark mode classes
         var footerClasses = await footer.GetAttributeAsync("class");
-        Assert.That(footerClasses, Does.Contain("dark:bg-gray-900"), 
-            "Footer should have dark mode background class");
+        Assert.That(footerClasses, Does.Contain("site-footer"),
+            "Footer should have the site-footer CSS class");
     }
 
     [Test]
-    public async Task Footer_CopyrightAndLoveMessageAreInSeparateParagraphs()
+    public async Task Footer_CopyrightAndTaglineAreInSeparateParagraphs()
     {
         await Page.GotoAsync(BaseUrl);
-        
+
         var footer = Page.Locator("footer#contact");
         var copyrightParagraph = footer.Locator("p").Filter(new() { HasText = "©" });
-        var loveParagraph = footer.Locator("p").Filter(new() { HasText = "Made with" });
-        
+        var taglineParagraph = footer.Locator("p").Filter(new() { HasText = "Meetups, talks" });
+
         await Expect(copyrightParagraph).ToBeVisibleAsync();
-        await Expect(loveParagraph).ToBeVisibleAsync();
-        
-        // Verify they are separate elements
+        await Expect(taglineParagraph).ToBeVisibleAsync();
+
         var copyrightText = await copyrightParagraph.TextContentAsync();
-        Assert.That(copyrightText, Does.Not.Contain("Made with"), 
-            "Copyright and love message should be in separate paragraphs");
+        Assert.That(copyrightText, Does.Not.Contain("Meetups"),
+            "Copyright and tagline should be in separate paragraphs");
     }
 }

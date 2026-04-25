@@ -1886,6 +1886,13 @@ html.dark .loading-progress-text {
     }
 }
 
+html.switching-theme *,
+html.switching-theme *::before,
+html.switching-theme *::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+}
+
 @keyframes rise-in {
     from {
         opacity: 0;

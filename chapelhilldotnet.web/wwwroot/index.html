@@ -149,6 +149,11 @@
                 return 'light';
             },
             set: function (theme) {
+                document.documentElement.classList.add('switching-theme');
+                window.requestAnimationFrame(function () {
+                    document.documentElement.classList.remove('switching-theme');
+                });
+
                 const isDark = theme === 'dark';
                 document.documentElement.classList.toggle('dark', isDark);
                 document.documentElement.setAttribute('data-theme', theme);

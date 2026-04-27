@@ -21,23 +21,14 @@ public partial class EventsPageTests : BlazorPageTest
     {
         await Page.GotoAsync($"{BaseUrl}/events");
 
-        // Wait for the page to load
-        await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+        // Wait for deterministic events-page content to render.
+        ILocator sectionHeading = Page.GetByRole(AriaRole.Heading,
+            new PageGetByRoleOptions { NameRegex = new Regex("coming up next", RegexOptions.IgnoreCase) });
+        await Expect(sectionHeading).ToBeVisibleAsync();
 
-        // Check if there are event headings or sections
-        ILocator upcomingSection = Page.Locator("text=/upcoming events/i").First;
-        bool isUpcomingVisible = await upcomingSection.IsVisibleAsync().ConfigureAwait(false);
-
-        if (isUpcomingVisible)
-        {
-            Assert.Pass("Events page displays upcoming events section");
-        }
-        else
-        {
-            string? pageContent = await Page.TextContentAsync("body");
-            Assert.That(pageContent, Does.Contain("Event").Or.Contain("Meetup"),
-                "Page should contain event-related content");
-        }
+        ILocator eventCards = Page.Locator(".card-grid--events .event-card");
+        Assert.That(await eventCards.CountAsync(), Is.GreaterThan(0),
+            "Events page should render at least one upcoming event card.");
     }
 
     [Test]
@@ -66,25 +57,12 @@ public partial class EventsPageTests : BlazorPageTest
     {
         await Page.GotoAsync($"{BaseUrl}/events");
 
-        // Wait for content to load
-        await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+        // Wait for archived event cards and verify semantic date markup.
+        ILocator archiveCards = Page.Locator(".archive-grid .archive-card");
+        await Expect(archiveCards.First).ToBeVisibleAsync();
 
-        // Look for date-related content or calendar icons
-        string? pageText = await Page.TextContentAsync("body");
-
-        // Check for date patterns or date-related words
-        bool hasDateContent = pageText != null && (
-            pageText.Contains("January") ||
-            pageText.Contains("February") ||
-            pageText.Contains("March") ||
-            pageText.Contains("2024") ||
-            pageText.Contains("2025") ||
-            pageText.Contains("Event") ||
-            pageText.Contains("Date") ||
-            pageText.Contains("Time")
-        );
-
-        Assert.That(hasDateContent, Is.True,
+        ILocator dateElements = Page.Locator(".archive-grid time[datetime]");
+        Assert.That(await dateElements.CountAsync(), Is.GreaterThan(0),
             "Events page should display date or time information");
     }
 

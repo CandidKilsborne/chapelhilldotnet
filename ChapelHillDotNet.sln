@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chapelhilldotnet.web", "chapelhilldotnet.web\chapelhilldotnet.web.csproj", "{0B4FB449-0056-4AD1-BF3D-DBBBFE695567}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chapelhilldotnet.Web", "chapelhilldotnet.Web\chapelhilldotnet.Web.csproj", "{0B4FB449-0056-4AD1-BF3D-DBBBFE695567}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chapelhilldotnet.Tests", "chapelhilldotnet.Tests\chapelhilldotnet.Tests.csproj", "{39C53842-D056-4F01-ACE2-056A498E4BCA}"
 EndProject

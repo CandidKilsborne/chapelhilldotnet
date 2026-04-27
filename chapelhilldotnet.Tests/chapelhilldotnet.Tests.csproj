@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\chapelhilldotnet.web\chapelhilldotnet.web.csproj" />
+    <ProjectReference Include="..\chapelhilldotnet.Web\chapelhilldotnet.Web.csproj" />
   </ItemGroup>
 
 </Project>

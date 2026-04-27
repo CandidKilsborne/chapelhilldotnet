@@ -5,20 +5,20 @@ namespace chapelhilldotnet.E2ETests;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public class NavigationTests : BlazorPageTest
+public partial class NavigationTests : BlazorPageTest
 {
     [Test]
     public async Task HomePage_LoadsSuccessfully()
     {
         await Page.GotoAsync(BaseUrl);
-        await Expect(Page).ToHaveTitleAsync(new Regex("Chapel Hill"));
+        await Expect(Page).ToHaveTitleAsync(TitleRegex());
     }
 
     [Test]
     public async Task HomePage_ContainsMainHeading()
     {
         await Page.GotoAsync(BaseUrl);
-        var heading = Page.Locator("h1");
+        ILocator heading = Page.Locator("h1");
         await Expect(heading).ToContainTextAsync("Connect, learn, and build better");
     }
 
@@ -26,8 +26,8 @@ public class NavigationTests : BlazorPageTest
     public async Task AboutLink_NavigatesToAboutPage()
     {
         await Page.GotoAsync(BaseUrl);
-        await Page.GetByRole(AriaRole.Link, new() { Name = "About" }).First.ClickAsync();
-        await Expect(Page).ToHaveURLAsync(new Regex(".*about.*", RegexOptions.IgnoreCase));
+        await Page.GetByRole(AriaRole.Link, new PageGetByRoleOptions { Name = "About" }).First.ClickAsync();
+        await Expect(Page).ToHaveURLAsync(AboutRegex());
     }
 
     [Test]
@@ -36,13 +36,13 @@ public class NavigationTests : BlazorPageTest
         await Page.GotoAsync(BaseUrl);
 
         // Check if there's an Events link in navigation
-        var eventsLinks = await Page
-            .GetByRole(AriaRole.Link, new() { NameRegex = new Regex("Events?", RegexOptions.IgnoreCase) }).AllAsync();
+        IReadOnlyList<ILocator> eventsLinks = await Page
+            .GetByRole(AriaRole.Link, new PageGetByRoleOptions { NameRegex = EventLinksRegex() }).AllAsync();
 
         if (eventsLinks.Count > 0)
         {
             await eventsLinks[0].ClickAsync();
-            await Expect(Page).ToHaveURLAsync(new Regex(".*(events|#events).*", RegexOptions.IgnoreCase));
+            await Expect(Page).ToHaveURLAsync(EventsRegex());
         }
         else
         {
@@ -57,7 +57,19 @@ public class NavigationTests : BlazorPageTest
         await Page.GotoAsync(BaseUrl);
 
         // Check for the text or logo in the header
-        var headerText = await Page.Locator("header[role='banner']").TextContentAsync();
+        string? headerText = await Page.Locator("header[role='banner']").TextContentAsync();
         Assert.That(headerText, Does.Contain("Chapel Hill").Or.Contain(".NET"));
     }
+
+    [GeneratedRegex("Chapel Hill")]
+    private static partial Regex TitleRegex();
+
+    [GeneratedRegex(".*about.*", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex AboutRegex();
+
+    [GeneratedRegex("Events?", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex EventLinksRegex();
+
+    [GeneratedRegex(".*(events|#events).*", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex EventsRegex();
 }

@@ -1,3 +1,5 @@
+using Microsoft.Playwright;
+
 namespace chapelhilldotnet.E2ETests;
 
 [Parallelizable(ParallelScope.Self)]
@@ -9,7 +11,7 @@ public class FooterTests : BlazorPageTest
     {
         await Page.GotoAsync(BaseUrl);
 
-        var footer = Page.Locator("footer#contact");
+        ILocator footer = Page.Locator("footer#contact");
         await Expect(footer).ToBeVisibleAsync();
     }
 
@@ -18,8 +20,8 @@ public class FooterTests : BlazorPageTest
     {
         await Page.GotoAsync(BaseUrl);
 
-        var currentYear = DateTime.Now.Year.ToString();
-        var footer = Page.Locator("footer#contact");
+        string currentYear = DateTime.Now.Year.ToString();
+        ILocator footer = Page.Locator("footer#contact");
 
         await Expect(footer).ToContainTextAsync("©");
         await Expect(footer).ToContainTextAsync(currentYear);
@@ -32,7 +34,7 @@ public class FooterTests : BlazorPageTest
     {
         await Page.GotoAsync(BaseUrl);
 
-        var footer = Page.Locator("footer#contact");
+        ILocator footer = Page.Locator("footer#contact");
         await Expect(footer).ToContainTextAsync("Meetups, talks");
         await Expect(footer).ToContainTextAsync("Triangle");
     }
@@ -42,8 +44,8 @@ public class FooterTests : BlazorPageTest
     {
         await Page.GotoAsync(BaseUrl);
 
-        var footer = Page.Locator("footer#contact");
-        var exploreHeading = footer.Locator("h3").Filter(new() { HasText = "Explore" });
+        ILocator footer = Page.Locator("footer#contact");
+        ILocator exploreHeading = footer.Locator("h3").Filter(new LocatorFilterOptions { HasText = "Explore" });
 
         await Expect(exploreHeading).ToBeVisibleAsync();
         await Expect(footer).ToContainTextAsync(".NET");
@@ -54,8 +56,8 @@ public class FooterTests : BlazorPageTest
     {
         await Page.GotoAsync(BaseUrl);
 
-        var footer = Page.Locator("footer#contact");
-        var footerClasses = await footer.GetAttributeAsync("class");
+        ILocator footer = Page.Locator("footer#contact");
+        string? footerClasses = await footer.GetAttributeAsync("class");
         Assert.That(footerClasses, Does.Contain("site-footer"),
             "Footer should have the site-footer CSS class");
     }
@@ -65,14 +67,14 @@ public class FooterTests : BlazorPageTest
     {
         await Page.GotoAsync(BaseUrl);
 
-        var footer = Page.Locator("footer#contact");
-        var copyrightParagraph = footer.Locator("p").Filter(new() { HasText = "©" });
-        var taglineParagraph = footer.Locator("p").Filter(new() { HasText = "Meetups, talks" });
+        ILocator footer = Page.Locator("footer#contact");
+        ILocator copyrightParagraph = footer.Locator("p").Filter(new LocatorFilterOptions { HasText = "©" });
+        ILocator taglineParagraph = footer.Locator("p").Filter(new LocatorFilterOptions { HasText = "Meetups, talks" });
 
         await Expect(copyrightParagraph).ToBeVisibleAsync();
         await Expect(taglineParagraph).ToBeVisibleAsync();
 
-        var copyrightText = await copyrightParagraph.TextContentAsync();
+        string? copyrightText = await copyrightParagraph.TextContentAsync();
         Assert.That(copyrightText, Does.Not.Contain("Meetups"),
             "Copyright and tagline should be in separate paragraphs");
     }

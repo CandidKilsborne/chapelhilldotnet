@@ -5,16 +5,15 @@ namespace chapelhilldotnet.E2ETests;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public class EventsPageTests : BlazorPageTest
+public partial class EventsPageTests : BlazorPageTest
 {
-
     [Test]
     public async Task EventsPage_LoadsSuccessfully()
     {
         await Page.GotoAsync($"{BaseUrl}/events");
 
         // Check that the page loaded
-        await Expect(Page).ToHaveURLAsync(new Regex(".*events.*", RegexOptions.IgnoreCase));
+        await Expect(Page).ToHaveURLAsync(EventsRegex());
     }
 
     [Test]
@@ -26,8 +25,8 @@ public class EventsPageTests : BlazorPageTest
         await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 
         // Check if there are event headings or sections
-        var upcomingSection = Page.Locator("text=/upcoming events/i").First;
-        var isUpcomingVisible = await upcomingSection.IsVisibleAsync().ConfigureAwait(false);
+        ILocator upcomingSection = Page.Locator("text=/upcoming events/i").First;
+        bool isUpcomingVisible = await upcomingSection.IsVisibleAsync().ConfigureAwait(false);
 
         if (isUpcomingVisible)
         {
@@ -35,8 +34,7 @@ public class EventsPageTests : BlazorPageTest
         }
         else
         {
-            // Alternative: check for any event-related content
-            var pageContent = await Page.TextContentAsync("body");
+            string? pageContent = await Page.TextContentAsync("body");
             Assert.That(pageContent, Does.Contain("Event").Or.Contain("Meetup"),
                 "Page should contain event-related content");
         }
@@ -48,7 +46,7 @@ public class EventsPageTests : BlazorPageTest
         await Page.GotoAsync($"{BaseUrl}/events");
 
         // Check for a link back to home
-        var homeLink = Page.GetByRole(AriaRole.Link, new() { NameRegex = new Regex("Home", RegexOptions.IgnoreCase) });
+        ILocator homeLink = Page.GetByRole(AriaRole.Link, new PageGetByRoleOptions { NameRegex = HomeRegex() });
 
         if (await homeLink.CountAsync() > 0)
         {
@@ -57,8 +55,7 @@ public class EventsPageTests : BlazorPageTest
         }
         else
         {
-            // Alternative: check for logo link
-            var logoLink = Page.Locator("header a").First;
+            ILocator logoLink = Page.Locator("header a").First;
             await logoLink.ClickAsync();
             await Expect(Page).ToHaveURLAsync(BaseUrl);
         }
@@ -73,10 +70,10 @@ public class EventsPageTests : BlazorPageTest
         await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 
         // Look for date-related content or calendar icons
-        var pageText = await Page.TextContentAsync("body");
+        string? pageText = await Page.TextContentAsync("body");
 
         // Check for date patterns or date-related words
-        var hasDateContent = pageText != null && (
+        bool hasDateContent = pageText != null && (
             pageText.Contains("January") ||
             pageText.Contains("February") ||
             pageText.Contains("March") ||
@@ -100,7 +97,7 @@ public class EventsPageTests : BlazorPageTest
 
         // Verify page is accessible on mobile
         await Page.WaitForLoadStateAsync(LoadState.Load);
-        var bodyContent = await Page.TextContentAsync("body");
+        string? bodyContent = await Page.TextContentAsync("body");
         Assert.That(bodyContent, Is.Not.Null.And.Not.Empty,
             "Events page should render on mobile viewport");
 
@@ -112,4 +109,10 @@ public class EventsPageTests : BlazorPageTest
         Assert.That(bodyContent, Is.Not.Null.And.Not.Empty,
             "Events page should render on desktop viewport");
     }
+
+    [GeneratedRegex(".*events.*", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex EventsRegex();
+
+    [GeneratedRegex("Home", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex HomeRegex();
 }

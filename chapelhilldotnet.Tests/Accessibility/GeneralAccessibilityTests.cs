@@ -1,3 +1,4 @@
+using AngleSharp.Dom;
 using Bunit;
 using chapelhilldotnet.web.Layout;
 using chapelhilldotnet.web.Pages;
@@ -12,7 +13,7 @@ public class GeneralAccessibilityTests : TestContext
 {
     public GeneralAccessibilityTests()
     {
-        // Setup JS runtime mock for components that need it
+        // Set up JS runtime mock for components that need it
         JSInterop.Mode = JSRuntimeMode.Loose;
     }
 
@@ -20,10 +21,10 @@ public class GeneralAccessibilityTests : TestContext
     public void NavMenu_HeaderHasRoleBanner()
     {
         // Act
-        var cut = RenderComponent<NavMenu>();
+        IRenderedComponent<NavMenu> cut = RenderComponent<NavMenu>();
 
         // Assert
-        var header = cut.Find("header[role='banner']");
+        IElement header = cut.Find("header[role='banner']");
         Assert.NotNull(header);
     }
 
@@ -31,11 +32,11 @@ public class GeneralAccessibilityTests : TestContext
     public void NavMenu_NavigationHasAriaLabel()
     {
         // Act
-        var cut = RenderComponent<NavMenu>();
+        IRenderedComponent<NavMenu> cut = RenderComponent<NavMenu>();
 
         // Assert
-        var nav = cut.Find("nav");
-        var ariaLabel = nav.GetAttribute("aria-label");
+        IElement nav = cut.Find("nav");
+        string? ariaLabel = nav.GetAttribute("aria-label");
         Assert.NotNull(ariaLabel);
         Assert.Contains("navigation", ariaLabel.ToLower());
     }
@@ -44,15 +45,15 @@ public class GeneralAccessibilityTests : TestContext
     public void HomePage_NamedSectionsContainHeadings()
     {
         // Act
-        var cut = RenderComponent<Home>();
+        IRenderedComponent<Home> cut = RenderComponent<Home>();
 
         // Assert - sections with IDs should contain heading elements
-        var namedSections = cut.FindAll("section[id]");
+        IRefreshableElementCollection<IElement> namedSections = cut.FindAll("section[id]");
         Assert.NotEmpty(namedSections);
 
-        foreach (var section in namedSections)
+        foreach (IElement section in namedSections)
         {
-            var inner = section.InnerHtml;
+            string inner = section.InnerHtml;
             Assert.True(
                 inner.Contains("<h1", StringComparison.OrdinalIgnoreCase) ||
                 inner.Contains("<h2", StringComparison.OrdinalIgnoreCase) ||
@@ -65,11 +66,11 @@ public class GeneralAccessibilityTests : TestContext
     public void HomePage_DecorativeSvgsHaveAriaHidden()
     {
         // Act
-        var cut = RenderComponent<Home>();
+        IRenderedComponent<Home> cut = RenderComponent<Home>();
 
         // Assert
-        var markup = cut.Markup;
-        var svgCount = CountOccurrences(markup, "<svg");
+        string markup = cut.Markup;
+        int svgCount = CountOccurrences(markup, "<svg");
 
         // Decorative SVGs should have aria-hidden="true"
         if (svgCount > 0)
@@ -82,15 +83,15 @@ public class GeneralAccessibilityTests : TestContext
     public void HomePage_AllButtonsHaveTypeAttribute()
     {
         // Act
-        var cut = RenderComponent<Home>();
+        IRenderedComponent<Home> cut = RenderComponent<Home>();
 
         // Assert
-        var buttons = cut.FindAll("button");
-        foreach (var button in buttons)
+        IRefreshableElementCollection<IElement> buttons = cut.FindAll("button");
+        foreach (IElement button in buttons)
         {
-            var type = button.GetAttribute("type");
+            string? type = button.GetAttribute("type");
             Assert.NotNull(type);
-            Assert.True(type == "button" || type == "submit" || type == "reset");
+            Assert.True(type is "button" or "submit" or "reset");
         }
     }
 
@@ -98,12 +99,12 @@ public class GeneralAccessibilityTests : TestContext
     public void HomePage_NoImproperTabindex()
     {
         // Act
-        var cut = RenderComponent<Home>();
+        IRenderedComponent<Home> cut = RenderComponent<Home>();
 
         // Assert
-        var markup = cut.Markup;
+        string markup = cut.Markup;
 
-        // tabindex > 0 is considered an anti-pattern
+        // tabindex > 0 is considered an antipattern
         Assert.DoesNotContain("tabindex=\"1\"", markup);
         Assert.DoesNotContain("tabindex=\"2\"", markup);
         Assert.DoesNotContain("tabindex=\"3\"", markup);
@@ -113,13 +114,13 @@ public class GeneralAccessibilityTests : TestContext
     public void EventsPage_TimeElementsHaveDatetimeAttribute()
     {
         // Act
-        var cut = RenderComponent<Events>();
+        IRenderedComponent<Events> cut = RenderComponent<Events>();
 
         // Assert
-        var timeElements = cut.FindAll("time");
-        foreach (var time in timeElements)
+        IRefreshableElementCollection<IElement> timeElements = cut.FindAll("time");
+        foreach (IElement time in timeElements)
         {
-            var datetime = time.GetAttribute("datetime");
+            string? datetime = time.GetAttribute("datetime");
             Assert.NotNull(datetime);
 
             // Verify format is YYYY-MM-DD
@@ -131,26 +132,26 @@ public class GeneralAccessibilityTests : TestContext
     public void EventsPage_ExternalLinksHaveSecurityAttributes()
     {
         // Act
-        var cut = RenderComponent<Events>();
+        IRenderedComponent<Events> cut = RenderComponent<Events>();
 
         // Assert
-        var externalLinks = cut.FindAll("a[target='_blank']");
-        foreach (var link in externalLinks)
+        IRefreshableElementCollection<IElement> externalLinks = cut.FindAll("a[target='_blank']");
+        foreach (IElement link in externalLinks)
         {
-            var rel = link.GetAttribute("rel");
+            string? rel = link.GetAttribute("rel");
             Assert.Contains("noopener", rel);
             Assert.Contains("noreferrer", rel);
         }
     }
 
     [Fact]
-    public void Footer_HasRoleContentinfo()
+    public void Footer_HasRoleContentInfo()
     {
         // Act
-        var cut = RenderComponent<Footer>();
+        IRenderedComponent<Footer> cut = RenderComponent<Footer>();
 
         // Assert
-        var footer = cut.Find("footer[role='contentinfo']");
+        IElement footer = cut.Find("footer[role='contentinfo']");
         Assert.NotNull(footer);
     }
 
@@ -158,10 +159,10 @@ public class GeneralAccessibilityTests : TestContext
     public void ErrorPage_ErrorMessageHasRoleAlert()
     {
         // Act
-        var cut = RenderComponent<Error>();
+        IRenderedComponent<Error> cut = RenderComponent<Error>();
 
         // Assert
-        var alert = cut.Find("div[role='alert']");
+        IElement alert = cut.Find("div[role='alert']");
         Assert.NotNull(alert);
     }
 
@@ -169,10 +170,10 @@ public class GeneralAccessibilityTests : TestContext
     public void ErrorPage_HasAriaLive()
     {
         // Act
-        var cut = RenderComponent<Error>();
+        IRenderedComponent<Error> cut = RenderComponent<Error>();
 
         // Assert
-        var alert = cut.Find("div[aria-live='assertive']");
+        IElement alert = cut.Find("div[aria-live='assertive']");
         Assert.NotNull(alert);
     }
 
@@ -183,13 +184,13 @@ public class GeneralAccessibilityTests : TestContext
         // This is a simplified test - in practice you'd check each page
 
         // Act
-        var cut = RenderComponent<Home>();
+        IRenderedComponent<Home> cut = RenderComponent<Home>();
 
         // Assert
-        var markup = cut.Markup;
-        var h1Index = markup.IndexOf("<h1", StringComparison.Ordinal);
-        var h2Index = markup.IndexOf("<h2", StringComparison.Ordinal);
-        var h3Index = markup.IndexOf("<h3", StringComparison.Ordinal);
+        string markup = cut.Markup;
+        int h1Index = markup.IndexOf("<h1", StringComparison.Ordinal);
+        int h2Index = markup.IndexOf("<h2", StringComparison.Ordinal);
+        int h3Index = markup.IndexOf("<h3", StringComparison.Ordinal);
 
         // h1 should come before h2
         if (h1Index > -1 && h2Index > -1)
